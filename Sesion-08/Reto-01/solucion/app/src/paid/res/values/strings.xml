@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_empty">El campo usuario está vacío</string>
+    <string name="pass_empty">El campo contraseña está vacío</string>
+    <string name="login_successful">login exitoso</string>
+</resources>

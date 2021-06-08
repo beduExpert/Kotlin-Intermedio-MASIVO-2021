@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Reto 02</string>
+    <string name="name">Nombre(s)</string>
+    <string name="last_name">Apellidos</string>
+    <string name="email">Correo electrónico</string>
+    <string name="phone">Teléfono</string>
+    <string name="accept">ACEPTAR</string>
+</resources>

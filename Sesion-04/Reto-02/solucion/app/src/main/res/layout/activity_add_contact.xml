@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingTop="24dp"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+    <ImageView
+        android:src="@drawable/unknown"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"/>
+    <EditText
+        android:hint="Nombre"
+        android:id="@+id/editName"
+        android:layout_width="260dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="64dp"
+        />
+    <EditText
+        android:hint="Teléfono"
+        android:id="@+id/editPhone"
+        android:layout_width="260dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="48dp"
+        />
+    <Button
+        android:layout_marginTop="24dp"
+        android:id="@+id/buttonAdd"
+        android:text="Agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

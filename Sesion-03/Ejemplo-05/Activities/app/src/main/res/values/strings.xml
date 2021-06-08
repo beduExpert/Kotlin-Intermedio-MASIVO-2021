@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Activies</string>
+    <string name="name">Nombre(s)</string>
+    <string name="last_name">Apellidos</string>
+    <string name="email">Correo electrónico</string>
+    <string name="phone">Teléfono</string>
+    <string name="accept">ACEPTAR</string>
+
+    <string name="welcome">Bienvenido</string>
+</resources>

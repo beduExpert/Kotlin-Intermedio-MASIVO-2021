@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">App Bar</string>
+    <string name="delete">Eliminar</string>
+    <string name="share">Compartir</string>
+    <string name="open_drawer">Abrir</string>
+    <string name="close_drawer">Cerrar</string>
+    <string name="delete_element">Deleting element</string>
+    <string name="sharing_element">Sharing element</string>
+    <string name="user">Usuario</string>
+    <string name="email">Correo electrónico</string>
+    <string name="drawer.home">Home</string>
+    <string name="drawer.account">Cuenta</string>
+    <string name="drawer.payments">Pago</string>
+    <string name="drawer.settings">Configuración</string>
+    <string name="drawer.extra">Adicional</string>
+    <string name="drawer.about">Acerca de</string>
+    <string name="drawer.privacy">Privacidad</string>
+</resources>

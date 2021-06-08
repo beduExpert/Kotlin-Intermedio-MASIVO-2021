@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MaterialComponents</string>
+    <string name="card_title">Título</string>
+    <string name="card_description">Descripción</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+</resources>

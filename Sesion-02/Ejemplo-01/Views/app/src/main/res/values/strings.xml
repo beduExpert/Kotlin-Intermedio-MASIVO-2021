@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Views</string>
+    <string name="hello_text">Hola, Estas es la sesión 2!</string>
+    <string name="accept_button">ACEPTAR</string>
+    <string name="button_clicked">Haz dado click al botón!</string>
+
+</resources>

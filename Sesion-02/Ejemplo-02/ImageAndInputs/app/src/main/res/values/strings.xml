@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ImageAndInputs</string>
+    <string name="add_text">Ingresa un texto</string>
+    <string name="phone">Teléfono</string>
+    <string name="here_text">Aquí el texto del EditText</string>
+    <string name="accept">ACEPTAR</string>
+</resources>

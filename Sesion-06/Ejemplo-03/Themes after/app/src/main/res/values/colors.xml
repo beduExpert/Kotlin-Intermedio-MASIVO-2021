@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#212121</color>
+    <color name="primaryLightColor">#484848</color>
+    <color name="primaryDarkColor">#000000</color>
+    <color name="secondaryColor">#ff1744</color>
+    <color name="secondaryLightColor">#ff616f</color>
+    <color name="secondaryDarkColor">#c4001d</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="tabBarIconColor">#ffffff</color>
+
+    <!-- for custom theme -->
+    <color name="redBluePrimaryColor">#f50057</color>
+    <color name="redBluePrimaryLightColor">#ff5983</color>
+    <color name="redBluePrimaryDarkColor">#bb002f</color>
+    <color name="redBlueSecondaryColor">#4527a0</color>
+    <color name="redBlueSecondaryLightColor">#7953d2</color>
+    <color name="redBlueSecondaryDarkColor">#000070</color>
+    <color name="redBluePrimaryTextColor">#000000</color>
+    <color name="redBlueSecondaryTextColor">#ffffff</color>
+</resources>
