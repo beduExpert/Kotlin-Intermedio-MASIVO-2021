@@ -10,6 +10,8 @@
 Este módulo tiene como propósito introducir al desarrollo de aplicaciones android mediante el lenguaje Kotlin, utilizando como Entorno de Desarrollo Integrado (IDE) Android studio. Aquí aprenderás a crear un proyecto android desde cero, diseñar las pantallas, agregar funcionalidad a botones y eventos, probar versiones de testing mediante un emulador o un dispositivo físico y preparar la aplicación para el lanzamiento a la Google Play Store. 
 
 ### :memo:  Contenido
+
+El módulo consta de 8 sesiones en su mayoría prácticas que abordarán los siguientes temas:
  
  - [Sesión 1: Introducción a Android Studio](Sesion-01/Readme.md) 
  - [Sesión 2: Views](Sesion-02/Readme.md) 
@@ -22,5 +24,9 @@ Este módulo tiene como propósito introducir al desarrollo de aplicaciones andr
  
 
 [`Siguiente`](Sesion-01/Readme.md)
+
+### Instalaciones:
+
+Es importante contar con el IDE Android Studio para el desarrollo de este modulo, puedes descargarlo directamente de este [sitio](https://developer.android.com/studio?hl=es-419&gclid=CjwKCAjw2ZaGBhBoEiwA8pfP_taektFLZxvKrdSwJSBnmRayBLarX1TgMr9TowHqvU6f5gksOxkUPxoCRYQQAvD_BwE&gclsrc=aw.dsß)
 
 </div>
