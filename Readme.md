@@ -21,12 +21,11 @@ El módulo consta de 8 sesiones en su mayoría prácticas que abordarán los sig
  - [Sesión 6: Material Design](Sesion-06/Readme.md) 
  - [Sesión 7: Menús](Sesion-07/Readme.md) 
  - [Sesión 8: Gradle y Preparación para lanzamiento](Sesion-08/Readme.md)  
- 
-
-[`Siguiente`](Sesion-01/Readme.md)
 
 ### Instalaciones:
 
 Es importante contar con el IDE Android Studio para el desarrollo de este modulo, puedes descargarlo directamente de este [sitio](https://developer.android.com/studio?hl=es-419&gclid=CjwKCAjw2ZaGBhBoEiwA8pfP_taektFLZxvKrdSwJSBnmRayBLarX1TgMr9TowHqvU6f5gksOxkUPxoCRYQQAvD_BwE&gclsrc=aw.dsß)
 
+
+[`Siguiente`](Sesion-01/Readme.md)
 </div>
