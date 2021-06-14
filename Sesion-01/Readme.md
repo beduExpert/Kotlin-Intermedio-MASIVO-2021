@@ -1,6 +1,6 @@
 [`Kotlin-Intermedio`](../Readme.md) > `Sesión 1`
 
-## Sesión 1: Introducción a Android
+## Sesión 1: Introducción a Android 🤖
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 <div style="text-align: justify;">
@@ -12,13 +12,15 @@
 
 ### 2. Contenido :blue_book:
 
+Android Studio te ayudará a desarrollar tu app más productivamente a escala. Android Studio ofrece las herramientas más rápidas para crear apps de Android. Codifica más rápido. Codifica con seguridad. Crea el mejor código. Elimina tareas tediosas. Compila sin límites.
+
 ---
 
 <img src="images/tools.png" align="right" height="90"> 
 
 #### <ins>Setup inicial</ins>
 
-Se detalla como crear un proyecto android desde nuestra IDE __Android Studio__, explicando el significado de los distintos campos y opciones para su configuración.
+Se detalla como crear un proyecto android desde nuestra IDE __Android Studio__, viendo el significado de los distintos campos y opciones para su configuración.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 
@@ -28,7 +30,7 @@ Se detalla como crear un proyecto android desde nuestra IDE __Android Studio__, 
 
 #### <ins>Estructura del proyecto</ins>
 
-Con el proyecto nuevo creado, analizamos la estructura del proyecto y explicamos cada sección de esta y su propósito.
+Una vez que el proyecto está creado, la estructura o forma en la que se organiza es de suma importancia. No sólo nos ayuda a mantener nuestro código organizado, sino que también es importante para el funcionamiento de nuestra nueva app.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 
@@ -38,7 +40,7 @@ Con el proyecto nuevo creado, analizamos la estructura del proyecto y explicamos
 
 #### <ins>Emulación de dispositivos</ins>
 
-Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un emulador de algún dispositivo móvil para poder correr nuestra aplicación! :iphone:
+Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un emulador de algún dispositivo móvil para poder correr nuestra aplicación! :iphone:. Es decir, vamos a correr un dispositivo móvil virtual en nuestra computadora para simular la funcionalidad de nuestra app.
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -49,7 +51,7 @@ Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un 
 
 #### <ins>Correr en un dispositivo físico</ins>
 
-Basta de emulaciones, utilizaremos un dispositivo móvil físico para instalar nuestra primera aplicación a nuestro móvil. :iphone:
+Basta de emulaciones, ahora veamos como funciona en el mundo real. Nuestra app, por muy sencilla que sea ya está lista para ser instalada en un dispositivo móvil y para verla en acción.
 
 - [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 

@@ -20,6 +20,11 @@
 
 ---
 
+Un *activity* es una acción simple y especifica que puede realizar el usuario en nuestra aplicación. **Casi todas** las *activities* dependen de la interacción con el usuario. Algunos ejemplos serían: mandarle un mensaje, pedirle una confirmación, mostrarle mas contenido, entre otros.
+
+El **Layout** de una aplicación define la estructura y el orden de los elementos que la conforman. Nos define cómo y en dónde se deben mostrar los elementos.
+
+---
 <img src="images/relative_layout.jpeg" align="right" height="90"> 
 
 #### <ins>Layouts: RelativeLayout</ins>
@@ -45,7 +50,7 @@ Utilizaremos el último layout integrado a android, que integra patrones de otro
 
 #### <ins>Activity</ins>
 
-Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las acciones que podemos hacer en cada una de sus etapas.
+Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las acciones que podemos hacer en cada una de sus etapas. Es importante entender el ciclo de vida de las *activities* para saber que esperar de ellas.
 
 - [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 
@@ -55,7 +60,7 @@ Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las accione
 
 #### <ins>Comunicación entre Activities</ins>
 
-Crearemos dos activities y haremos transmición de datos entre ellas.
+Crearemos dos activities y haremos que se comuniquen entre ellas transfiriendo datos de una a otraß.
 
 - [**`EJEMPLO 5`**](Ejemplo-05/Readme.md)
 
@@ -63,7 +68,7 @@ Crearemos dos activities y haremos transmición de datos entre ellas.
 
 ### 3. Proyecto :hammer:
 
-Con los temas anteriores, haz una transición entre tu formulario y tu pantalla principal empleando _constraint layouts.
+Con los temas anteriores, haz una transición entre tu formulario y tu pantalla principal empleando _constraint layouts_.
 
 - [**`PROYECTO SESIÓN 3`**](Proyecto/Readme.md)
 
