@@ -6,8 +6,10 @@
 
 ### 1. Objetivos :dart:
 
-- Definir el proyecto con el que trabajaremos todo el curso.
-- Programar la idea básica de nuestra aplicación.
+- Definir el proyecto con el que se trabajará durante el módulo.
+- Interpretar los lineamientos que integran el proyecto.
+- Modelar la idea básica de nuestra aplicación.
+
 
 ### 2. Requisitos :clipboard:
 

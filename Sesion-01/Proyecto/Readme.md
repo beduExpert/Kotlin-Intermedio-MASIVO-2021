@@ -6,9 +6,10 @@
 
 ### 1. Objetivos :dart:
 
-- Definir el proyecto con el que trabajaremos todo el curso.
-- Interpretar los lineamientos que integra el proyecto.
+- Definir el proyecto con el que se trabajará durante el módulo.
+- Interpretar los lineamientos que integran el proyecto.
 - Programar la idea básica de nuestra aplicación.
+
 
 ### 2. Requisitos :clipboard:
 
@@ -22,7 +23,7 @@
 
 En esta primera parte del curso, debemos definir un proyecto con el que trabajemos las 8 sesiones. Este proyecto va ir tomando mayor complejidad conforme se vaya avanzando en nuevos temas, obteniendo herramientas que nos permitan realizar nuevas funcionalidades.
 
-Si previamente tomaraon el curso de __Kotlin fundamentals__, pueden retomar la idea original del proyecto e ir adaptándolo a este módulo, con esto tendrán una integración más completa de conceptos de Android y Kotlin.
+Si previamente se cursó Kotlin fundamentals, es posible retomar la idea original del proyecto e ir adaptándolo a este módulo, con esto tendrán una integración más completa de conceptos de Android y Kotlin.
 
 Para poder elegir el proyecto adecuado, hay que considerar ciertos factores:
 
