@@ -12,15 +12,15 @@
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 
-- Diseñar layouts avanzados
-- Explorar el flujo de un Activity
-- Crear interacción entre Activities
+- Diseñar layouts avanzados.
+- Explorar el flujo de un Activity.
+- Crear interacción entre Activities.
 
 ### 2. Contenido :blue_book:
 
 ---
 
-Un *activity* es una acción simple y especifica que puede realizar el usuario en nuestra aplicación. **Casi todas** las *activities* dependen de la interacción con el usuario. Algunos ejemplos serían: mandarle un mensaje, pedirle una confirmación, mostrarle mas contenido, entre otros.
+Un *activity* es una acción simple y específica que puede realizar el usuario en nuestra aplicación. **Casi todas** las *activities* dependen de la interacción con el usuario; algunos ejemplos son: mandarle un mensaje, pedirle una confirmación, mostrarle mas contenido, entre otros.
 
 El **Layout** de una aplicación define la estructura y el orden de los elementos que la conforman. Nos define cómo y en dónde se deben mostrar los elementos.
 
@@ -50,7 +50,7 @@ Utilizaremos el último layout integrado a android, que integra patrones de otro
 
 #### <ins>Activity</ins>
 
-Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las acciones que podemos hacer en cada una de sus etapas. Es importante entender el ciclo de vida de las *activities* para saber que esperar de ellas.
+Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las acciones que podemos hacer en cada una de sus etapas. Es importante entender el ciclo de vida de las *activities* para saber qué esperar de ellas.
 
 - [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 
@@ -60,7 +60,7 @@ Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las accione
 
 #### <ins>Comunicación entre Activities</ins>
 
-Crearemos dos activities y haremos que se comuniquen entre ellas transfiriendo datos de una a otraß.
+Crearemos dos activities y haremos que se comuniquen entre ellas, transfiriendo datos de una a otra.
 
 - [**`EJEMPLO 5`**](Ejemplo-05/Readme.md)
 
@@ -68,7 +68,7 @@ Crearemos dos activities y haremos que se comuniquen entre ellas transfiriendo d
 
 ### 3. Proyecto :hammer:
 
-Con los temas anteriores, haz una transición entre tu formulario y tu pantalla principal empleando _constraint layouts_.
+Con los temas anteriores se hará una transición entre tu formulario y tu pantalla principal empleando _constraint layouts_.
 
 - [**`PROYECTO SESIÓN 3`**](Proyecto/Readme.md)
 
