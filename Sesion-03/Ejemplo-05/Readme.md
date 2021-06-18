@@ -144,9 +144,9 @@ const val USER_PHONE = "org.bedu.activities.USER_PHONE"
 
 Nótese que existen dos _textViews_ que no tienen ningún texto predefinido. Eso lo abordaremos después.
 
-la Activity _LoggedActivity_ tiene qué tener los callbacks de su ciclo de vida implementados como en el _MainActivity_, pero con un identificador propio para poder diferenciarlos y saber cómo se comporta su flujo. 
+La Activity _LoggedActivity_ tiene que tener los callbacks de su ciclo de vida implementados como en el _MainActivity_, pero con un identificador propio para poder diferenciarlos y saber cómo se comporta su flujo. 
 
-en el método ___onCreate___, vamos a recuperar la información de nuestro teléfono y mostrarlo mediante un _Toast_. como la información que recuperaremos es un _String_, la obtendremos por medio del método ___getStringExtra___.
+En el método ___onCreate___ vamos a recuperar la información de nuestro teléfono y mostrarlo mediante un _Toast_. Como la información que recuperaremos es un _String_, la obtendremos por medio del método ___getStringExtra___.
 
 ```kotlin
 val phone = intent.getStringExtra(USER_PHONE)
@@ -154,10 +154,10 @@ val phone = intent.getStringExtra(USER_PHONE)
 Log.d("activities","El telefono es $phone")
 ```
 
-Corremos la aplicación...
+Después corremos la aplicación.
 
 
-y obtenemos el siguiente error: 
+Deberíamos visualizar el siguiente error: 
 
 <img src="images/1.png" width="70%">
 
@@ -167,21 +167,21 @@ Esto se debe a que la segunda _Activity_ no está declarada en el ___AndroidMani
 <activity android:name=".LoggedActivity"/>
 ```
 
-Ahora sí, corremos la aplicación y obtenemos lo siguiente: 
+Ahora sí, corremos la aplicación nuevamente y obtenemos lo siguiente: 
 
 <img src="images/2.png" width="35%">
 
-Al dar clic a __Aceptar__, navegaremos a la siguiente pantalla, obteniendo:
+Al hacer clic a __Aceptar__ navegaremos a la siguiente pantalla, obteniendo:
 
 <img src="images/2.png" width="35%">
 
-__Comentar el flujo del ciclo de vida al momento de la navegación y cuando se presiona el botón de__ ___Atrás___.
+__Comenta el flujo del ciclo de vida al momento de la navegación y cuando se presiona el botón de__ ___Atrás___.
 
 
 
 [`Anterior`](../Ejemplo-04/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
-7. Recuerdas esos _textViews_ vacíos? los vamos a utilizar para mostrar el nombre y email del usuario. Existe otra forma de pasar un arreglo de  valores a través del _Intent_: el ___Bundle___. Esta clase representa un map de keys ligadas a valores ___Parcelables___ (objetos que para transmitirse, son serializados).
+7. ¿Recuerdas esos _textViews_ vacíos? los vamos a utilizar para mostrar el nombre y el email del usuario. Existe otra forma de pasar un arreglo de  valores a través del _Intent_: el ___Bundle___. Esta clase representa un map de keys ligadas a valores ___Parcelables___ (objetos que para transmitirse, son serializados).
 
 Enviaremos tanto el nombre completo del usuario como su correo mediante un bundle, por tanto agregaremos estas líneas de código:
 
