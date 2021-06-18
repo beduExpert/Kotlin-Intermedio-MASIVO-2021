@@ -10,8 +10,8 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio instalado
-2. Al menos un Emulador android configurado
+1. Android Studio instalado.
+2. Al menos un Emulador android configurado.
 
 ### 3. Desarrollo :computer:
 
@@ -20,6 +20,8 @@ Este diagrama podría ser de ayuda para este reto:
 <img src="images/view_diagram.png">
 
 
+Para realizar este reto es necesario realizar las siguientes instrucciones.
+	
 1. Cambiar de color de los siguientes elementos:
 
 - El background del layout en un tono azul claro.
@@ -80,7 +82,11 @@ btnAccept.isEnabled = false
 </details>
 <br/>
 
-4. Experimentar con las medidas del botón y el text. Qué sucede al asignarle a width y a height el valor "match_parent"? Experimentar con gravity y layout_gravity.
+4. Experimentar con las medidas del botón y el text. 
+	
+¿Qué sucede al asignarle a width y a height el valor "match_parent"? 
+	
+Experimentar con gravity y layout_gravity.
 
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)
 
