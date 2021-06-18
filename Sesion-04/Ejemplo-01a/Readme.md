@@ -7,7 +7,7 @@
 
 ### 1. Objetivos :dart:
 
-- Que el alumno aprenda a customizar sus listas para su posterior implementación
+- Customizar listas personalizadas para su posterior implementación en proyectos determinados.
 
 ### 2. Requisitos :clipboard:
 
@@ -248,7 +248,7 @@ Colóquenlo dentro de la MainActivity.
 
 5.- Con todo lo anterior, crear el GameAdapter y asignarlo al ListView.
 
-6.- Al dar click a cada elemento del ListView, se debe mostrar un Toast que nos indique el nombre del ganador y la categoría ganada.
+6.- Al hacer click a cada elemento del ListView, se debe mostrar un Toast que nos indique el nombre del ganador y la categoría ganada.
 
 7.- Debemos obtener algo similar a esto:
 
