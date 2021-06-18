@@ -6,15 +6,17 @@
 
 ### 1. Objetivos :dart:
 
-- Utilizar los spinners y sus limitados casos de uso.
+- Utilizar los spinners y sus limitados casos de empleo.
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
+Para realizar este ejemplo es necesario seguir los pasos a continuación:
+    
 1.- Crear un proyecto con Activity vacía.
 
 2.- Generar un Layout, incluyendo un Spinner con su respectivo id para poder ser identificado posteriormente.
@@ -60,7 +62,7 @@
  var language = arrayOf("Inglés", "Español", "Chino", "Ruso", "Coreano", "Alemán", "Francés", "Holandés")
  ```
  
- 4.- Debemos setear el listener del spinner, para poder mostrar un mensaje cuando el usuario halla seleccionado un idioma.
+ 4.- Debemos setear el listener del spinner, para poder mostrar un mensaje cuando el usuario haya seleccionado un idioma.
  
  ```kotlin
  spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -91,7 +93,7 @@ private fun showDialog(title:String,message:String){
 }
 ```
 
-La app se tiene qué ver parecido a la sig. imagen:
+La app debe lucir semejante a la siguiente imagen:
 
 <img src="result.png" width="33%">
 
