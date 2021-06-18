@@ -6,9 +6,8 @@
 
 ### 1. Objetivos :dart:
 
-- Comprender el concepto y funcionamiento de un RecyclerView
-- Ventajas y desventajas
-- Cuál es el núcleo de la diferencia con una ListView
+- Reconocer el concepto, el funcionamiento, las ventajas y desventajas de un RecyclerView, mediante su utilización, y el núcleo de su diferencia con una ListView.
+
 
 ### 2. Requisitos :clipboard:
 
@@ -127,7 +126,7 @@ En este proyecto, crearemos una lista de contactos de teléfono sencilla con un 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-4.- Tendremos qué crear un Modelo de datos para nuestro arreglo, Por el momento desplegamos nombre, estado, teléfono y foto (es la misma siempre), por lo que nuestro Modelo queda así: 
+4.- Tendremos que crear un Modelo de datos para nuestro arreglo, Por el momento desplegamos nombre, estado, teléfono y foto (es la misma siempre), por lo que nuestro Modelo queda así: 
 
 ```kotlin
 package org.bedu.recyclercontacts
@@ -202,7 +201,7 @@ class RecyclerAdapter(
 }
 ```
 
-- La primera diferencia que observamos, es que nuestro RecyclerAdapter no ereda de un basicAdapter() como las listas de los otros dos ejemplos; sino de un RecyclerView.Adapter
+- La primera diferencia que observamos, es que nuestro RecyclerAdapter no hereda de un basicAdapter() como las listas de los otros dos ejemplos; sino de un RecyclerView.Adapter
 - Tiene una clase nueva llamada ViewHolder, que asigna los valores de los datos a las vistas correspondientes en el Item, sin crear diversas instancias de esta (reciclando así este recurso).
 - sobreescribe el callback onCreateViewHolder, que infla y devuelve la vista. Como no la personaliza, se podrían asignar diferentes vistas para diversos Items.
 - contiene onBindViewHolder, que personaliza el tipo de ViewHolder según su posición.
