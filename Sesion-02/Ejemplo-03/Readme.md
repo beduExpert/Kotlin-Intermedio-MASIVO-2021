@@ -7,25 +7,25 @@
 ### 1. Objetivos :dart:
 
 - Instalar dependencias mediante _gradle_/
-- extender _ImageView_ para recuperar imágenes por medio de una URL.
+- Extender _ImageView_ para recuperar imágenes por medio de una URL.
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Coil instalado en el proyecto.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-Para que un ImageView pueda cargar una imagen remota a través de una URL, tenemos qué instalar alguna dependencia (o descargarla con un cliente y asignarla, pero eso es mucho más complicado). Las opciones más populares son:
+Es necesario instalar alguna dependencia (o descargarla con un cliente y asignarla, pero eso es mucho más complicado) para que un ImageView pueda cargar una imagen remota a través de una URL. Las opciones más populares son:
 
 - Fresco
 - Picasso
 - Glide
 
-Mientras que todos los anteriores tienen una amplia comunidad, nos enfocaremos en una cuarta opción: ___coil___ ( COroutine Image Loader), que como dice su nombre, utiliza las populares coroutines de Kotlin. 
+Mientras que todos los anteriores tienen una amplia comunidad, nos enfocaremos en una cuarta opción: ___coil___ ( COroutine Image Loader). Esta, como dice su nombre, utiliza las populares coroutines de Kotlin. Para hacerlo es necesario realizar los siguientes pasos.
 
-1. Insertamos la implementación de la dependencia en el archivo ___app/buid.grade___ la siguiente línea:
+1. Insertamos la implementación de la dependencia en el archivo ___app/buid.grade___, como en la siguiente línea:
 
 ```kotlin
 dependencies{
@@ -33,7 +33,7 @@ dependencies{
 }
 ```
 
-nótese que esta línea va dentro del bloque ___dependencies___, aquí es donde se declara la implementación de dependencias de la app. Cada dependencia se vaja de un repositorio; en este caso, coil se encuentra alojado en __Maven Central___, pero también en el _Jcenter Maven Repository de Bintray_ y podemos ver que ese repositorio se incluye en nuestro proyecto entrando en el archivo ___build.gradle___ en la carpeta raíz.
+Nótese que esta línea va dentro del bloque ___dependencies___. Aquí es donde se declara la implementación de dependencias de la app. Cada dependencia se baja de un repositorio; en este caso, coil se encuentra alojado en __Maven Central__, pero también en el _Jcenter Maven Repository de Bintray_, y podemos ver que ese repositorio se incluye en nuestro proyecto entrando en el archivo ___build.gradle___ en la carpeta raíz.
 
 ```kotlin
 buildscript {
@@ -72,7 +72,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 
 <img src="images/0.png" width="90%"/>
 
-Podemos dar click en ___Sync now___ en la parte derecha de esa barra, o sincronizamos mediante la herramienta (dicha opción es un elefante con una flecha azul).
+Podemos hacer click en ___Sync now___ en la parte derecha de esa barra, o sincronizamos mediante la herramienta (dicha opción es un elefante con una flecha azul).
 
 <img src="images/1.png" width="55%"/>
 
@@ -86,9 +86,9 @@ Podemos dar click en ___Sync now___ en la parte derecha de esa barra, o sincroni
 
 <img src="images/2.png" width="55%"/>
 
-5. Agregamos el código de setup inicial de [la sesión](../Readme.md)
+5. Agregamos el código de setup inicial de [la sesión](../Readme.md).
 
-6. Dentro del _LinearLayout_, insertar el siguiente _ImageView_:
+6. Dentro del _LinearLayout_ se debe insertar el siguiente _ImageView_:
 
 ```xml
 <ImageView
@@ -104,19 +104,19 @@ Podemos dar click en ___Sync now___ en la parte derecha de esa barra, o sincroni
 private lateinit var imageView: ImageView
 ```
 
-asignamos valor a un campo:
+Asignamos valor a un campo:
 
 ```kotlin
 imageView = findViewById(R.id.imageView)
 ```
 
-y utilizamos la función _load_ (es un método que extiende de _ImageView_) para cargar imágenes desde URLS etc.
+Y utilizamos la función _load_ (es un método que extiende de _ImageView_) para cargar imágenes desde URLS etcétera.
 
 ```kotlin
 imageView.load("https://raw.githubusercontent.com/beduExpert/Kotlin-Intermedio-2020/master/images/android-kotlin.png")
 ```
 
-Corremos el código y comprobamos!
+¡Finalmente corremos el código y comprobamos!
 
 <img src="images/3.png" width="55%"/>
 
