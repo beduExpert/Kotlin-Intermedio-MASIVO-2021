@@ -201,7 +201,7 @@ Agregamos el botón y lo asociamos a su id; para no redundar en código omitirem
 Log.d("Test","Los valores son: ${editText.text} y ${editText2.text}")
 ```
 
-Y terminamos con la borroboración del funcionamiento:
+Y terminamos con la corroboración del funcionamiento:
 
 <img src="images/1.png" width="70%"/>
 
