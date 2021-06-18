@@ -14,9 +14,9 @@
 
 ### 3. Desarrollo :computer:
 
-El Relative Layout es un ViewGroup que organiza su contenido de acuerdo a posiciones relativas a su área o a los otros miembros del layout. para hacer el enlace con otros Views, se requiere que declaren id's, en el layout de abajo, los id tienen el nombre del color que representa cada vista, para identificarlos mejor.
+El Relative Layout es un ViewGroup que organiza su contenido de acuerdo a posiciones relativas a su área o a los otros miembros del layout. Para hacer el enlace con otros Views se requiere que declaren id's en el layout de abajo. Los id tienen el nombre del color que representa cada vista para identificarlos mejor.
 
-La siguiente tabla muestra los atributos que tienen qué ver con el posicionamiento de sus elementos:
+La siguiente tabla muestra los atributos que tienen relación con el posicionamiento de sus elementos:
 
 
 ATRIBUTO | DESCRIPCIÓN
