@@ -10,22 +10,24 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-El objetivo es apilar las Views como la siguiente imagen:
+El objetivo de este ejemplo es apilar las Views como la siguiente imagen.
 
 
 <img src="images/00.png" width="35%">
 
 
-1.- Abrir un nuevo proyecto con Activity vacía
+Para ello deben realizarse los siguientes pasos:
+ 
+1.- Abrir un nuevo proyecto con Activity vacía.
 
-2.- El trabajo será únicamente con Layouts, así que ir directamente a activity_main.xml
+2.- El trabajo será únicamente con Layouts, así que es necesario ir directamente a activity_main.xml.
 
-3.- Los proyectos empiezan con Constraint Layout por defecto, así que sólo requerimos meter las vistas que teníamos en el reto anterior, por lo cual sólo hay qué borrar el Text y reemplazar por el siguiente fracción de XML
+3.- Los proyectos empiezan con Constraint Layout por defecto, así que sólo requerimos meter las vistas que teníamos en el reto anterior, por lo cual sólo hay que borrar el Text y reemplazar por la siguiente fracción de XML
 
 
 ```xml
@@ -70,13 +72,13 @@ El código debe quedar similar a la imagen:
 
 <img src="images/01.png" width="70%">
 
-No hay que preocuparse por los errores, esto sucede porque dentro de un constraint layout, los hijos deben de anclarse a algún lugar.
+No hay que preocuparse por los errores, esto sucede porque dentro de un constraint layout los hijos deben de anclarse a algún lugar.
 
 4.- Selecciona la pestaña **Design**, con ella la interacción de Constraint Layout es mucho más interactiva y eficaz.
 
 <img src="images/02.png" width="70%">
 
-5.- Los Views aparecerán de forma desordenada, acércate a uno, verás cuatro puntos de anclaje, si arrastras desde ahí verás salir una flecha, esos son los puntos de anclaje y los puedes poner sobre otros puntos, sobre líneas de guía, barreras o sobre los límites del layout. Arrastra el View amarillo al límite inferior del layout.
+5.- Los Views aparecerán de forma desordenada. Acércate a uno y verás cuatro puntos de anclaje, y si arrastras desde ahí verás salir una flecha. Esos son los puntos de anclaje y los puedes poner sobre otros puntos, sobre líneas de guía, barreras, o sobre los límites del layout. Arrastra el View amarillo al límite inferior del layout.
 
 <img src="images/03.png" width="35%">
 
@@ -86,14 +88,16 @@ No hay que preocuparse por los errores, esto sucede porque dentro de un constrai
 
 <img src="images/04.png" width="35%">
 
-8.- Termina de apilar todas las cajas ¡Felicidades!
+8.- Termina de apilar todas las cajas 
+ 
+¡Felicidades!
 
 
 
-Puedes estudiar el código generado para comprender un poco cómo funciona el xml generado.
+Puedes estudiar el código generado para comprender un poco cómo funciona el XML generado.
 
 
-Continúen experimentando con la UI y Constraint Layout para seguir enriqueciendo su conocimiento.
+Continúa experimentando con la UI y Constraint Layout para seguir aprendiendo.
 
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
 </div>
