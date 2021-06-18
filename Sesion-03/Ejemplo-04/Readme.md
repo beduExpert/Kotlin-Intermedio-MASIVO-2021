@@ -7,7 +7,7 @@
 
 ### 1. Objetivos :dart:
 
-- Volver visible el ciclo de vida de un activity a través de indicadores visual para corroborar el orden en el flujo estudiado previamente, para su posterior uso.
+- Identificar el ciclo de vida de un activity mediante su evidencia con indicadores visuales, con el propósito de verificar el orden en el flujo estudiado y para su reutilización.
 
 ### 2. Requisitos :clipboard:
 
