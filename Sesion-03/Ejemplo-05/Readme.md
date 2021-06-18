@@ -7,9 +7,9 @@
 
 ### 1. Objetivos :dart:
 
-- Transmitir datos entre activities.
+- Establecer un código que transmita datos entre activities.
 - Ejemplificar el uso de un Intent.
-- Estudiar el comportamiento del ciclo entre activities al navegar hacia una nueva.
+- Reconocer el comportamiento del ciclo entre activities al navegar hacia una nueva.
 
 ### 2. Requisitos :clipboard:
 
