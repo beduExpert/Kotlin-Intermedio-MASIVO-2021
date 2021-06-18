@@ -6,43 +6,46 @@
 
 ### 1. Objetivos :dart:
 
-- Crear EditTexts y extraer su valor
-- Asignar imágenes a un ImageView de forma dinámica
-- Validar contenido 
-- (Op) utilizar styles
+- Crear EditTexts y extraer su valor.
+- Asignar imágenes a un ImageView de forma dinámica.
+- Validar contenido.
+- Utilizar styles (OP).
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio instalado
-2. Al menos un Emulador android configurado
+1. Android Studio instalado.
+2. Al menos un Emulador android configurado.
 
 ### 3. Desarrollo :computer:
+
+Para hacer este reto es necesario realizar las siguientes instrucciones.
 
 - Crear una aplicación cuya interfaz tenga el siguiente diseño:
 
 	<img src="images/0.png" width="40%">
 
-- Cuando el usuario pulse __ACEPTAR__, existirán dos casos:
+- Cuando el usuario pulse __ACEPTAR__, deberán existir los siguientes dos casos.
+	
 	a) Ningún campo está vacío: se mostrará una imagen con una palomita verde en señal de autenticación correcta
 	
-	<img src="images/1.png" width="40%">
-	
-	b) Uno o todos los campos están vacíos: Se mostrará una imagen con una paloma roja en señal de error de autenticación
-	
 	<img src="images/2.png" width="40%">
+	
+	b) Uno o todos los campos están vacíos: se mostrará una imagen con una paloma roja en señal de error de autenticación
+	
+	<img src="images/1.png" width="40%">
 
 
-Contemplar lo siguiente:
+Debe contemplarse lo siguiente:
 
 1. Los recursos gráficos se encuentran en la carpeta (drawable)[./drawable], y se colocan en el directorio homónimo.
 2. Los colores a utilizar son los siguientes:
-	* ___#9CCDE0___ para el fondo de la pantalla
-	* ___#3700B3___ para el background del botón
-	* ___#FFFFFF___ para las letras del botón
-3. El tamaño del ___ImageView___ debe de ser de __64x64__ dp
-4. La asignación programática de una imagen en el ImageView se hace con su método ___setImageResource(R.drawable.<NOMBRE_DRAWABLE>)___ con el ID del Drawable
-5. El texto del EditText tiene qué ser convertido a formato ___String___ mediante el método ___toString()___ . Ejemplo: _editName.text.toString()
-6. Para evitar poner atributos repetitivos en cada _EditText_, podemos crear un estilo nuevo en ___res/values/styles.xml___, aquí ponemos los atributos en común.
+	* ___#9CCDE0___ para el fondo de la pantalla.
+	* ___#3700B3___ para el background del botón.
+	* ___#FFFFFF___ para las letras del botón.
+3. El tamaño del ___ImageView___ debe de ser de __64x64__ dp.
+4. La asignación programática de una imagen en el ImageView se hace con su método ___setImageResource(R.drawable.<NOMBRE_DRAWABLE>)___ con el ID del Drawable.
+5. El texto del EditText tiene que ser convertido a formato ___String___ mediante el método ___toString()___ . Ejemplo: _editName.text.toString().
+6. Para evitar poner atributos repetitivos en cada _EditText_, podemos crear un estilo nuevo en ___res/values/styles.xml___, y aquí ponemos los atributos en común.
 
 ```xml
 <style name="editText">
@@ -51,7 +54,7 @@ Contemplar lo siguiente:
     </style>
 ```
 	
-este estilo se utiliza en un View como:
+Este estilo se utiliza en un View como:
 
 ```xml
 <EditText
