@@ -11,7 +11,7 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
@@ -20,9 +20,9 @@
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-2. Abrimos el archivo XML encontrado en la carpeta _layout_.
+2. Después abrimos el archivo XML encontrado en la carpeta _layout_.
    
-3. Reemplazamos el código autogenerado por [este](../Readme#instrucciones-de-la-sesión) y agregamos un ImageView, mediante el siguiente código:
+3. Reemplazamos el código autogenerado por [este](../Readme#instrucciones-de-la-sesión), y agregamos un ImageView mediante el siguiente código:
 
 ```kotlin
 <ImageView
@@ -32,7 +32,7 @@
         />
 ```
 
-4. Notamos que existe un atributo ___src___ con un drawable llamado _beto_, por lo que tenemos qué agregar una imagen con ese nombre en el directorio ___res/drawable/___.
+4. Existe un atributo ___src___ con un drawable llamado _beto_, por lo que es necesario agregar una imagen con ese nombre en el directorio ___res/drawable/___.
 
 <img src="images/0.png" width="40%">
 
@@ -40,9 +40,9 @@
 
 <img src="images/wrap_content.png" width="40%">
 
-El tamaño excesivo se debe a que el ImageView por asignarle _wrap_content_ al ancho y alto, se ajusta al tamaño de la imagen.
+El tamaño excesivo se debe a que el ImageView se ajusta al tamaño de la imagen por asignarle _wrap_content_ al ancho y alto.
 
-Vamos a definir un tamaño específico para nuestro _View_:
+Ahora vamos a definir un tamaño específico para nuestro _View_:
 
 ```xml
 android:layout_height="48dp"
@@ -62,11 +62,12 @@ fitCenter | FIT_CENTER | redimension la imagen manteniendo su proporción para q
 fitEnd | FIT_END | reescala la imagen manteniendo su proporción para que quepa y se alinee al final del _View_ | <img src="images/fit_end.png" width="80%">
 fitEnd | FIT_END | redimensiona la imagen cambiando su proporción para ajustarse a las medidas del _View_ | <img src="images/fit_xy.png" width="80%">
 
-Experimentemos con cada una de estas opciones. Finalmente, utilizaremos la opción ___centerInside___.
+Experimentemos con cada una de estas opciones.    
+Finalmente, utilizaremos la opción ___centerInside___.
 
 ### EditText
 
-1. Ahora vamos a agregar un EditText. Agregamos las siguientes líneas de código después de nuestro ImageView:
+1. Ahora agregaremos un EditText. Para hacerlo añadimos las siguientes líneas de código después de nuestro ImageView:
 
 ```xml
 <EditText
@@ -76,11 +77,11 @@ Experimentemos con cada una de estas opciones. Finalmente, utilizaremos la opci�
         />
 ```
 
-Tendremos lo siguiente:
+Visualizaremos lo siguiente:
 
 <img src="images/edit_text.gif" width="40%">
 
-2. Como el tamaño lo ponemos en función del contenido, este se redimensiona al agregar texto, esto no es deseable así que tenemos qué determinar un tamaño fijo, por lo que modificaremos el EditText:
+2. Como el tamaño lo ponemos en función del contenido, este se redimensiona al agregar texto. Esto no es deseable, así que tenemos que determinar un tamaño fijo. Para ello modificaremos el EditText:
 
 ```xml
 <EditText
@@ -97,11 +98,12 @@ Tendremos lo siguiente:
         />
 ```
 
-3. En este caso, utilizamos el ancho de nuestro _LinearLayout_ con un margen de 24dp para cada lado, e incluimos el ___inputType___ como text (con eso evitamos un texto multilínea), este último atributo regula el tipo de dato que introducimos y por ende modifica el teclado, de modo que si nuestro InputType es _phone_, nos desplegará un teclado numérico, o si se trata de un _textEmailAddress_, saldrá un teclado alfanumérico que nos facilita caracteres como el . y @. El texto de descripción se controla por la propiedad ___hint___ y su color por ___textColorHint___. En este caso, haría falta agregar un string llamado _add_text_ para que funcione correctamente. finalmente, ___drawableLeft___ nos da la posibilidad de poner una imagen del lado izquierdo para personalizarlo, existen otros atributos para agregar en otros lados las imágenes e incluso para añadir padding al drawable con ___drawablePadding___.
+3. En este caso, utilizamos el ancho de nuestro _LinearLayout_ con un margen de 24dp para cada lado, e incluimos el ___inputType___ como text, y con eso evitamos un texto multilínea. Este último atributo regula el tipo de dato que introducimos y, por ende, modifica el teclado, de modo que si nuestro InputType es _phone_, nos desplegará un teclado numérico, o si se trata de un _textEmailAddress_, saldrá un teclado alfanumérico que nos facilita caracteres como el . y @. 
+El texto de descripción se controla por la propiedad ___hint___ y su color por ___textColorHint___. Además, hace falta agregar un string llamado _add_text_ para que funcione correctamente. Finalmente, ___drawableLeft___ brinda la posibilidad de poner una imagen del lado izquierdo para personalizarlo. Existen otros atributos para agregar en otros lados las imágenes e incluso para añadir padding al drawable con ___drawablePadding___.
 
-4. Ahondaremos ahora en el concepto de _focus_. El foco determina si un elemento está activo, en el caso de un _EditText_, es cuando está seleccionada, apareciendo el cursor en este y mostrándose el teclado para edición. Se puede deshabilidar la propiedad _focusable_ de un EditText, pero por ahora esto no es requerido. Cuando tenemos varios campos, podemos seleccionar qué elemento se va a enfocar después de terminar de editar en un _EditText_. Por defecto, esto está seteado de arriba para abajo. 
+4. Ahondaremos ahora en el concepto de _focus_. El foco determina si un elemento está activo. En el caso de un _EditText_, es cuando está seleccionada, apareciendo el cursor en este y mostrándose el teclado para edición. Se puede deshabilidar la propiedad _focusable_ de un EditText, pero por ahora esto no es requerido. Cuando tenemos varios campos, podemos seleccionar qué elemento se va a enfocar después de terminar de editar en un _EditText_. Por defecto, esto está seteado de arriba para abajo. 
 
-Agregaremos un nuevo _EditText_ que pida un teléfono, para esto, limitaremos los caracteres a 10 y agregaremos y declararemos el tipo de input a ___phone___:
+Agregaremos un nuevo _EditText_ que pida un teléfono. Para esto limitaremos los caracteres a 10, y agregaremos y declararemos el tipo de input a ___phone___:
 
 ```xml
 <EditText
@@ -133,10 +135,10 @@ nextFocusUp | determina el siguiente campo navegando hacia arriba
 nextFocusLeft | determina el siguiente campo navegando hacia la izquierda
 nextFocusRight | determina el siguiente campo navegando hacia la derecha
 
-también esto se puede hacer de forma programática.
+También, esto se puede hacer de forma programática.
 
 
-5. Ahora, nos queda manejar algunos eventos del _EditText_, primero vamos a detonar una acción cuando el texto se modifique. Para eso utilizaremos un _TextWatcher_.
+5. Ahora, nos queda manejar algunos eventos del _EditText_. Primero vamos a detonar una acción cuando el texto se modifique. Para eso utilizaremos un _TextWatcher_.
 
    Agregamos las variables:
 
@@ -146,7 +148,7 @@ también esto se puede hacer de forma programática.
     private lateinit var textView: TextView
 ```
 
-   relacionamos las variables con los id's del layout:
+   Relacionamos las variables con los id's del layout:
    
 ```kotlin
     textView = findViewById(R.id.textView)
@@ -174,13 +176,15 @@ editText.addTextChangedListener(object : TextWatcher {
         })
 ```
 
-Como vemos anteriormente, hay tres callbacks a definir (_afterTextChanged, beforeTextChanged_ y _onTextChanged_), utilizamos el último callback y asignaremos el texto del _EditText_ en nuestro _TextView_.
+Como vemos anteriormente, hay tres callbacks a definir (_afterTextChanged, beforeTextChanged_ y _onTextChanged_). 
+                                        
+Utilizamos el último callback y asignaremos el texto del _EditText_ en nuestro _TextView_.
 
-y listo! lo que aparezca en el EditText lo visualizamos en el TextView!
+¡Y listo! lo que aparezca en el EditText lo visualizamos en el TextView.
 
 <img src="images/text_changed.gif" width="40%">
 
-Por último, imprimiremos los valores de los editText, para esto imprimiremos los valores en nuestra línea de comandos ___Logcat___ al pulsar sobre un botón.
+Por último, imprimiremos los valores de los editText, y para esto imprimiremos los valores en nuestra línea de comandos ___Logcat___ al pulsar sobre un botón.
 
 ```xml
 <Button
@@ -191,13 +195,13 @@ Por último, imprimiremos los valores de los editText, para esto imprimiremos lo
         android:text="@string/accept"/>
 ```
 
-Agregamos el botón y lo asociamos a su id, para no redundar en código omitiremos este paso. Finalmente, imprimimos en consola los textos de los _EditText_ cuando demos click al botón:
+Agregamos el botón y lo asociamos a su id; para no redundar en código omitiremos este paso. Finalmente, imprimimos en consola los textos de los _EditText_ cuando hagamos click al botón:
 
 ```kotlin
 Log.d("Test","Los valores son: ${editText.text} y ${editText2.text}")
 ```
 
-Corroboramos el funcionamiento:
+Y terminamos con la borroboración del funcionamiento:
 
 <img src="images/1.png" width="70%"/>
 
