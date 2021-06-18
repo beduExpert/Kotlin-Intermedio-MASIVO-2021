@@ -11,8 +11,7 @@
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 
-- Desplegar listas scrolleables de elementos en la pantalla 
-- Interactuar con los elementos de las listas.
+- Establecer un código que desplegue listas scrolleables de elementos en la pantalla y permita la interacción con los elementos de las listas.
 - Utilizar layouts personalizados para darles estilo.
 
 ---
