@@ -15,8 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-Las listas son elementos recurrentes en las aplicaciones. En nuestra aplicación de galeria, tenemos un grid de fotos que al pulsar sobre un elemento, se despliega la imagen para abarcar toda la pantalla. En una app bancaria, el historial de transacciones se muestran en lista. Para una app de cine, las pelí
-culas están listadas de forma vertical. 
+Las listas son elementos recurrentes en las aplicaciones. En nuestra aplicación de galeria, tenemos un grid de fotos que al pulsar sobre un elemento, se despliega la imagen para abarcar toda la pantalla. En una app bancaria, el historial de transacciones se muestran en lista. Para una app de cine, las películas están listadas de forma vertical. 
 
 <img src="images/1.png" width="35%">
 
