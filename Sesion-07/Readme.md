@@ -12,8 +12,14 @@
 - Definir elementos de Menús de manera gráfica así como con código.
 - Manejar de eventos y cambio de elementos en tiempo de ejecución.
 - Menús contextuales y grupos de Menús.
-- Implementar ActionModes.
+- Implementar `ActionModes`.
 
+
+### Introducción 
+
+La Navegación en tu app debe ser intuitiva y predecible. Tanto para usuarios nuevos como para quienes vuelven a usarla debe ser simple de descubrir como moverse en las distintas secciones con comodidad. Pero lograr que la navegación sea descubrible y accesible puede ser todo un desafío por las limitaciones de las pantallas pequeñas y la necesidad de priorizar el contenido sobre los componentes de la interface.
+
+Los menus son una herramienta básica de navegación que utilizan la mayoría de las aplicaciones móviles ya que son intuitivos para los usuarios y útiles den lado de desarrollo de la aplicación. En esta sesión veremos la forma de implementarlos en nuestra app, así como diferentes estilos de estos.
 
 
 ### 2. Contenido :blue_book:
@@ -24,7 +30,7 @@
 
 #### <ins>Tipos de menus en Android</ins>
 
-Implementación de los tres tipos de menú en Android. Abarcando desde la interfáz grafica con grupos de elementos hasta la creación mediante código. Los menús vistos: Popup, Contextual y Opciones.
+Implementación de los tres tipos de menú en Android. Abarcando desde la interfaz gráfica con grupos de elementos hasta la creación mediante código. Los menús vistos: __PopUp__, __Contextual__ y __Opciones__.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)

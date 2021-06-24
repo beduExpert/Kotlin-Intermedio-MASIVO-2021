@@ -8,7 +8,7 @@
 
 - Crear menus de opciones utilizando las clases dedicadas a esto incluidas en el SDK de Android.
 - Entender los elementos que conforman a cada uno de estos tres tipos de menu.
-- Aprender a definir y crear los tres tipos de menus en Android: Popup, Contextual y Opciones.
+- Aprender a definir y crear los tres tipos de menus en Android: PopUp, Contextual y Opciones.
 
 ### 2. Requisitos :clipboard:
 
@@ -19,18 +19,18 @@
 
 ### 3. Desarrollo :computer:
 
-Los Menus de opciones en Android pertenecen a una interfaz llamada de la misma manera, [Menu](
+Los Menus de opciones en Android pertenecen a una interfaz llamada de la misma forma, [Menu](
 https://developer.android.com/reference/kotlin/android/view/Menu?hl=es#).
 
 > interface Menu
 
-Esta interfaz es usada para definir dos tipos de menú, El ContextMenu y el SubMenu.
+Esta interfaz es usada para definir dos tipos de menú, El `ContextMenu` y el `SubMenu`.
 
 La manera mas simple de agregar un menú es "inflando" un archivo XML utilizando **MenuInflater**.
 
 Y para recibir la acción de selección de alguna opción, nos basaremos en los métodos `onOptionsItemSelected(MenuItem)` y `onContextItemSelected(MenuItem)`.
 
-Hay algunas funcionalidades que no son soportadas. Por ejemplo iconos en el caso de Context Menus y CheckMarks en el caso de Option Menus.
+Hay algunas funcionalidades que no son soportadas. Por ejemplo iconos en el caso de `ContextMenus` y `CheckMarks` en el caso de `OptionMenus`.
 
 
 #### Definiendo un menú en XML
@@ -66,21 +66,25 @@ Ejemplo de menú en xml:
 En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"`. Esto indica que se mostrará el menú si hay espacio en pantalla. Para ver mas sobre esta opción ver la [documentación](https://developer.android.com/guide/topics/resources/menu-resource?hl=es).
 
 
-#### Creamos un proyecto nuevo...
+<!-- #### Creamos un proyecto nuevo... -->
+
+Ahora veamos los tres tipos de menus que podemos crear para una aplicación Android.
+
+---
 
 ### OPTIONS MENU
 
-Una vez creado un proyecto en Android, agregaremos un icono en nuestro folder `res` en `drawables`.  Para agregar un icono, damos click derecho y seleccionamos las siguientes opciones `New > Vector Asset`, elegimos un nombre.
+Vamos a crear un proyecto nuevo en Android, agregaremos un icono en nuestro folder `res` en `drawables`.  Para agregar un icono, damos click derecho y seleccionamos las siguientes opciones _New > Vector Asset_, elegimos un nombre.
 
 ![Elemento de Menu](./images/res_icon.png)
 
-Para crear los menus, crearemos un nuevo directorio. Click derecho sobre `res` y dando click derecho, elegimos `New > Directory`, escribimos **Menu**.
+Para crear los menus, crearemos un nuevo directorio. Click derecho sobre `res` y dando click derecho, elegimos _New > Directory_, escribimos **Menu**.
 
-En la carpeta generada, damos click derecho y elegimos `New > Menu Resource File`, para agregar el elemento de Menu, escribimos un nombre y lo creamos.
+En la carpeta generada, damos click derecho y elegimos _New > Menu Resource File_, para agregar el elemento de Menu, escribimos un nombre y lo creamos.
 
 ![Elemento de Menu](./images/res_menu.png)
 
-En este archivo en XML escribiremos los elementos del Menu de Opciones.
+En este archivo en XML vamos a definir los elementos del Menu de Opciones.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -97,11 +101,12 @@ En este archivo en XML escribiremos los elementos del Menu de Opciones.
 
 Agregamos otro elemento de menú.
 
-**OJO** observamos que se agrega otro botón de buscar. Para corregir esto nos dirigimos a `showAsAtion` en el código XML, lo cambiamos a `never`.
+> **OJO** 👀
+> observamos que se agrega otro botón de buscar. Para corregir esto nos dirigimos a `showAsAtion` en el código XML, lo cambiamos a `never`.
 
 ![Elemento de Menu](./images/2.gif)
 
-Ahora, agregaremos un Submenu. Para lograr esto, escribimos dentro de Item un bloque de Menu con Items en el interior, estos Items serán las opciones del submenú.
+Ahora, agregaremos un Submenu. Para lograr esto, escribimos dentro de `Item` un bloque de `Menu` con Items en el interior, estos Items serán las opciones del submenú.
 
 ```
     <item android:id="@+id/item3"
@@ -143,6 +148,7 @@ class MainActivity : AppCompatActivity() {
 
 ![MainActivity](./images/4.png)
 
+--- 
 
 ### CONTEXTUAL MENU
 
@@ -152,7 +158,7 @@ Creamos un directorio de Menu  y agregamos un Menu Resource File llamado `menu_c
 
 ![MainActivity](./images/5.png)
 
-**Opcional**:
+> **Opcional**:
 Nos dirigimos al `Gradle` (Module: app) para agregar la dependencia de Material Design. Sincronizamos.
 
 > implementation 'com.android.support.design:28.0.0'
@@ -174,18 +180,19 @@ override fun onCreateContextMenu( menu: ContextMenu?, v: View?, menuInfo: Contex
 
 ![MainActivity](./images/6.gif)
 
+---
 
 ### POPUP MENU
 
-Similar a los menús anteriores. Creamos un proyecto nuevo, nos dirigimos al `activity_main.xml` y agregamos un botón.
+Al igual que con los menús anteriores. Creamos un proyecto nuevo, nos dirigimos al `activity_main.xml` y agregamos un botón.
 
 Este **botón** servirá para lanzar el PopUp Menu.
 
-Creamos un Directorio de Menu y un Menu Item en XML con las opciones que necesitemos. 
+Creamos un Directorio de Menu y un `Menu Item` en XML con las opciones que necesitemos. 
 
-Esta implementación sera similar al Context Menu.
+La implementación de este tipo de menu es muy similar a la que vimos para Context Menu.
 
-Vamos al MainActivity, agregamos un Listener en la clase.
+Vamos al MainActivity, agregamos un `Listener` en la clase.
 
 ```
 class MainActivity: AppCompatActivity(), View.OnClickListener {
@@ -198,7 +205,7 @@ class MainActivity: AppCompatActivity(), View.OnClickListener {
 }
 ```
 
-Dentro de este onClick, agregaremos una instancia de PopupMenu.
+Dentro de este `onClick`, agregaremos una instancia de `PopupMenu`.
 
 ```
 

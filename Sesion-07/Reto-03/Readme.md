@@ -7,7 +7,7 @@
 
 ### 1. Objetivos :dart:
 
-- Con base al ejemplo-03, implementar una clase dedicada para mostrar el mismo menú flotante.
+- Con base en el ejemplo-03, implementar una clase dedicada para mostrar el mismo menú flotante.
 
 ### 2. Requisitos :clipboard:
 
@@ -16,24 +16,24 @@
 
 ### 3. Desarrollo :computer:
 
-Crear una clase que implemente un ActionMode.Callback().
+Crear una clase que implemente un `ActionMode.Callback()`.
 
 ```
 class PrimaryActionModeCallback : ActionMode.Callback {
 }
 ```
 
-Este callback tendra un OnClick listener, lo implementaremos como Global.
+Este _callback_ tendra un `OnClick listener`, lo implementaremos como Global.
 
 
-> var onActionItemClickListener: OnActionItemClickListener? = null
+    var onActionItemClickListener: OnActionItemClickListener? = null
 
 Dentro de la clase sobreescribiremos los metodos necesarios, estos son:
 
-	- onCreateActionMode
-	- onPrepareActionMode
-	- onDestroyActionMode
-	- onActionItemClicked
+- `onCreateActionMode`
+- `onPrepareActionMode`
+- `onDestroyActionMode`
+- `onActionItemClicked`
 
 Finalmente creamos un método para configuracion, agregamos titulo, subtitulo y menu.
 

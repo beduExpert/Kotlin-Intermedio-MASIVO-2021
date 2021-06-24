@@ -19,7 +19,7 @@
 
 ## ActionMode
 
-Recordando los menus contextuales, aquellos que se enfocan sobre elementos de UI que especifiquemos. Encontramos los ActionMode, estos son una implementacion similar al contextual menu, veamos.
+Recordando los menus contextuales, aquellos que se enfocan sobre elementos de UI que especifiquemos. Encontramos los `ActionMode`, estos son una implementacion similar al contextual menu, veamos a que nos referimos.
 
 ![imagen](images/1.png)
 
@@ -30,49 +30,49 @@ En la Primaria los elementos se muestran en el action bar. En el caso de Flotati
 
 Esto nos da dos Properties:
 
-	- ActionMode.TYPE_PRIMARY
-	- ActionMode.TYPE_FLOATING
+- `ActionMode.TYPE_PRIMARY`
+- `ActionMode.TYPE_FLOATING`
 
-Los action mode pueden ser mostrados sobre cualquier View o Activity.
+Los action mode pueden ser mostrados sobre cualquier `View` o `Activity`.
 
 En cualquier caso hay dos funciones que debemos usar.
 
-> fun startActionMode(callback: ActionMode.Callback): ActionMode
+- `fun startActionMode(callback: ActionMode.Callback): ActionMode`
  
-> fun startActionMode(callback: ActionMode.Callback, type: Int): ActionMode
+- `fun startActionMode(callback: ActionMode.Callback, type: Int): ActionMode`
 
-Vemos el parámetro `ActionMode.Callback`, este hace referencia a un lifecycle donde podemos hacer un override de cualquiera de sus funciones en un Activity, ya sea:
+Vemos el parámetro `ActionMode.Callback`, este hace referencia a un _lifecycle_ donde podemos hacer un _override_ de cualquiera de sus funciones en un `Activity`, ya sea:
 
-	- onActionModeStarted
-	- onActionModeFinished
+- `onActionModeStarted`
+- `onActionModeFinished`
 
 Todo esto con el fin de manipular el ciclo de vida.
 
 Tenemos cuatro funciones par aimplementar en el Callback.
 
-	- onCreateActionMode
-	- onPrepareActionMode
-	- onDestroyActionMode
-	- onActionItemClicked
+- `onCreateActionMode`
+- `onPrepareActionMode`
+- `onDestroyActionMode`
+- `onActionItemClicked`
 
 
 
 ## Flotating ActionMode 
 
-Cuando tenemos nuestro ActionMode flotante, tenmos tambien un callback nuevo, llamado `Callback2`. Este agrega solo una funcion mas, esta es:
+Cuando tenemos nuestro ActionMode flotante, tenemos cambien un _callback_ nuevo, llamado `Callback2`. Este agrega solo una función mas, esta es:
 
-	- onGetContentRect
+- `onGetContentRect`
 
 La cuál te dará la posición en la pantalla para el elemento flotante.
 
 
 
-## Comenzamos
+## Veamos como implementarlo
 
 
-Como ya hemos visto, crearemos un directorio para Menu y un archivo xml.
-En el Activity Main xml agregaremos un elemento de UI como un TextView.
-Igualmente, agregaremos dos iconos de tu elección a la carpeta Drawable.
+Como ya hemos visto, crearemos un directorio para ___Menu___ y un archivo xml.
+En el ___Activity Main xml___ agregaremos un elemento de UI como un `TextView`.
+Igualmente, agregaremos dos iconos de tu elección a la carpeta ___Drawable___.
 
 ![imagen](images/2.png)
 
@@ -91,7 +91,7 @@ Igualmente, agregaremos dos iconos de tu elección a la carpeta Drawable.
 </menu>
 ```
 
-Nos dirigimos a nuestro MainActivity, declaramos el elemento de UI, en este caso TextView. Este recibirá la acción de `onClick`.
+Nos dirigimos a nuestro `MainActivity`, declaramos el elemento de UI, en este caso `TextView`. Este recibirá la acción de `onClick`.
 
 ```
  var textView: TextView = findViewById(R.id.txTextView)
@@ -112,14 +112,14 @@ var textView: TextView = findViewById(R.id.txTextView)
 }
 ```
 
-Para ejecutar el Action Mode es necesario implementar un `ActionMode.Callback`.
-Declaramos una variable global para ActionModes.
+Para ejecutar el `Action Mode` es necesario implementar un `ActionMode.Callback`.
+Declaramos una variable global para `ActionModes`.
 
 ```
  private var actionMode: ActionMode? = null
 ```
 
-Dentro de la misma clase de Main Activity creamos un Callback con los metodos para poder ejecutar el ActionMode.
+Dentro de la misma clase de `Main Activity` creamos un `Callback` con los métodos para poder ejecutar el `ActionMode`.
 
 ```
 inner class ActionModeCallback: ActionMode.Callback {
@@ -156,7 +156,7 @@ Ejecutamos el código y el resultado debe ser similar a este:
 ![imagen](images/3.gif)
 
 
-Ahora bien, agregaremos un poco de funcionalidad al seleccionar uno de los botones del menu de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado.
+Ahora bien, agregaremos un poco de funcionalidad al seleccionar uno de los botones del menu de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado. 
 
 ```
 inner class ActionModeCallback: ActionMode.Callback {

@@ -20,14 +20,16 @@
 
 ### 3. Desarrollo :computer:
 
+Ahora veremos como agregarle acciones a los items de nuestros menus, de nuevo dividiremos el reto en 3 una sección para cada uno de los tipos de menus que vimos en el anterior.
+
 ### OPTIONS MENU
 
-Retomaremos el Ejemplo de [options_menu](./options_menu), pero esta vez agregaremos funcionalidad a las opciones de menú.
+Retomaremos el Ejemplo de [options_menu](./options_menu), para agregarle funcionalidad a las opciones de menú.
 
 ![MainActivity](./images/4.png)
 
 
-Para ello, nos dirigimos al MainActivity, y escribimos la función encargada de obtener la opción elegida en el menú.
+Para ello, nos dirigimos al `MainActivity`, y escribimos la función encargada de obtener la opción elegida en el menú.
 
 ```
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -73,10 +75,11 @@ Finalmente, para el resto de opciones:
     }
 ```
 
+---
 
 ### CONTEXTUAL MENU
 
-Retomaremos el Ejemplo de [context_menu](./context_menu), pero esta vez agregaremos funcionalidad a las opciones de menú.
+Retomaremos el Ejemplo de [context_menu](./context_menu), para agregarle funcionalidad a las opciones de menú.
 
 ![MainActivity](./images/7.gif)
 
@@ -93,14 +96,15 @@ Para ejecutar acciones de acuerdo al elemento seleccionado del menú, nos basare
     }
 ```
 
-Implementar resto de opciones.
+De esta misma forma se pueden implementar el resto de las acciones para los elementos del menu.
 
+---
 
 ### POPUP MENU
 
-Retomaremos el Ejemplo de [popup_menu](./popup_menu), pero esta vez agregaremos funcionalidad a las opciones de menú.
+Retomaremos el Ejemplo de [popup_menu](./popup_menu), para agregarle funcionalidad a las opciones de menú.
 
-Este código difiere debido a que implementaremos un closure para el popMenu, dentro de este closure mediante un capture list obtendremos la opcion deseada.
+Este código difiere debido a que implementaremos un **closure** para el `PopUpMenu`, dentro de este **closure** mediante un capture _list_ obtendremos la opción deseada.
 
 ```
 override fun onClick(v: View?) {
@@ -111,7 +115,7 @@ override fun onClick(v: View?) {
     }
 ```
 
-Captamos cada opción de menú con su **id** correspondiente.
+Captamos cada opción de menú con su `id` correspondiente.
 
 ```
 override fun onClick(v: View?) {
@@ -132,6 +136,8 @@ override fun onClick(v: View?) {
 
 
 #### Referencias: 
+
+Puedes consultar la documentación oficial para ver mas ejemplos y mas herramientas que se pueden utilizar con los menus.
 
 > https://developer.android.com/guide/topics/ui/menus?hl=es#xml
 
