@@ -299,4 +299,4 @@ Mientras que en un dispositivo tablet, obtendremos lo siguiente:
 
 <img src="images/9.png" width="40%">
 
-[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Reto-03/Readme.md)
+[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Reto-02/Readme.md)

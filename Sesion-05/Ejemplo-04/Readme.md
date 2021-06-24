@@ -6,9 +6,9 @@
 
 ### 1. Objetivos :dart:
 
-- Crear y remover _Fragments_ programáticamente.
-- Mostrar y esconder un _Fragment_ en específico.
-- Visualizar cómo las transacciones afectan al ciclo de vida de un _Fragment_.
+- Crear y remover `Fragments` programáticamente.
+- Mostrar y esconder un `Fragment` en específico.
+- Visualizar cómo las transacciones afectan al ciclo de vida de un `Fragment`.
 
 ### 2. Requisitos :clipboard:
 
@@ -17,22 +17,22 @@
 
 ### 3. Desarrollo :computer:
 
-Hasta ahora hemos declarado ___Fragments___ por medio del tag ___fragment___ dentro del archivo _xml_ del layout de un _Activity_, pero también esto se puede hacer de forma programática utilizando un _contenedor_, tal como un ___ViewGroup___. En este caso, vamos a utilizar operaciones para manipular el ciclo de vida de un ___Fragmnet___ mediante el ___supportFragmentManager___. La lista de acciones que haremos son:
+Hasta ahora hemos declarado `Fragments` por medio del tag `fragment` dentro del archivo _xml_ del layout de un `Activity`, pero también esto se puede hacer de forma programática utilizando un _contenedor_, tal como un `ViewGroup`. En este caso, vamos a utilizar operaciones para manipular el ciclo de vida de un `Fragmnet` mediante el `supportFragmentManager`. La lista de acciones que haremos son:
 
-* Agregar un _Fragment_
+* Agregar un `Fragment`
 * Removerlo
 * Ocultarlo
 * Mostrarlo
-* Agregar un segundo _Fragment_
-* Remover el segundo _Fragment_
+* Agregar un segundo `Fragment`
+* Remover el segundo `Fragment`
 * Attach (adjuntar)
 * Detach (remover)
-* Reemplazar por un _Fragment_
-* Reemplazar por el segundo _Fragment_
+* Reemplazar por un `Fragment`
+* Reemplazar por el segundo `Fragment`
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-2. Crearemos un nuevo _layout_ para nuestro ___activity_main.xml___, de modo que en la parte superior tengamos un arreglo horizontal scrolleable de botones que corresponderán a las acciones a realizar. Bajo esta barra de botones, tendremos el ___FrameLayout___ que fungirá como contenedor para agregar nuestros ___Fragments___. 
+2. Crearemos un nuevo `layout` para nuestro `activity_main.xml`, de modo que en la parte superior tengamos un arreglo horizontal scrolleable de botones que corresponderán a las acciones a realizar. Bajo esta barra de botones, tendremos el `FrameLayout` que fungirá como contenedor para agregar nuestros `Fragments`. 
 
 ```xml 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -118,7 +118,7 @@ Hasta ahora hemos declarado ___Fragments___ por medio del tag ___fragment___ den
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-3. Crearemos dos ___Fragments___: El primero llevará el [Logo de Bedu]() y su _layout_ llamará ___fragment_bedu.xml___.
+3. Crearemos dos `Fragments`: El primero llevará el [Logo de Bedu]() y su `layout` llamará `fragment_bedu.xml`.
 
 ```xml 
 <?xml version="1.0" encoding="utf-8"?>
@@ -158,13 +158,13 @@ class BeduFragment : Fragment() {
 }
 ```
 
-Recuerdas el [../Reto-01]? Ahí examinamos el ciclo de vida de un ___Fragment___, así que tomaremos la implementación de ___callbacks___ para analizar el ciclo de vida cuando hagamos una transacción.
+Recuerdas el [../Reto-01]? Ahí examinamos el ciclo de vida de un `Fragment`, así que tomaremos la implementación de _callbacks_ para analizar el ciclo de vida cuando hagamos una transacción.
 
-4. Para el segundo Fragment, repetimos el paso anterior, cambiando los nombres a ___fragment_beto.xml___ y a ___BetoFragment___ respectivamente. El nombre de la imagen del layout será ___beto.png___. Para los _Logs_, podemos poner un identificador en el texto para distinguirlos.
+4. Para el segundo Fragment, repetimos el paso anterior, cambiando los nombres a `fragment_beto.xml` y a `BetoFragment` respectivamente. El nombre de la imagen del layout será ___beto.png___. Para los _Logs_, podemos poner un identificador en el texto para distinguirlos.
 
-5. Aunque google no lo recomienda, utilizaremos para esta ocasión _kotlinx synthetic_ En nuestro ___MainActivity___, para saltarnos la asignación de las _Views_. obtenemos el ___supportFragmentManager___ y lo guardamos en una variable.
+5. Aunque google no lo recomienda, utilizaremos para esta ocasión _kotlinx synthetic_ En nuestro `MainActivity`, para saltarnos la asignación de las _Views_. obtenemos el `supportFragmentManager` y lo guardamos en una variable.
 
-En el _listener_ del botón de agregar, crearemos una nueva _Transaction_, creamos una instancia de ___BeduFragment___, la agregamos al _container_ con el _tag_ "fragBedu" (que nos servirá para identificarlo) y aplicamos los cambios mediante el método ___commit___.
+En el _listener_ del botón de agregar, crearemos una nueva _Transaction_, creamos una instancia de ___BeduFragment___, la agregamos al _container_ con el _tag_ "fragBedu" (que nos servirá para identificarlo) y aplicamos los cambios mediante el método `commit`.
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -182,7 +182,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     }
 }
 ```
-Abajo de esta, creamos el _listener_ para remover un ___Fragment___, el _fragment_ será encontrado por el tag que asignamos anteriormente ("fragBedu").
+Abajo de esta, creamos el _listener_ para remover un `Fragment`, el `fragment` será encontrado por el tag que asignamos anteriormente ("fragBedu").
 
 ```kotlin
 removeButton.setOnClickListener {
@@ -214,11 +214,11 @@ if(fragmentTag!=null){
             
 Corremos nuevamente el código y hacemos los siguientes ejercicios. Discutir los resultados y analizar cómo se comporta el ciclo de vida para cada uno.
 
-- Remover sin que exista un ___Fragment___
+- Remover sin que exista un `Fragment`
 - Agregar un fragment y eliminarlo
 - Agregar tres fragments y eliminar dos
 
-6. Ahora vamos a mostrar y ocultar un _fragment_, para esto utilzaremos los métodos ___hide___ y ___show___. El código es idéntico al de remover, excepto el nombre del método, en los cuales utilizaremos
+6. Ahora vamos a mostrar y ocultar un `fragment`, para esto utilzaremos los métodos `hide` y `show`. El código es idéntico al de remover, excepto el nombre del método, en los cuales utilizaremos
 
 ```kotlin
 transaction.hide(fragment)
@@ -231,12 +231,12 @@ transaction.show(fragment)
 ```
 Corremos nuevamente el código y hacemos los siguientes ejercicios. 
 
-- Esconder/mostrar sin que exista un ___Fragment___
+- Esconder/mostrar sin que exista un `Fragment`
 - Agregar un fragment, esconderlo y mostrarlo
 
-7. Ahora implementaremos ___attach___ y ___detach___. Para hacer una diferenciación, el método ___add___ agrega un _fragment_ que puede tener su propi _View_ Al estado del _activity_, mientras que ___attach___, adjunta nuevamente el _fragment_ a la UI. Mientras que ___remove___ elimina el _View_ del _fragment_ y el estado del _FragmentManager_, ___detach___ destruye únicamente el _View_.
+7. Ahora implementaremos `attach` y `detach`. Para hacer una diferenciación, el método `add` agrega un `fragment` que puede tener su propi `View` Al estado del `activity`, mientras que `attach`, adjunta nuevamente el `fragment` a la UI. Mientras que `remove` elimina el `View` del `fragment` y el estado del `FragmentManager`, `detach` destruye únicamente el `View`.
 
-La implementación, nuevamente, se realiza de forma similar al _remove_.
+La implementación, nuevamente, se realiza de forma similar al `remove`.
 
 ```kotlin
 transaction.attach(fragment)
@@ -251,11 +251,11 @@ transaction.detach(fragment)
 
 Corremos nuevamente el códido y hacemos los siguientes ejercicios. 
 
-- Attach/detach sin que exista un ___Fragment___
+- Attach/detach sin que exista un `Fragment`
 - Agregar un fragment, Attach y Detach
 
 
-8. Ahora vamos a agregar la opción de agregar/eliminar un segundo _fragment_, es aquí donde ___BetoFragment___ entra en acción.El código es el mismo que para el primer _fragment_, pero adaptado para el segundo _fragment_.
+8. Ahora vamos a agregar la opción de agregar/eliminar un segundo `fragment`, es aquí donde `BetoFragment` entra en acción.El código es el mismo que para el primer `fragment`, pero adaptado para el segundo `fragment`.
 
 ```kotlin
 add2Button.setOnClickListener {
@@ -285,7 +285,7 @@ Los ejercicios a hacer son los siguientes:
 - Agregar un FragmentBedu, agregar un FragmentBeto, eliminar el FragmentBeto y luego el FragmentBedu
 - Agregar un FragmentBedu, agregar un FragmentBeto, eliminar el FragmentBedu y luego el FragmentBeto (Remarcar la estructura LIFO).
 
-8. Por último, utilizaremos la función ___replace___, que reemplazará todo lo contenido en el contenedor por el fragment que le pasemos. 
+8. Por último, utilizaremos la función `replace`, que reemplazará todo lo contenido en el contenedor por el fragment que le pasemos. 
 
 ```kotlin
 replace1Button.setOnClickListener {
@@ -297,14 +297,14 @@ replace1Button.setOnClickListener {
 }
 ```
 
-De la misma forma, podemos hacer el ___replace___ para el otro _fragment_.
+De la misma forma, podemos hacer el `replace` para el otro `fragment`.
 
 Los ejercicios son los siguientes:
 
-- Agregar un _FragmentBedu_ y reemplazarlo por un _FragmentBeto_
-- Crear varios _FragmentBedu_ y _FragmentBeto_ y reemplazarlos por cualquiera de los fragments.
+- Agregar un `FragmentBedu` y reemplazarlo por un `FragmentBeto`
+- Crear varios `FragmentBedu` y `FragmentBeto` y reemplazarlos por cualquiera de los fragments.
 
-[`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
+[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
 
 

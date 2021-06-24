@@ -23,8 +23,6 @@ Puedes pensar en un fragmento como una sección modular de una actividad que tie
 <img src="images/fragment-cycle.png">
 <h5>Ciclo de vida de un Fragment</h5>
 
-**Cómo crear un fragmento**
-
 ### 1. Objetivos :dart: 
 
 ---
@@ -56,13 +54,13 @@ Para este ejemplo agregaremos un fragmento al layout del _Activity_ principal y 
 
 #### <ins>Flexibilidad: patrón lista-detalle</ins>
 
-Utliizaremos este patrón ampliamente utilizado en aplicaciones para ejemplificar la flexibilidad de un ___Fragment___.
+Para este ejemplo se usa el patrón lista-detalle que es ampliamente utilizado en aplicaciones y sirve ejemplificar la flexibilidad de un `Fragment`.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
-- [**`RETO 2`**](Reto-02/Readme.md)
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
-- [**`RETO 3`**](Reto-03/Readme.md)
+
+- [**`RETO 2`**](Reto-02/Readme.md)
 
 ---
 
@@ -70,7 +68,7 @@ Utliizaremos este patrón ampliamente utilizado en aplicaciones para ejemplifica
 
 #### <ins>Transactions</ins>
 
-Ejecutaremos una serie de transacciones para los fragments dentro de un contenedor.
+Ejecutaremos una serie de transacciones para los `fragments` dentro de un contenedor.
 
 - [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 
