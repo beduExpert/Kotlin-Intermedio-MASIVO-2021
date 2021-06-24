@@ -1,14 +1,12 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Ejemplo 3`
 
-## Ejemplo 3: Fragment Transactions
+## Ejemplo 3: Fragments Lista-Detalle (Kotlin)
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Crear y remover _Fragments_ programáticamente.
-- Mostrar y esconder un _Fragment_ en específico.
-- Visualizar cómo las transacciones afectan al ciclo de vida de un _Fragment_.
+- Adaptar un diseño de acuerdo al tamaño de una pantalla.
 
 ### 2. Requisitos :clipboard:
 
@@ -17,295 +15,288 @@
 
 ### 3. Desarrollo :computer:
 
-Hasta ahora hemos declarado ___Fragments___ por medio del tag ___fragment___ dentro del archivo _xml_ del layout de un _Activity_, pero también esto se puede hacer de forma programática utilizando un _contenedor_, tal como un ___ViewGroup___. En este caso, vamos a utilizar operaciones para manipular el ciclo de vida de un ___Fragmnet___ mediante el ___supportFragmentManager___. La lista de acciones que haremos son:
+Continuemos con la aplicación del patron `lista-detalle`, en el ejemplo anterior nos concentramos en dejar listas las vistas para que el patrón funcionara, ahora es momento de Kotlin.
 
-* Agregar un _Fragment_
-* Removerlo
-* Ocultarlo
-* Mostrarlo
-* Agregar un segundo _Fragment_
-* Remover el segundo _Fragment_
-* Attach (adjuntar)
-* Detach (remover)
-* Reemplazar por un _Fragment_
-* Reemplazar por el segundo _Fragment_
+1. Vamos a requerir un `Adapter` para nuestro `RecyclerView`, por lo que utilizaremos este código para nuestra clase `RecyclerAdapter`.
+```kotlin
+//Declaración con constructor
+class RecyclerAdapter(
+    private val context:Context,
+    private val products: MutableList<Product>,
+    private val clickListener: (Product) -> Unit): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
+    //Aquí atamos el ViewHolder
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val product = products.get(position)
+        holder.bind(product, context)
 
-2. Crearemos un nuevo _layout_ para nuestro ___activity_main.xml___, de modo que en la parte superior tengamos un arreglo horizontal scrolleable de botones que corresponderán a las acciones a realizar. Bajo esta barra de botones, tendremos el ___FrameLayout___ que fungirá como contenedor para agregar nuestros ___Fragments___. 
+        holder.view.setOnClickListener{clickListener(product)}
 
-```xml 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <HorizontalScrollView
-        android:id="@+id/scroll"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <LinearLayout
-            android:paddingVertical="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/addButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Agregar" />
+    }
 
-            <Button
-                android:id="@+id/removeButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remover" />
-            <Button
-                android:id="@+id/hideButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Esconder" />
-            <Button
-                android:id="@+id/showButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mostrar" />
-            <Button
-                android:id="@+id/add2Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Agregar 2" />
-            <Button
-                android:id="@+id/remove2Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remover 2" />
-            <Button
-                android:id="@+id/attachButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Attach" />
-            <Button
-                android:id="@+id/detachButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Detach" />
-            <Button
-                android:id="@+id/replace1Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remplazar por 1" />
 
-            <Button
-                android:id="@+id/replace2Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reemplazar por 2" />
-        </LinearLayout>
-    </HorizontalScrollView>
-    <FrameLayout
-        android:background="#DDD"
-        android:id="@+id/container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/scroll"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return ViewHolder(layoutInflater.inflate(R.layout.item_contact, parent, false))
+    }
+
+    override fun getItemCount(): Int {
+        return products.size
+    }
+
+    //El ViewHolder ata los datos del RecyclerView a la Vista para desplegar la información
+    //También se encarga de gestionar los eventos de la View, como los clickListeners
+    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+        //obteniendo las referencias a las Views
+        val productName = view.findViewById(R.id.tvProduct) as TextView
+        val description = view.findViewById(R.id.tvDescription) as TextView
+        val price = view.findViewById(R.id.tvPrice) as TextView
+        val image = view.findViewById(R.id.imgProduct) as ImageView
+
+        //"atando" los datos a las Views
+        fun bind(product: Product, context: Context){
+            productName.text = product.name
+            description.text = product.description
+            price.text = product.price
+            image.setImageResource(product.idImage)
+        }
+    }
+
+}
 ```
 
-3. Crearemos dos ___Fragments___: El primero llevará el [Logo de Bedu]() y su _layout_ llamará ___fragment_bedu.xml___.
-
-```xml 
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/bedu" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
-
-Su clase correspondiente será la siguiente:
+1. También requerimos el modelo de nuestro producto.
 
 ```kotlin
-class BeduFragment : Fragment() {
+data class Product (
+    val name: String,
+    val description: String,
+    val price: String,
+    val rating: Float,
+    val idImage: Int
+):
+```
+Para teléfonos móviles, requeriremos en un punto pasar un producto de un `Activity` a otro, por lo que requeriremos que nuestro Producto sea `Parcelable` (una implementación del SDK de andriod similar al Serializer clásico de Java), por lo cual nuestra clase queda así:
+
+```kotlin
+import android.os.Parcel
+import android.os.Parcelable
+
+class Product (
+    val name: String,
+    val description: String,
+    val price: String,
+    val rating: Float,
+    val idImage: Int
+): Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readFloat(),
+        parcel.readInt()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(name)
+        parcel.writeString(description)
+        parcel.writeString(price)
+        parcel.writeFloat(rating)
+        parcel.writeInt(idImage)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Product> {
+        override fun createFromParcel(parcel: Parcel): Product {
+            return Product(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Product?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
+```
+
+1. Creamos la clase para nuestra lista `FragmentList`. Este es el esqueleto:
+
+```kotlin
+class ListFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_bedu, container, false)
-        
+        return inflater.inflate(R.layout.fragment_list, container, false)
+    }
+}
+```
+
+Crearemos dos atributos en nuestra clase para setear el adaptador, y la otra será un método que nos indicará qué ejecutar cuando demos click a un elemento de la lista.
+
+```kotlin
+ private lateinit var mAdapter : RecyclerAdapter
+    private var listener : (Product) ->Unit = {}
+```
+
+Generamos los métodos para configurar la lista de productos...
+
+```kotlin
+    //generamos datos dummy con este método
+    private fun getProducts(): MutableList<Product>{
+        var products:MutableList<Product> = ArrayList()
+
+        products.add(Product("Control ps5", "Disponible el 20 de noviembre", "$1400",4.6f,R.drawable.control))
+        products.add(Product("Intel core i9", "10ma Generación", "$9800",4.4f,R.drawable.corei9))
+        products.add(Product("Lector Kobo", "Disponible Prime", "$2235",3.8f,R.drawable.kobo))
+        products.add(Product("Audífonos Sony xm3", "Noise Cancelling", "$6449",4.8f,R.drawable.xm3))
+
+        return products
+    }
+
+    //configuramos lo necesario para desplegar el RecyclerView
+    private fun setUpRecyclerView(){
+        recyclerProducts.setHasFixedSize(true)
+        recyclerProducts.layoutManager = LinearLayoutManager(activity)
+        //seteando el Adapter
+        mAdapter = RecyclerAdapter( activity!!, getProducts(), listener)
+        //asignando el Adapter al RecyclerView
+        recyclerProducts.adapter = mAdapter
+    }
+```
+
+Y ejecutamos la configuración en el método `onActivityCreated`.
+
+```kotlin
+override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        setUpRecyclerView()
+    }
+
+```
+Con este método, asignaremos más tarde la tarea a ejecutar al darle click a un elemento desde nuestro `MainActivity`.
+
+```kotlin
+    fun setListener(l: (Product) ->Unit){
+        listener = l
+    }
+```
+
+1. Para el detalle del producto, creamos nuestra clase `DetailFragment`. Relacionaremos todas nuestras Views a variables para poder manipular su contenido. 
+
+```kotlin
+class DetailFragment : Fragment() {
+
+    private lateinit var tvProduct: TextView
+    private lateinit var tvDescription: TextView
+    private lateinit var rbRate: RatingBar
+    private lateinit var imgProduct: ImageView
+    private lateinit var tvPrice: TextView
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_detail, container, false)
+
+        tvProduct = view.findViewById(R.id.tvProduct)
+        tvDescription = view.findViewById(R.id.tvDescription)
+        rbRate = view.findViewById(R.id.rbRate)
+        imgProduct = view.findViewById(R.id.imgProduct)
+        tvPrice = view.findViewById(R.id.tvPrice)
+
         return view
     }
-
 }
 ```
 
-Recuerdas el [../Reto-01]? Ahí examinamos el ciclo de vida de un ___Fragment___, así que tomaremos la implementación de ___callbacks___ para analizar el ciclo de vida cuando hagamos una transacción.
-
-4. Para el segundo Fragment, repetimos el paso anterior, cambiando los nombres a ___fragment_beto.xml___ y a ___BetoFragment___ respectivamente. El nombre de la imagen del layout será ___beto.png___. Para los _Logs_, podemos poner un identificador en el texto para distinguirlos.
-
-5. Aunque google no lo recomienda, utilizaremos para esta ocasión _kotlinx synthetic_ En nuestro ___MainActivity___, para saltarnos la asignación de las _Views_. obtenemos el ___supportFragmentManager___ y lo guardamos en una variable.
-
-En el _listener_ del botón de agregar, crearemos una nueva _Transaction_, creamos una instancia de ___BeduFragment___, la agregamos al _container_ con el _tag_ "fragBedu" (que nos servirá para identificarlo) y aplicamos los cambios mediante el método ___commit___.
+Recuerdas que inicialmente pusimos el `layout` de nuestro detalle invisible? esto es debido a que en modo tablet, al principio no hemos seleccionado ningún producto, por lo tanto no debemos mostrar nada. Con la función showProduct, haremos visible nuestra información y desplegaremos la información de nuestro producto en los `Views`.
 
 ```kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
-    ...
-    
-    val manager = supportFragmentManager
+    fun showProduct(product: Product){
+        view?.visibility = View.VISIBLE
+        tvProduct.text = product.name
+        tvDescription.text = product.description
+        rbRate.rating = product.rating
+        imgProduct.setImageResource(product.idImage)
+        tvPrice.text = product.price
 
+    }
+```
 
-    //Agregaremos un nuevo Fragment
-    addButton.setOnClickListener {
-        val fragment = BeduFragment()
-        val transaction = manager.beginTransaction()
-        transaction.add(R.id.container, fragment, "fragBedu")
-        transaction.commit()
+1. Debido a que nuestros `Fragments` son modulares (y reutilizables), debemos gestionar cómo se va a mostrar nuestro `DetailFragment`, debido a que en versión tablet, nuestros dos `Fragments` se muestran al mismo tiempo en nuestra `MainActivity`; mientras que en versión móvil, visualizar nuestro detalle implica navegar a un nuevo `Activity`.
+
+Obtenemos nuestro Fragment `listFragment` y le asignaremos un listener que corresponde a cuando pulsamos a un elemento de la lista, por medio del método `setListener`; en dicho método revisamos si el `fragmentDetail` existe en nuestro `Activity`, es la versión tablet y solo tendremos qué mostrar el contenido mediante el método `showProduct` que creamos previamente para esa clase; en caso contrario, creamos un `Intent`, pasamos como información extra nuestro producto, e iniciamos el nuevo `Activity`.   
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val listFragment = supportFragmentManager.findFragmentById(R.id.fragmentList) as ListFragment
+
+        listFragment.setListener{
+            val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
+
+            // Pantalla grande, mostrar detalle en el fragment
+            if(detailFragment!=null){
+                detailFragment.showProduct(it)
+            } else{ //pantalla pequeña, navegar a un nuevo Activity
+                val intent = Intent(this, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.PRODUCT,it)
+                startActivity(intent)
+            }
+        }
     }
 }
 ```
-Abajo de esta, creamos el _listener_ para remover un ___Fragment___, el _fragment_ será encontrado por el tag que asignamos anteriormente ("fragBedu").
+
+1. El último paso que nos resta hacer, es crear la clase `DetailActivity` para nuestro detalle. En esta clase, lo que haremos es recuperar la información de nuestro producto y mostrarlo desde nuestro `Fragment`  mediante el método `showProduct`.
 
 ```kotlin
-removeButton.setOnClickListener {
-            val fragment = manager.findFragmentByTag("fragBedu") as BeduFragment
-            val transaction = manager.beginTransaction()
-            transaction.remove(fragment)
-            transaction.commit()
-        }
-```
+package org.bedu.listdetailfragment
 
-Corremos el código e inmediatemente pulsamos el botón remover... Qué sucede?
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 
-<img src="images/1.png" width="80%">
+class DetailActivity : AppCompatActivity() {
 
-Como no se encontró ningún fragment con ese tag, el valor nos arroja nulo y al querer hacer un __cast__, nos arroja un error. Por lo tanto, verificaremos si se encontró dicho fragment
+    companion object {
+        val PRODUCT = "PRODUCT"
+    }
 
-```kotlin
-val fragmentTag = manager.findFragmentByTag("fragBedu")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_detail)
 
-if(fragmentTag!=null){
-    val fragment = fragmentTag as BeduFragment
-    val transaction = manager.beginTransaction()
-    transaction.remove(fragment)
-    transaction.commit()
-} else{
-    Toast.makeText(this, "No hay ningún FragmentBedu agregado",Toast.LENGTH_SHORT).show()
-}
-```
-            
-Corremos nuevamente el código y hacemos los siguientes ejercicios. Discutir los resultados y analizar cómo se comporta el ciclo de vida para cada uno.
+        val product = intent.getParcelableExtra<Product>(PRODUCT)
+        val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
+        detailFragment?.showProduct(product)
 
-- Remover sin que exista un ___Fragment___
-- Agregar un fragment y eliminarlo
-- Agregar tres fragments y eliminar dos
-
-6. Ahora vamos a mostrar y ocultar un _fragment_, para esto utilzaremos los métodos ___hide___ y ___show___. El código es idéntico al de remover, excepto el nombre del método, en los cuales utilizaremos
-
-```kotlin
-transaction.hide(fragment)
-```
-
-y
-
-```kotlin
-transaction.show(fragment)
-```
-Corremos nuevamente el código y hacemos los siguientes ejercicios. 
-
-- Esconder/mostrar sin que exista un ___Fragment___
-- Agregar un fragment, esconderlo y mostrarlo
-
-7. Ahora implementaremos ___attach___ y ___detach___. Para hacer una diferenciación, el método ___add___ agrega un _fragment_ que puede tener su propi _View_ Al estado del _activity_, mientras que ___attach___, adjunta nuevamente el _fragment_ a la UI. Mientras que ___remove___ elimina el _View_ del _fragment_ y el estado del _FragmentManager_, ___detach___ destruye únicamente el _View_.
-
-La implementación, nuevamente, se realiza de forma similar al _remove_.
-
-```kotlin
-transaction.attach(fragment)
-```
-
-```kotlin
-transaction.detach(fragment)
-```
-
-
-[`Anterior`](../Readme.md) | [`Siguiente`](../Reto-02)
-
-Corremos nuevamente el códido y hacemos los siguientes ejercicios. 
-
-- Attach/detach sin que exista un ___Fragment___
-- Agregar un fragment, Attach y Detach
-
-
-8. Ahora vamos a agregar la opción de agregar/eliminar un segundo _fragment_, es aquí donde ___BetoFragment___ entra en acción.El código es el mismo que para el primer _fragment_, pero adaptado para el segundo _fragment_.
-
-```kotlin
-add2Button.setOnClickListener {
-            val fragment = BetoFragment()
-            val transaction = manager.beginTransaction()
-            transaction.add(R.id.container, fragment, "fragBeto")
-            transaction.commit()
-        }
-
-        remove2Button.setOnClickListener {
-            val fragmentTag = manager.findFragmentByTag("fragBeto")
-
-            if(fragmentTag!=null){
-                val fragment = fragmentTag as BetoFragment
-                val transaction = manager.beginTransaction()
-                transaction.remove(fragment)
-                transaction.commit()
-            } else{
-                Toast.makeText(this, "No hay ningún FragmentBeto agregado",Toast.LENGTH_SHORT).show()
-            }
-        }
-```
-
-Los ejercicios a hacer son los siguientes:
-
-- Agregar un FragmentBeto y removerlo
-- Agregar un FragmentBedu, agregar un FragmentBeto, eliminar el FragmentBeto y luego el FragmentBedu
-- Agregar un FragmentBedu, agregar un FragmentBeto, eliminar el FragmentBedu y luego el FragmentBeto (Remarcar la estructura LIFO).
-
-8. Por último, utilizaremos la función ___replace___, que reemplazará todo lo contenido en el contenedor por el fragment que le pasemos. 
-
-```kotlin
-replace1Button.setOnClickListener {
-    val beduFragment = BeduFragment()
-    val transaction = manager.beginTransaction()
-    transaction
-        .replace(R.id.container,beduFragment,"fragBedu")
-        .commit()
+    }
 }
 ```
 
-De la misma forma, podemos hacer el ___replace___ para el otro _fragment_.
+Al correr la aplicación en un móvil, se debe visualizar este flujo:
 
-Los ejercicios son los siguientes:
+<img src="images/7.png" width="40%">
 
-- Agregar un _FragmentBedu_ y reemplazarlo por un _FragmentBeto_
-- Crear varios _FragmentBedu_ y _FragmentBeto_ y reemplazarlos por cualquiera de los fragments.
+<sub><sup>lista de productos</sup></sub>
 
-[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
+<img src="images/8.png" width="40%">
+
+<sub><sup>detalle de producto</sup></sub>
 
 
+Mientras que en un dispositivo tablet, obtendremos lo siguiente:
 
-</div>
+<img src="images/9.png" width="40%">
+
+[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Reto-03/Readme.md)
