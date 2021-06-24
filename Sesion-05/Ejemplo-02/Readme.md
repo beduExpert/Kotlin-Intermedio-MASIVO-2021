@@ -15,7 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-En este ejemplo abordaremos una aplicación que sigue el patrón _lista-detalle_, en el cual tendremos una lista de productos y al seleccionar uno, visualizaremos sus detalles. En este ejercicio ejemplificamos el uso de _Fragments_ para un diseño de interfaz flexible, ya que para un teléfono móvil convencional, la lista se mostrará en una pantalla y el detalle en otra. En el caso de una tablet, que consta de una pantalla grande, pondremos la vista y el detalle en la misma pantalla. El siguiente diagrama nos ayudará a visualizar la idea.
+En este ejemplo abordaremos una aplicación que sigue el patrón `lista-detalle`, en el cual tendremos una lista de productos y al seleccionar uno, visualizaremos sus detalles. En este ejercicio ejemplificamos el uso de `Fragments` para un diseño de interfaz flexible, ya que para un teléfono móvil convencional, la lista se mostrará en una pantalla y el detalle en otra. En el caso de una tablet, que consta de una pantalla grande, pondremos la vista y el detalle en la misma pantalla. El siguiente diagrama nos ayudará a visualizar la idea.
 
 <img src="images/1.png" width="70%">
 
@@ -24,9 +24,9 @@ La diferencia es que las dos pantallas irán en orden vertical para el caso de l
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-2. Copiaremos las imágenes que se encuentran en [Esta carpeta](ListDetailFragment/app/src/main/res/drawable-v24) y las pegamos en nuestro directorio de recursos ___drawable___ para poder utilizarlos en nuestros productos.
+2. Copiaremos las imágenes que se encuentran en [Esta carpeta](ListDetailFragment/app/src/main/res/drawable-v24) y las pegamos en nuestro directorio de recursos `drawable` para poder utilizarlos en nuestros productos.
 
-3. En el directorio _layout_, diseñaremos el template de un elemento de nuestra lista de productos y lo llamaremos _item_contact.xml_, y tendrá el siguiente código:
+3. En el directorio `layout`, diseñaremos el template de un elemento de nuestra lista de productos y lo llamaremos _item_contact.xml_, y tendrá el siguiente código:
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout
