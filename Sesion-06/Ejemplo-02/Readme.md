@@ -15,7 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-Implementaremos ahora dos _componets_ importantes para material design: Appbar y Navigation Drawer.
+Implementaremos ahora dos `componets` importantes para material design: Appbar y Navigation Drawer.
 
 * En [Este enlace](https://material.io/components/app-bars-top) podemos leer acerca de las App bars.
 * En [Este enlace](https://material.io/components/navigation-drawer) podemos leer acerca de las Navigation Drawers.
@@ -28,7 +28,7 @@ Implementaremos ahora dos _componets_ importantes para material design: Appbar y
 
 3. Copiaremos todos los recursos que se encuentran en [Esta carpeta](AppBarAndNavigationDrawer/app/src/main/res/values) y las pegamos en nuestro directorio de recursos ___values___, para utilizarlos posteriormente.
 
-4. Ahora insertaremos nuestro AppBar en nuestro _main_activity.xml_, para esto, utilizaremos un ___AppBarLayout___ que en realidad es un _LinearLayout_ que implementa varios conceptos del [App Bar de Material design](https://material.io/components/app-bars-top). Dentro de esta, contenemos nuestro _widget_ ___Toolbar___ que es realmente la barra superior. el _flag_ ___navigationIcon___ es el elemento gráfico al lado izquierdo, en este caso pondremos el ícono de menú hamburguesa.
+4. Ahora insertaremos nuestro AppBar en nuestro _main_activity.xml_, para esto, utilizaremos un `AppBarLayout` que en realidad es un `LinearLayout` que implementa varios conceptos del [App Bar de Material design](https://material.io/components/app-bars-top). Dentro de esta, contenemos nuestro `widget Toolbar` que es realmente la barra superior. el `flag navigationIcon` es el elemento gráfico al lado izquierdo, en este caso pondremos el ícono de menú hamburguesa.
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -53,11 +53,11 @@ Implementaremos ahora dos _componets_ importantes para material design: Appbar y
     </LinearLayout>
 ```
 
-5. Para agregar opciones a nuestra _AppBar_, creamos un directorio _menu_.
+5. Para agregar opciones a nuestra `AppBar`, creamos un directorio _menu_.
 
 <img src="images/1.png" width="35%">
 
-dentro de este, creamos _toolbar_menu.xml_ y agregamos los _items_ que compondrán a nuestro menú:
+dentro de este, creamos _toolbar_menu.xml_ y agregamos los `items` que compondrán a nuestro menú:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -77,14 +77,14 @@ dentro de este, creamos _toolbar_menu.xml_ y agregamos los _items_ que compondr�
 ```
 
 
-5. Asignamos nuestro _Toolbar_ como ___ActionBar___, esto lo hacemos en el ___onCreate___ de nuestra _MainActivity_.
+5. Asignamos nuestro `Toolbar` como `ActionBar`, esto lo hacemos en el `onCreate` de nuestra `MainActivity`.
 
 ```kotlin
         val appBar = findViewById<Toolbar>(R.id.app_bar)
         this.setSupportActionBar(appBar)
 ```
 
-Y asociamos nuestra _AppBar_ al menú que creamos con anterioridad:
+Y asociamos nuestra `AppBar` al menú que creamos con anterioridad:
 
 ```kotlin
 override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -113,7 +113,7 @@ Al correr la aplicación, debe mostrarse esta interfaz:
     }
 ```
 
-Al correr de nuevo la app, y hacer click en uno de los elementos, se visualiza este _Toast_:
+Al correr de nuevo la app, y hacer click en uno de los elementos, se visualiza este `Toast`:
 
 <img src="images/3.png" width="35%">
 
@@ -165,7 +165,7 @@ Al correr de nuevo la app, y hacer click en uno de los elementos, se visualiza e
 </menu>
 ```
 
-8. Ahora, crearemos el _layout_ ___drawer_header.xml___ del _header_ de nuestro Drawer.
+8. Ahora, crearemos el `layout` ___drawer_header.xml___ del _header_ de nuestro Drawer.
 
 ```xml
 <LinearLayout
@@ -195,7 +195,7 @@ Al correr de nuevo la app, y hacer click en uno de los elementos, se visualiza e
 </LinearLayout>
 ```
 
-9. Nuestro _activity_main.xml_ será modificado de tal forma que el _LinearLayout_ quede envuelto por nuestra clase ___DrawerLayout___
+9. Nuestro _activity_main.xml_ será modificado de tal forma que el `LinearLayout` quede envuelto por nuestra clase `DrawerLayout`
 
 ```xml
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -211,7 +211,7 @@ Al correr de nuevo la app, y hacer click en uno de los elementos, se visualiza e
 </androidx.drawerlayout.widget.DrawerLayout>
 ```
 
-Sin embargo, requerimos implementar el menú de Navegación y el header, por lo que agregaremos la clase ___NavigationView___ al final del interior de nuestro _DrawerLayout_.
+Sin embargo, es necesario implementar el menú de Navegación y el header, por lo que agregaremos la clase `NavigationView` al final del interior de nuestro `DrawerLayout`.
 
 ```xml
   <com.google.android.material.navigation.NavigationView
@@ -222,8 +222,8 @@ Sin embargo, requerimos implementar el menú de Navegación y el header, por lo 
         android:layout_width="wrap_content"
         app:menu="@menu/drawer_menu" />
 ```
-
-El código final de _main_activity.xml_ quedaría de la siguiente forma:
+<details>
+<summary>El código final de _main_activity.xml_ es el siguiente:</summary>
 
 ```xml
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -266,7 +266,7 @@ El código final de _main_activity.xml_ quedaría de la siguiente forma:
         app:menu="@menu/drawer_menu" />
 </androidx.drawerlayout.widget.DrawerLayout>
 ```
-
+</details>
 10. Debemos relacionar nuestro _AppBar_ con nuestro _NavigationDrawer_, por lo que haremos un método para hacer la configuración necesaria:
 
 ```kotlin
