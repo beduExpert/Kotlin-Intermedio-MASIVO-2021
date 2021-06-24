@@ -187,9 +187,6 @@ Agregaremos un `CardView` sencillo, con un header superior con color `PrimaryDar
     </com.google.android.material.card.MaterialCardView>
 ```
 
-
-
-
 [`Anterior`](../Readme.md) | [`Siguiente`](../Reto-01)
 
 

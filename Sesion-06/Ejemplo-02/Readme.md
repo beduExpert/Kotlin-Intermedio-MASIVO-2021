@@ -223,7 +223,7 @@ Sin embargo, es necesario implementar el menú de Navegación y el header, por l
         app:menu="@menu/drawer_menu" />
 ```
 <details>
-<summary>El código final de _main_activity.xml_ es el siguiente:</summary>
+<summary>El código final de _main_activity.xml_ se puede consultar aquí</summary>
 
 ```xml
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -267,7 +267,8 @@ Sin embargo, es necesario implementar el menú de Navegación y el header, por l
 </androidx.drawerlayout.widget.DrawerLayout>
 ```
 </details>
-10. Debemos relacionar nuestro _AppBar_ con nuestro _NavigationDrawer_, por lo que haremos un método para hacer la configuración necesaria:
+
+10. Ahora es necesario relacionar nuestro `AppBar` con el `NavigationDrawer`, por lo que definiremos  un método para hacer la configuración necesaria:
 
 ```kotlin
 private fun setupDrawer(toolbar: Toolbar){
@@ -276,7 +277,7 @@ private fun setupDrawer(toolbar: Toolbar){
     }
 ```
 
-esta función se llama en el método ___onCreate___:
+esta función se llama en el método `onCreate`:
 
 ```kotlin
 setupDrawer(appBar)

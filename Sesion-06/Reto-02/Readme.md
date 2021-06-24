@@ -6,7 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Implementar algún atributo de un _Theme_ en un _View_ específico.
+- Implementar algún atributo de un `Theme` en un `View` específico.
 - Crear un Theme oscuro.
 
 ### 2. Requisitos :clipboard:
@@ -19,7 +19,7 @@ Tomaremos el ejercicio realizado en el proyecto del [Ejemplo 3](../Ejemplo-03) p
 
 
 
-1. En el ejemplo [Ejemplo 3](../Ejemplo-03), faltó implementar lo siguiente en el _Drawer_:
+1. En el ejemplo [Ejemplo 3](../Ejemplo-03), faltó implementar lo siguiente en el `Drawer`:
 
 <image src="../Ejemplo-03/images/7.png" width="35%">
     
@@ -27,7 +27,7 @@ Implementar el diseño del código, de forma que quede así:
 
 <image src="images/1.png" width="35%">
     
-Y al cambiar al _Theme_ ___AppTheme.RedBlue___ quede así:
+Y al cambiar al `Theme` `AppTheme.RedBlue` quede así:
 
 <image src="images/2.png" width="35%">
 
@@ -44,7 +44,7 @@ Y al cambiar al _Theme_ ___AppTheme.RedBlue___ quede así:
 ```
 </details>
 
-2. Generar un nuevo ___Dark Theme___, para esto, hereda de ___Theme.MaterialComponents.NoActionBar___. (Ejercicio abierto, sujeto a revisión).
+2. Generar un nuevo ___Dark Theme___, para esto, hereda de `Theme.MaterialComponents.NoActionBar`. (Ejercicio abierto, sujeto a revisión).
 
 <br/>
 

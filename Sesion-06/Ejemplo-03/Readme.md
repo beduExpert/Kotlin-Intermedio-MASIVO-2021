@@ -15,22 +15,22 @@
 
 ### 3. Desarrollo :computer:
 
-Para personalizar el estilo de una aplicación y adaptarlo a material design, debemos seguir ciertas reglas de diseño, como la elección de una cierta paleta de colores, el tamaño y fuente de nuestras letras, etc. Todo esto compone el ___Theme___ de nuestra aplicación.
+Para personalizar el estilo de una aplicación y que utilice **Material Design** existen algunas reglas de diseño, por ejemplo la elección de paletas de colores, el tamaño y fuente de nuestras letras, etc. Todo esto compone el `Theme` de nuestra aplicación.
 
-En este ejemplo, aplicaremos un _Theme_ personalizado a nuestra aplicación, para eso, utilizaremos una app preestablecida la cuál modificaremos para lograr nuestra personalización. 
+En este ejemplo, aplicaremos un `Theme` personalizado a nuestra aplicación, para eso, utilizaremos una app preestablecida la cuál modificaremos con nuestra personalización. 
 
-1. Descarga [Este proyecto](Themes), el cual será modificado para estilizarlo. El proyecto cuenta con las siguientes pantallas:
+1. Descarga [Este proyecto](Themes), con el cual trabajaremos en este ejemplo. El proyecto cuenta con las dos pantallas siguientes:
 
 <img src="images/1.png" width="35%">
 
 <img src="images/2.png" width="35%">
 
-2. Vamos a definir la paleta de colores a utilizar, o al menos parte de esta. Para esto, nos apoyaremos de la herramienta [Color Tool](https://material.io/resources/color/#!/?view.left=0&view.right=0) que se apega a la norma de _Material Design_. El tema de colores de _Material Design_ se aborda en [Este Enlace](https://material.io/design/color/applying-color-to-ui.html#usage). La paleta que escogeremos es la siguiente:
+2. Vamos a definir la paleta de colores a utilizar, o al menos parte de esta. Para esto, nos apoyaremos de la herramienta [Color Tool](https://material.io/resources/color/#!/?view.left=0&view.right=0) que se apega a la norma de **Material Design**. El tema de colores de **Material Design** se aborda en [este enlace](https://material.io/design/color/applying-color-to-ui.html#usage). La paleta que usaremos es la siguiente:
 
 
 <img src="images/3.png" width="65%">
 
-La página de _Color Tool_ ya viene configurada en [Este enlace]https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=FF1744&primary.color=212121
+La página de _Color Tool_ ya viene configurada en [este enlace]https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=FF1744&primary.color=212121
 
 El sitio web muestra una serie de implementaciones de la paleta de colores en los elementos de la UI. Nos basaremos en las siguientes sugerencias:
 
@@ -52,14 +52,14 @@ Para exportar la paleta de colores desde el sitio al archivo _colors.xml_, darem
 </resources>
 ```
 
-Ahora, hay qué reemplazar los viejos colores por los nuevos. En el ___AppTheme___ de _styles.xml_ reemplazamos:
+Ahora, hay qué reemplazar los viejos colores por los nuevos. En el `AppTheme` de _styles.xml_ hacemos las siguientes sustituciones:
 
-* _colorPrimary_ por ___primaryColor___.
-* _colorPrimaryDark_ por ___primaryDarkColor___.
-* _colorAccent_ por ___secondaryColor___.
-* _texColorPrimary_ por ___primaryTextColor___.
+* `colorPrimary` por `primaryColor`.
+* `colorPrimaryDark` por `primaryDarkColor`.
+* `colorAccent` por `secondaryColor`.
+* `texColorPrimary` por `primaryTextColor`.
 
-Definiremos también un color para los íconos del _App Bar_, que será de color blanco, cambiaremos el ___primaryTextColor___ a negro y el ___secondaryTextColor___ a blanco (_colors.xml_):
+Definiremos también un color para los íconos del `App Bar`, que será de color blanco, cambiaremos el `primaryTextColor` a negro y el `secondaryTextColor` a blanco (_colors.xml_):
 
 ```xml
 <color name="tabBarIconColor">#ffffff</color>
@@ -81,11 +81,11 @@ Las pantallas deben verse de la siguiente manera:
 
 <img src="images/5.png" width="35%">
 
-3. Ahora, vamos a estilizar la pantalla de _login_. Según la guía de _Components_ de _Material Design_, tenemos dos estilos de _Text Fields_:
+3. Ahora, vamos a estilizar la pantalla de _login_. Según la guía de _Components_ de _Material Design_, tenemos dos estilos de `Text Fields`:
 
 <img src="images/textfields.gif" width="60%">
 
-Utilizaremos el tipo _outlined_ para este caso, lo cual lo lograremos heredando de la clase _OutlinedBox_ de _MaterialComponents_. Para obtener atributos del _App Theme_, utilizamos la referencia ___?attr/<nombre_atributo>___, y lo utilizaremos en este caso, para que cuando cambiemos el tema de la app, cambien también en los estilos para nuestros componentes.
+Utilizaremos el tipo `outlined` para este caso, lo cual lo lograremos heredando de la clase `OutlinedBox` de `MaterialComponents`. Para obtener atributos del _App Theme_, utilizamos la referencia `?attr/<nombre_atributo>`, y lo utilizaremos en este caso, para que cuando cambiemos el tema de la app, cambien también en los estilos para nuestros componentes.
 
 ```xml
     <style name="Bedu.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -96,7 +96,7 @@ Utilizaremos el tipo _outlined_ para este caso, lo cual lo lograremos heredando 
         <item name="boxStrokeColor">?attr/colorAccent</item>
     </style>
 ```
-el atributo _hintTextAppearance_ hace referencia al estilo ___Bedu.HintText___, que define el tamaño, color, etc. del _hint_ cuando no está como _label_.Le daremos una apariencia de Subtítulo (probar con distintos) y sobreescribiremos el color al color de texto primario.
+el atributo `hintTextAppearance` hace referencia al estilo `Bedu.HintText`, que define el tamaño, color, etc. del `hint` cuando no está como `label`.Le daremos una apariencia de Subtítulo (probar con distintos) y sobreescribiremos el color original al color de texto primario.
 
 ```xml
 <style name="Bedu.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
@@ -104,7 +104,7 @@ el atributo _hintTextAppearance_ hace referencia al estilo ___Bedu.HintText___, 
 </style>
 ```
 
-E implementamos en los ___TextInputLayout___.
+E implementamos en los `TextInputLayout`.
 
 ```xml
      <com.google.android.material.textfield.TextInputLayout
@@ -119,7 +119,7 @@ E implementamos en los ___TextInputLayout___.
 	/>
 ```
 
-Supongamos que pueden existir en toda la app algunos ___TextInputs___ con tamaños y márgenes diferentes, podemos definir un estilo _parent_ y en los heredados, describir dichas dimensiones:
+Supongamos que pueden existir en toda la app algunos `TextInputs` con tamaños y márgenes diferentes, podemos definir un estilo `parent` y en los heredados, describir dichas dimensiones:
 
 ```xml
  <style name="Bedu.TextInputLayout.Login" parent="Bedu.TextInputLayout">
@@ -132,7 +132,7 @@ Supongamos que pueden existir en toda la app algunos ___TextInputs___ con tamañ
     </style>
 ```
 
-Con esto, en nuestro ___TextInputLayout___ ya no sería necesario agregar estos atributos:
+Con esto, en nuestro `TextInputLayout` ya no sería necesario agregar estos atributos:
 
 ```xml
  <com.google.android.material.textfield.TextInputLayout
@@ -164,15 +164,15 @@ La pantalla de Login debe quedar de la siguiente forma:
 <img src="images/login.gif" width="35%">
 
 
-4. Ahora vamos a darle estilo al menú principal. Con los cambios que hemos realizado hata el momento, tenemos lo siguiente:
+4. Ahora vamos a darle estilo al menú principal. Con los cambios que hemos realizado hasta el momento, tenemos lo siguiente:
 
 <img src="images/8.png" width="35%">
 
-Comenzamos por personalizar nuestro _Toolbar_, para esto, definiremos tres estilos diferentes: 
+Comenzamos por personalizar nuestro `Toolbar`, para esto, definiremos tres estilos diferentes: 
 
 - El primero para que el título sea de color blanco (El _Theme_ está basado en _Theme.MaterialComponents.Light_ y espera que tu barra tenga un fondo claro con letras oscuras). 
-- El segundo, para la apariencia del título del App Bar.
-- El último, para el resto de configuración de estilo del _Toolbar_.
+- El segundo, para la apariencia del título del `App Bar`.
+- El último, para el resto de configuración de estilo del `Toolbar`.
 
 ```xml
    <style name="Toolbar.Theme" parent="AppTheme">
@@ -191,7 +191,7 @@ Comenzamos por personalizar nuestro _Toolbar_, para esto, definiremos tres estil
     </style>
 ```
 
-Relacionamos nuestro estilo _Widget.Toolbar_ al _Toolbar_en nuestro _fragment_main.xml_
+Relacionamos nuestro estilo `Widget.Toolbar` al `Toolbar` en nuestro _fragment_main.xml_
 
 ```xml
 <androidx.appcompat.widget.Toolbar
@@ -200,7 +200,7 @@ Relacionamos nuestro estilo _Widget.Toolbar_ al _Toolbar_en nuestro _fragment_ma
                 style="@style/Widget.Toolbar"
 ```
 
-Ahora, vamos a estilizar cada item de nuestros productos. Agregaremos elevación a los _Cardviews_ en _item_contact.xml_.
+Ahora, vamos a estilizar cada item de nuestros productos. Agregaremos elevación a los `Cardviews` en _item_contact.xml_.
 
 ```xml
 <com.google.android.material.card.MaterialCardView
@@ -209,7 +209,7 @@ Ahora, vamos a estilizar cada item de nuestros productos. Agregaremos elevación
 </com.google.android.material.card.MaterialCardView>
 ```
 
-Debido a que el color de fondo de nuestras imágenes son blacnas, crearemos un separador entre estas dos:
+Debido a que el color de fondo de nuestras imágenes son blancas, crearemos un separador entre estas dos:
 
 ```xml
 <com.google.android.material.card.MaterialCardView
@@ -234,7 +234,7 @@ Nuestra pantalla debe quedar de la siguiente forma:
 <img src="images/9.png" width="35%">
 
 
-5. La app está lista, pero qué pasa si quisiéramos tener una versión alterna de nuestro _AppTheme_? crearemos uno nuevo:
+5. La app está lista, pero qué pasa si quisiéramos tener una versión alterna de nuestro `AppTheme`? crearemos uno nuevo:
 
 ```xml
     <style name="AppTheme.RedBlue" parent="Theme.MaterialComponents.Light.NoActionBar">\
@@ -249,13 +249,13 @@ Nuestra pantalla debe quedar de la siguiente forma:
     </style>
 ```
 
-El Theme del _Toolbar_ lo utiliza, por lo que lo utilizaremos en su atributo _parent_.
+El Theme del `Toolbar` lo utiliza, por lo que lo utilizaremos en su atributo `parent`.
 
 ```xml
     <style name="Toolbar.Theme" parent="AppTheme.RedBlue">	
 ```
 
-Ahora resta únicamente definirlo como el _Theme_ de la aplicación, para esto abriremos el ___AndroidManifest.xml___ y en ___application___ hallaremos el atributo ___android:theme___, donde colocaremos nuestro _style_.
+Ahora resta únicamente definirlo como el `Theme` de la aplicación, para esto abriremos el ___AndroidManifest.xml___ y en `application` hallaremos el atributo `android:theme`, donde colocaremos nuestro `style`.
 
 ```xml
     <application

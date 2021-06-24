@@ -14,7 +14,7 @@
 
 ### 3. Desarrollo :computer:
 
-Tomaremos el ejercicio realizado en el [Reto 2](../Sesion-05/Reto-02) de la [Sesión 5](../Sesion-05) como ejemplo, y reajustaremos el _layout_ de cada item en la lista y también la distribución en el _RecyclerView_, de modo que el listado quede de la siguiente forma:
+Tomaremos el ejercicio realizado en el [Reto 2](../Sesion-05/Reto-02) de la [Sesión 5](../Sesion-05) como ejemplo, y reajustaremos el `layout` de cada item en la lista y también la distribución en el `RecyclerView`, de modo que el listado quede de la siguiente forma:
 
 
  <img src="images/1.png" width="33%">
@@ -25,7 +25,7 @@ Por practicidad, únicamente se tomará en cuenta el layout en versión móvil e
 
 #### Tips:
 
-- Para una separación entre layouts, crearemos la siguiente clase que actuará como _Decorator_ en nuestro _Adapter_.
+- Para una separación entre layouts, crearemos la siguiente clase que actuará como `Decorator` en nuestro `Adapter`.
 
 ```kotlin
 class GridDecoration(private val largePadding: Int, private val smallPadding: Int) : RecyclerView.ItemDecoration() {
@@ -46,7 +46,7 @@ class GridDecoration(private val largePadding: Int, private val smallPadding: In
 }
 ```
 
-y así queda su implementación en el _RecyclerView_
+y así queda su implementación en el `RecyclerView`
 
 ```kotlin
 val largePadding = resources.getDimensionPixelSize(R.dimen.product_grid_spacing)
@@ -54,9 +54,9 @@ val largePadding = resources.getDimensionPixelSize(R.dimen.product_grid_spacing)
         recyclerProducts.addItemDecoration(GridDecoration(largePadding, smallPadding))
 ```
 
-- Todos los elementos de _item_contact_ que son _atados_ al Producto, deben existir (incluso si no son visibles), de lo contrario esto nos puede generar un error en el código.
+- Todos los elementos de `item_contact` que son atados al Producto, deben existir (incluso si no son visibles), de lo contrario esto nos puede generar un error en el código.
 
-- Utilizar _CardView_ sin elevación.
+- Utilizar `CardView` sin elevación.
 
 
 <details><summary>Solución</summary>
