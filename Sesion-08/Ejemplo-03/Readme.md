@@ -18,7 +18,7 @@
 
 ### 3. Desarrollo :computer:
 
-Después de ejecutar todos los pasos necesarios y recomendados para preparar la app para el lanzamiento, estamos listos para preparar el archivo de nuestra aplicación. Los formatos en los que los podemos subir son los siguientes:
+Después de ejecutar todos los pasos necesarios y recomendados para preparar la app para el lanzamiento estamos listos para preparar el archivo de nuestra aplicación. Los formatos en los que los podemos subir son los siguientes:
 
 * ___.aab___ (Android App Bundle)
 * ___.apk___ (Android Package)
@@ -27,21 +27,22 @@ Ambos formatos requieren la generación de una clave y su ___keystore___ para po
 
 
 #### Construyendo la app de debug
-1. Vamos a generar nuestra app de _debug_, para esto, abrimos la opción _Build > Build Bundle(s) / Apk(s) > Build Apk(s)
+1. Vamos a generar nuestra app de _debug_, para esto, abrimos la opción ___Build > Build Bundle(s) / Apk(s) > Build Apk(s)___
 
 <img src="images/build-apk.gif" width="40%">
 
 Esto nos generará un archivo ___apk___ firmada con la llave de debug, dicha llave se genera la primera vez que se corre el proyecto. La llave se encuentra en la siguiente ruta:
 
-* ___~/.android/___ en OS X y Linux
-* ___C:\Users\user\.android\___ en Windows Vista y Windows 7, 8 y 10
+* ___~/.android/___ en OS X y Linux 
+* ___C:\Users\user\.android\ ___ en Windows Vista y Windows 7, 8 y 10
 
 El archivo apk utiliza la variante seleccionada en _Build Variants_. El _apk_ generado se encuentra en _{directorio raíz}/app/build/outputs/apk/{flavor}/{buildType}/app-{flavor}-{buildType}.apk_.
 
+---
 
 #### Estructura del apk
 
-2. El archivo apk es un archivo que contiene todos los elementos para correr la aplicación en distintas densidades de dispositivos y versiones del OS, es similar a un arhicho .zip, por lo tanto, cualquier herramienta de descompresión permite hurgar en el contenido de este. Podemos analizar su contenido por medio del ___Apk Analyzer___, que nos permite ver el contendio de la app. Arrastramos el _apk_ al IDE o bien, en la opción _Build / Analyze Apk_ y seleccionando el archivo. También podemos analizar el apk al momento de generarla, pues saltará una ventana con las siguientes opciones:
+2. El archivo apk es un archivo que contiene todos los elementos para correr la aplicación en distintas densidades de dispositivos y versiones del OS, es similar a un archivo .zip, por lo tanto, cualquier herramienta de descompresión permite hurgar en el contenido de este. Podemos analizar su contenido por medio del ___Apk Analyzer___, que nos permite ver el contenido de la app. Arrastramos el _apk_ al IDE o bien, en la opción _Build / Analyze Apk_ y seleccionando el archivo. También podemos analizar el apk al momento de generarla, pues saltará una ventana con las siguientes opciones:
 
 <img src="images/build-successful.png" width="60%">
 
@@ -68,7 +69,7 @@ La estructura de un app bundle es la siguiente:
 
 <img src="images/aab.png" width="70%">
 
-Desde la versión 5.0 de android, se pueden tener _APK's divididas_, que en conjunto se pueden tomar como una sola app. El Base module son los recursos y código de la apk base, una versión que todas las variantes comparten. Los dynamic features son apks divididas que tienen funciones específicas para ciertos dispositivos/clientes.
+Desde la versión 5.0 de android, se pueden tener _APK's divididas_, que en conjunto se pueden tomar como una sola app. El Base module son los recursos y código de la apk base, una versión que todas las variantes comparten. Los _dynamic features_ son apks divididas que tienen funciones específicas para ciertos dispositivos/clientes.
 
 Para el testing de un _AAB_, existen dos maneras:
 
@@ -77,21 +78,24 @@ Para el testing de un _AAB_, existen dos maneras:
 
 En este caso, haremos pruebas mediante la herramienta de linea de comandos ___bundletool___. Para instalarlo, podemos hacer lo siguiente:
 
-* En MacOs, mediante homebrew instalamos la dependencia con:
+* En MacOs, mediante _homebrew_ instalamos la dependencia con:
 
-> brew install bundletool
+```
+ brew install bundletool
+```
+
 
 * Para MacOs y Linux, podemos descargar el proyecto en [Este Enlace](https://github.com/google/bundletool/releases), y agregar un alias para correr el archivo ___.jar___ del proyecto.
 
-> alias bundletool='java -jar bundletool-all.jar'
+`alias bundletool='java -jar bundletool-all.jar'`
 
 * O en Windows, mediante
 
-> @doskey bundletool=java -jar {path}\bundletool-all.jar $*
+`@doskey bundletool=java -jar {path}\bundletool-all.jar $*`
 
 * Para los tres OS, podemos poner utilizar el archivo ___.jar___ con el comando directo de java:
 
-> java -jar bundletool-all.jar {your_arguments_here}
+`java -jar bundletool-all.jar {your_arguments_here}`
 
 Tomaremos por sentado de que tenemos el alias ___bundletool___.
 
@@ -109,10 +113,11 @@ bundletool build-apks --bundle=app-free-debug.aab --output=app-free-debug.apks
 
 La terminal nos arroja el siguiente mensaje:
 
-> INFO: The APKs will be signed with the debug keystore found at '~/.android/debug.keystore'.
+``` 
+    INFO: The APKs will be signed with the debug keystore found at '~/.android/debug.keystore'.
+    Esto debido a que estamos utilizando la versión debug, que utiliza dicha llave.
 
-Esto debido a que estamos utilizando la versión debug, que utiliza dicha llave.
-
+```
 
 Esto generará un _APK set archive_ o archivo de conjunto de APK en español, que es un conjunto de todas las posibles configuraciones de apks para el proyecto y su extensión es ___apks___.
 
@@ -186,6 +191,8 @@ bundletool install-apks --apks=/MyApp/my_app.apks
 ```
 
 Se instalará la aplicación sin que se ejecute automáticamente.
+
+---
 
 #### Generación del keystore
 

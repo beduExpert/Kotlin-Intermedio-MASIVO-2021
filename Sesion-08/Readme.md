@@ -9,8 +9,15 @@
   
 ### Introducción
 
-La cantidad de aplicaciones disponibles en Google Play no deja de aumentar. Una de las grandes ventajas de la tienda oficial en Android es que hay muchos tipos de apps diferentes, también de multitud de estudios y desarrolladores. Esto permite que desarrolladores pequeños, que están empezando, puedan publicar sus aplicaciones en la tienda sin demasiados problemas.
+La cantidad de aplicaciones disponibles en Google Play no deja de aumentar. Una de las grandes ventajas de la tienda oficial en Android es que hay muchos tipos de apps diferentes, también de una gran cantidad  de estudios y desarrolladores. Esto permite que algunos desarrolladores pequeños o que están empezando puedan publicar sus aplicaciones en la tienda sin demasiados problemas y de forma gratuita.
 
+Al momento de publicar una app móvil es importante tener en cuenta las siguientes características de ésta:
+
+- El nombre de la aplicación.
+- El icono con el que se verá en la tienda.
+- Las palabras clave con las que aparecerá en las búsquedas.
+- A que categoría corresponde.
+- Una descripción clara y concisa de los usos y funcionamiento.
 
 ### 1. Objetivos :dart: 
 
@@ -32,7 +39,7 @@ La cantidad de aplicaciones disponibles en Google Play no deja de aumentar. Una 
 
 #### <ins>Configuración de gradle</ins>
 
-Realizaremos todos los preparativos en los archivos _gradle_ para tener un lanzamiento de la app exitosa.
+Se realizarán todos los preparativos para el lanzamiento, en los archivos _gradle_ para tener un lanzamiento exitoso.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 
@@ -42,7 +49,7 @@ Realizaremos todos los preparativos en los archivos _gradle_ para tener un lanza
 
 #### <ins>Build variants</ins>
 
-Crearemos diferentes versiones de una aplicación y aprenderemos para qué sirve esta utilidad.
+Se crearán diferentes versiones de una aplicación y aprenderemos para qué sirve esta utilidad.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -53,7 +60,7 @@ Crearemos diferentes versiones de una aplicación y aprenderemos para qué sirve
 
 #### <ins>Firma de aplicación</ins>
 
-Generaremos un apk de prueba para instalarlo en un dispositivo. Compilaremos un archivo .aab y probaremos su funcionalidad mediante _buildtool_. Firmaremos nuestra aplicación de release y la probaremos en busqueda de algún defecto.
+Se generará un apk de prueba para instalarlo en un dispositivo compilando un archivo .aab y probando su funcionalidad mediante _buildtool_. Finalmente se firmará la aplicación de _release_ y la _testearemos_ en búsqueda de algún defecto.
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
 

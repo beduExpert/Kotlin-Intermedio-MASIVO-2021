@@ -21,7 +21,7 @@ Antes de liberar una aplicación, hay una serie de pasos que se tienen qué real
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-2. En el proyecto que estemos abriendo, se tiene qué validar que se hayan removido el código cuyo único propósito era por debugging. Cualquier _Log_ que se haya realizado, es recomendado removerlo, especialmente si está imprimiendo valores sensibles que puedan comprometer la seguridad de la app o del cliente.
+2. En este proyecto se tiene qué validar que se hayan removido el código cuyo único propósito era el de debugging. Cualquier _Log_ que se haya realizado, es recomendado quitarlo, especialmente si está imprimiendo valores sensibles que puedan comprometer la seguridad de la app o del cliente.
 
 3. Abriremos el archivo ___build.gradle___ de la carpeta raíz, este archivo define las configuraciones de compilación que se aplican a todos los módulos del proyecto. Aquí definimos los repositorios de donde extraemos nuestras dependencias. Todos los archivos ___build.gradle___ son archivos de configuración para la compilación.
 
@@ -57,7 +57,8 @@ task clean(type: Delete) {
 }
 ```
 
-En un momento volveremos a este archivo.
+> Ojo 👀
+No cierres este archivo en un momento volveremos a él.
 
 
 4.Ahora toca abrir el archivo ___app/build.gradle___, que es un archivo de configuración local (para el módulo donde está contenido). En este caso, define toda la configuración para la compilación de nuestro módulo ___app___. Ejemplificaremos con el _build.gradle_ de un proyecto en blanco.
@@ -152,7 +153,7 @@ dependencies {
 }
 ```
 
-En buildTypes->release, habilitaremos la ofuscación de código y la depuración de código cambiando el valor de ___minifyEnabled___ y ___shrinkResources___ a _true_. Esto sólo se recomienda antes de liberar la app ya que hace que el proceso de compilación sea más tardado.
+En _buildTypes->release_, habilitaremos la ofuscación y depuracion del código cambiando el valor de ___minifyEnabled___ y ___shrinkResources___ a _true_. Esto sólo se recomienda antes de liberar la app ya que hace que el proceso de compilación sea más tardado, pero es necesario para garantizar que la aplicacion funciona corretamente.
 
 ```kotlin
 release {
