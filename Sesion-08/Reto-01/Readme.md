@@ -6,7 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Utilizar una variante para restringir un servicio
+- Utilizar una variante para restringir un servicio.
 
 ### 2. Requisitos :clipboard:
 
@@ -14,10 +14,10 @@
 
 ### 3. Desarrollo :computer:
 
-Tomaremos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y haremos le unas modificaciones:
+Tomaremos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y le haremos las siguientes modificaciones:
 
 - Tanto la versión _free_ como _paid_ utilizarán el formulario, que estará ahora en un fragment ___fragment_login.xml___, que el ___activity_main.xml___ incluirá.
-- Al dar click al login en _free_, un ___Toast___ nos advertirá que es la versión gratuita.
+- Al hacer click al login en _free_, un ___Toast___ nos advertirá que es la versión gratuita.
 - En la versión pagada, se mostrará un ___Toast___ indicando si el usuario o la contraseña están vacíos, en caso contrario, se advertirá del inicio de sesión.
 - Los recursos que se ocupen únicamente en un flavor, se deben declarar en el directorio correspondiente (por ejemplo, los _strings_).
 - La versión pagada debe enviar un mensaje como este (si los campos tienen texto) 
@@ -28,7 +28,7 @@ Tomaremos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y ha
 #### Tips:
 
 - Tanto la versión _free_ como _paid_ tendrán su directorio en _src_.
-- No olvides que si utilizas una clase que es diferente para distintas versiones, repítelos en los directorios de flavors correspondientes y no en el _main_, puesto que se duplicarían los 
+- No olvides que si utilizas una clase que es diferente para distintas versiones, repítela en los directorios de flavors correspondientes y no en el _main_, puesto que se duplicarían los 
 
 <details><summary>Solución</summary>
 
