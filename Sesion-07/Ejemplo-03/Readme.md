@@ -7,7 +7,7 @@
 
 ### 1. Objetivos :dart:
 
-- Aprender a implementar contextual menus reutilizables para Views y Activities.
+- Implementar Contextual menus reutilizables para Views y Activities.
 
 ### 2. Requisitos :clipboard:
 
@@ -19,14 +19,14 @@
 
 ## ActionMode
 
-Recordando los menus contextuales, aquellos que se enfocan sobre elementos de UI que especifiquemos. Encontramos los `ActionMode`, estos son una implementacion similar al contextual menu, veamos a que nos referimos.
+Recordando los menús contextuales, estos son los enfocados sobre elementos de UI que especifiquemos, y así encontramos los `ActionMode`, una implementacion similar al contextual menu. Revisaremos más, así que veamos a qué nos referimos.
 
 ![imagen](images/1.png)
 
 Como se muestra en la imagen, tenemos dos tipos.
 Primaria y Flotante.
 
-En la Primaria los elementos se muestran en el action bar. En el caso de Flotating, el toolbar es mostrado sobre la vista de manera flotante. Es importante mencionar que solo se podra ocultar este menú de manera programada.
+En la Primaria, los elementos se muestran en el action bar. En el caso de Flotating, el toolbar es mostrado sobre la vista de manera flotante. Es importante mencionar que solo se podrá ocultar este menú de manera programada.
 
 Esto nos da dos Properties:
 
@@ -35,7 +35,7 @@ Esto nos da dos Properties:
 
 Los action mode pueden ser mostrados sobre cualquier `View` o `Activity`.
 
-En cualquier caso hay dos funciones que debemos usar.
+En cualquier caso, hay dos funciones que debemos usar.
 
 - `fun startActionMode(callback: ActionMode.Callback): ActionMode`
  
@@ -59,11 +59,11 @@ Tenemos cuatro funciones par aimplementar en el Callback.
 
 ## Flotating ActionMode 
 
-Cuando tenemos nuestro ActionMode flotante, tenemos cambien un _callback_ nuevo, llamado `Callback2`. Este agrega solo una función mas, esta es:
+Cuando tenemos nuestro ActionMode flotante, tenemos cambien un _callback_ nuevo, llamado `Callback2`. Este agrega solo una función más, esta es:
 
 - `onGetContentRect`
 
-La cuál te dará la posición en la pantalla para el elemento flotante.
+La cual te dará la posición en la pantalla para el elemento flotante.
 
 
 
@@ -72,7 +72,7 @@ La cuál te dará la posición en la pantalla para el elemento flotante.
 
 Como ya hemos visto, crearemos un directorio para ___Menu___ y un archivo xml.
 En el ___Activity Main xml___ agregaremos un elemento de UI como un `TextView`.
-Igualmente, agregaremos dos iconos de tu elección a la carpeta ___Drawable___.
+Igualmente, agregaremos dos íconos de tu elección a la carpeta ___Drawable___.
 
 ![imagen](images/2.png)
 
@@ -156,7 +156,7 @@ Ejecutamos el código y el resultado debe ser similar a este:
 ![imagen](images/3.gif)
 
 
-Ahora bien, agregaremos un poco de funcionalidad al seleccionar uno de los botones del menu de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado. 
+Ahora bien, agregaremos un poco de funcionalidad al seleccionar uno de los botones del menú de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado. 
 
 ```
 inner class ActionModeCallback: ActionMode.Callback {
