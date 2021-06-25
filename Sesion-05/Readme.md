@@ -57,7 +57,7 @@ Para este ejemplo agregaremos un fragmento al layout del _Activity_ principal y 
 
 #### <ins>Flexibilidad: patrón lista-detalle</ins>
 
-Para este ejemplo se usa el patrón lista-detalle, que es ampliamente empleado en aplicaciones y sirve ejemplificar la flexibilidad de un `Fragment`.
+Para este ejemplo se usa el patrón lista-detalle, que es ampliamente empleado en aplicaciones y sirve para ejemplificar la flexibilidad de un `Fragment`.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 
