@@ -13,17 +13,17 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-Después de ejecutar todos los pasos necesarios y recomendados para preparar la app para el lanzamiento estamos listos para preparar el archivo de nuestra aplicación. Los formatos en los que los podemos subir son los siguientes:
+Después de ejecutar todos los pasos necesarios y recomendados de preparación de la app para su lanzamiento, estamos listos para preparar el archivo de la aplicación. Los formatos en los que los podemos subir son los siguientes:
 
 * ___.aab___ (Android App Bundle)
 * ___.apk___ (Android Package)
 
-Ambos formatos requieren la generación de una clave y su ___keystore___ para poder ser firmados y subidas a la tienda.
+Ambos formatos requieren la generación de una clave y su ___keystore___ para poder ser firmados y subidos a la tienda.
 
 
 #### Construyendo la app de debug
@@ -42,7 +42,7 @@ El archivo apk utiliza la variante seleccionada en _Build Variants_. El _apk_ ge
 
 #### Estructura del apk
 
-2. El archivo apk es un archivo que contiene todos los elementos para correr la aplicación en distintas densidades de dispositivos y versiones del OS, es similar a un archivo .zip, por lo tanto, cualquier herramienta de descompresión permite hurgar en el contenido de este. Podemos analizar su contenido por medio del ___Apk Analyzer___, que nos permite ver el contenido de la app. Arrastramos el _apk_ al IDE o bien, en la opción _Build / Analyze Apk_ y seleccionando el archivo. También podemos analizar el apk al momento de generarla, pues saltará una ventana con las siguientes opciones:
+2. El archivo apk es un archivo que contiene todos los elementos para correr la aplicación en distintas densidades de dispositivos y versiones del OS; es similar a un archivo .zip, por lo tanto, cualquier herramienta de descompresión permite hurgar en el contenido de este. Podemos analizar su contenido por medio del ___Apk Analyzer___, que nos permite ver el contenido de la app. Arrastramos el _apk_ al IDE o bien, en la opción _Build / Analyze Apk_ y seleccionando el archivo. También podemos analizar el apk al momento de generarla, pues saltará una ventana con las siguientes opciones:
 
 <img src="images/build-successful.png" width="60%">
 
@@ -59,7 +59,7 @@ Existen otros directorios que se generan en apps más complejas, como con librer
 
 #### Estructura del aab
 
-3. El _Android App Bundle_ es un archivo que contiene todos los recursos y el código compilado de la app, pero que a diferencia de un _Apk_, no es un archivo instalable, sino que sirve como fuente para extraer lo necesario y compilar un _apk_ específico para un dispositivo con una arquitectura determinada y con un idioma en concreto; esto reduce los recursos dentro del archivo y por lo tanto, el tamaño de la aplicación. Si un dispositivo viene configurado con ciertos idiomas y posteriormente, se configura uno nuevo, el recurso para este idioma (si existe en ) se descarga automáticamente de la ___Play Store___.
+3. El _Android App Bundle_ es un archivo que contiene todos los recursos y el código compilado de la app, pero que a diferencia de un _Apk_ no es un archivo instalable, sino que sirve como fuente para extraer lo necesario y compilar un _apk_ específico para un dispositivo, con una arquitectura determinada y con un idioma en concreto; esto reduce los recursos dentro del archivo y, por lo tanto, el tamaño de la aplicación. Si un dispositivo viene configurado con ciertos idiomas y posteriormente se configura uno nuevo, el recurso para este idioma (si existe en él) se descarga automáticamente de la ___Play Store___.
 
 ___Advertencia:___ Google hará obligatorio la subida de un Android App Bundle para que la aplicación esté en la tienda.
 
@@ -73,10 +73,10 @@ Desde la versión 5.0 de android, se pueden tener _APK's divididas_, que en conj
 
 Para el testing de un _AAB_, existen dos maneras:
 
-* Mediante _Internal Test Track_ en la _Play Store Console_ en _App Releases_, esto implica tener una cuenta de desarrollador y un setup de la aplicación. También se pueden ejectura pruebas cerradas y abiertas.
-* Con la herramienta ___bundletool___, que mediante CLI, podemos lanzar archivos _.apk_ para dispositivos específicos, simulando el sistema ___Dynamic Delivery___ que se ejecuta desde los servidores de Google.
+* Mediante _Internal Test Track_ en la _Play Store Console_ en _App Releases_. Esto implica tener una cuenta de desarrollador y un setup de la aplicación. También se pueden ejecutar pruebas cerradas y abiertas.
+* Con la herramienta ___bundletool___, mediante CLI, podemos lanzar archivos _.apk_ para dispositivos específicos, simulando el sistema ___Dynamic Delivery___ que se ejecuta desde los servidores de Google.
 
-En este caso, haremos pruebas mediante la herramienta de linea de comandos ___bundletool___. Para instalarlo, podemos hacer lo siguiente:
+En este caso, haremos pruebas mediante la herramienta de línea de comandos ___bundletool___. Para instalarlo, podemos hacer lo siguiente:
 
 * En MacOs, mediante _homebrew_ instalamos la dependencia con:
 
@@ -97,7 +97,7 @@ En este caso, haremos pruebas mediante la herramienta de linea de comandos ___bu
 
 `java -jar bundletool-all.jar {your_arguments_here}`
 
-Tomaremos por sentado de que tenemos el alias ___bundletool___.
+Tomaremos por sentado que tenemos el alias ___bundletool___.
 
 Un _APK set archive_ o archivo de conjunto de APK en español, que es un conjunto de todas las posibles configuraciones de apks para el proyecto y su extensión es ___apks___. Para generar nuestro set de APK, se utiliza el siguiente comando:
 
@@ -105,7 +105,7 @@ Un _APK set archive_ o archivo de conjunto de APK en español, que es un conjunt
 bundletool build-apks --bundle=/<path>/<nombre_app>.aab --output=/<path>/<nombre_app>.apks
 ```
 
-En nuestro particular caso, emplearemos el siguiente comando (situando nuestra terminal en la carpeta donde se localiza el bundle):
+En nuestro caso, emplearemos el siguiente comando (situando nuestra terminal en la carpeta donde se localiza el bundle):
 
 ```sh
 bundletool build-apks --bundle=app-free-debug.aab --output=app-free-debug.apks
@@ -131,7 +131,7 @@ Si vemos las propiedades de los dos conjuntos de APK, podemos observar que el pe
 
 <img src="images/apk-set.png" width="35%">  <img src="images/apk-device-set.png" width="35%">
 
-Vamos a explorar el primer ___.apks___. Descomprimiremos nuestro archivo como si de un _zip_ se tratase
+Vamos a explorar el primer ___.apks___. Descomprimiremos nuestro archivo como si de un _zip_ se tratase.
 
 * En macOs y Linux, podemos correr el siguiente comando:
 
@@ -139,7 +139,7 @@ Vamos a explorar el primer ___.apks___. Descomprimiremos nuestro archivo como si
 unzip app-free-debug.apks -d app-free-debug
 ```
 
-* En el caso de windows, podemos usar una herramienta de descompresión como winZip (quizá tengamos qué cambiar la extensión por _.zip_).
+* En el caso de windows, podemos usar una herramienta de descompresión como winZip (quizá tengamos que cambiar la extensión por _.zip_).
 
 Hallaremos en nuestra carpeta descomprimida dos elementos: ___toc.pb___ y el directorio ___splits___, que contiene todas las variaciones de la aplicación. Abrimos _splits_, encontramos que el número de aplicaciones son 82 (esto podría variar).
 
@@ -149,7 +149,7 @@ Tomamos uno de estos archivos _apk_ como ___base-es.apk___ y lo leemos con el __
 
 <img src="images/base-es.png" width="65%">
 
-La aplicación tiene únicamente tres elementos, a diferencia de los 6 del apk generado desde _android studio_ y... pesa únicamente __12.3KB___?
+La aplicación tiene únicamente tres elementos, a diferencia de los 6 del apk generado desde _android studio_ y... ¿pesa únicamente __12.3KB___?
 Si abrimos el ___AndroidManifest___ de esta apk, hallaremos esto:
 
 ```xml
@@ -165,7 +165,7 @@ Si abrimos el ___AndroidManifest___ de esta apk, hallaremos esto:
 </manifest>
 ```
 
-en el ___manifest___, hallamos un atributo llamado split, que nos indica que contiene la configuración para español, por lo que concluímos que este ___split___ o app dividida contiene únicamente los recursos de la app en español. Ahora lo intentaremos para el set del dispositivo conectado:
+En el ___manifest___, hallamos un atributo llamado split, que nos indica que contiene la configuración para español, por lo que concluimos que este ___split___ o app dividida contiene únicamente los recursos de la app en español. Ahora lo intentaremos para el set del dispositivo conectado:
 
 ```sh
 unzip debug-specific-device.apks -d debug-specific-device
@@ -196,11 +196,11 @@ Se instalará la aplicación sin que se ejecute automáticamente.
 
 #### Generación del keystore
 
-4. Un keystore es un repositorio asegurado con una contraseña, donde se guardan una serie de llaves y certificados. Cada llave tiene asignado un alias para identificarse y una contraseña para protegerse. Para firmar nuestra aplicación de release, debemos  generar un keystore con una ___signing key___, que es una llave privada que genera un certificado (una llave pública), que es el que encontramos en el ___META_INF___ de nuestro _APK_; esto asegura a Google que nuestra aplicación es auténtica. Una vez que una app es subida, la llave no puede ser cambiada, por lo que perderla implica no poder volver a actualizar la app. La llave de debug es genérica e insegura, por lo que no es válida como una llave de ___release___.
+4. Un keystore es un repositorio asegurado con una contraseña, donde se guardan una serie de llaves y certificados. Cada llave tiene asignado un alias para identificarse y una contraseña para protegerse. Para firmar nuestra aplicación de release, debemos generar un keystore con una ___signing key___, que es una llave privada que genera un certificado (una llave pública), que es el que encontramos en el ___META_INF___ de nuestro _APK_; esto asegura a Google que nuestra aplicación es auténtica. Una vez que una app es subida, la llave no puede ser cambiada, por lo que perderla implica no poder volver a actualizar la app. La llave de debug es genérica e insegura, por lo que no es válida como una llave de ___release___.
 
 __IMPORTANTE__, el keystore debe ser guardado de forma segura y no debe ser subida como archivo en un CVS (Control Version System) como _Git_.
 
-para generar el keystore, iremos a _Build > Generate Signed Bundle / Apk_, Seleccionamos ___Apk___, le damos a siguiente y en la nueva ventana, damos click a ___create new___:
+para generar el keystore, iremos a _Build > Generate Signed Bundle / Apk_, Seleccionamos ___Apk___, le hacemos clic a siguiente, y en la nueva ventana hacemos click a ___create new___:
 
 <img src="images/key-window.gif" width="55%">
 
@@ -213,18 +213,18 @@ La siguiente sección es para la llave de firma:
 
 * ___Alias___ es el texto para identificar nuestra llave.
 * ___Password y confirm___ es la contraseña de la llave.
-* ___validity___ da una fecha de expiración a partir de la generación de la llave (recomendable poner una cantidad de años alta).
+* ___validity___ brinda una fecha de expiración a partir de la generación de la llave (recomendable poner una cantidad de años alta).
 
 La siguiente sección es para el certificado y ninguno de estos campos es obligatorio, por lo que describiremos solo un par de los campos.
 
 * ___First and Last name___ es el nombre del desarrollador (no recomendable poner nombre si la app es de una empresa ).
 * ___Country Code___: código del país de dos dígitos, ejemplo: __MX__.
 
-daremos ok y la llave será generada. Ahora, tenemos la ventana previa, con todos los datos de nuestra llave capturados:
+Hacemos clic en OK y la llave será generada. Ahora tenemos la ventana previa con todos los datos de nuestra llave capturados:
 
-a) Pulsamos al checkbox ___Remember Passwords___ para no tener qué capturarlos nuevamente y damos ___Next___.
-b) Seleccionamos el build variant deseado ___freeRelease___, 
-c) seleccionamos V1 (Jar Signature) y V2 (Full APK Signature) para tener mayor seguridad.
+a) Pulsamos al checkbox ___Remember Passwords___ para no tener que capturarlos nuevamente y damos ___Next___.
+b) Seleccionamos el build variant deseado ___freeRelease___. 
+c) Seleccionamos V1 (Jar Signature) y V2 (Full APK Signature) para tener mayor seguridad.
 d) Finalizamos el proceso.
 
 El ___apk___ de release estará ubicado en ___app/{flavor}/{buildType}/app-{flavor}-{buildType}.apk___.
