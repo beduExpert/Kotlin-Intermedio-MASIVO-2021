@@ -6,7 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Orientarse en la implementación de _Material Design_ para el proyecto.
+- Recuperar la implementación de _Material Design_ para orientar proyectos Android.
 
 ### 2. Requisitos :clipboard:
 
