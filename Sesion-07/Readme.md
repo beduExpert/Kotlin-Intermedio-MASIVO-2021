@@ -28,7 +28,7 @@ Los menús son una herramienta básica de navegación que utilizan la mayoría d
 
 <img src="images/dots.jpg" align="right" height="150"> 
 
-#### <ins>Tipos de menus en Android</ins>
+#### <ins>Tipos de menús en Android</ins>
 
 Implementación de los tres tipos de menú en Android, abarcando desde la interfaz gráfica con grupos de elementos, hasta la creación mediante código. Los menús vistos serán: __PopUp__, __Contextual__ y __Opciones__.
 
@@ -39,7 +39,7 @@ Implementación de los tres tipos de menú en Android, abarcando desde la interf
 
 <img src="images/context.png" align="right" height="150"> 
 
-#### <ins>Menus y Eventos</ins>
+#### <ins>Menús y Eventos</ins>
 
 Crearemos menús que sean capaces de ejecutar acciones.
 
