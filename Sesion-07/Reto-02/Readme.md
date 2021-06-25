@@ -8,7 +8,7 @@
 
 ### 1. Objetivos :dart:
 
-- Agregar mas elementos a los menus de opciones
+- Añadir más elementos a los menús de opciones de Android.
 
 ### 2. Requisitos :clipboard:
 
@@ -21,7 +21,7 @@
 
 El reto consiste en agregar funcionalidad a cada opción elegida en el menú.
 
-Nos apoyaremos del siguiente código.
+Para ello nos apoyaremos del siguiente código.
 
 ```
  if (item.isChecked) {
@@ -33,8 +33,7 @@ Nos apoyaremos del siguiente código.
                 }
 ```
 
-Se debe identificar en que parte del proyecto debe agregarse este código.
-Igualmente jugar con el método `item.setChecked(false)`.
+Se debe identificar en qué parte del proyecto debe agregarse este código, y, asimismo, es necesario jugar con el método `item.setChecked(false)`.
 
 ![Elemento de Menu](./images/1.gif)
 
