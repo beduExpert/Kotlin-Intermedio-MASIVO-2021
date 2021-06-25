@@ -17,9 +17,9 @@
 
 ### Introducción 
 
-La Navegación en tu app debe ser intuitiva y predecible. Tanto para usuarios nuevos como para quienes vuelven a usarla debe ser simple de descubrir como moverse en las distintas secciones con comodidad. Pero lograr que la navegación sea descubrible y accesible puede ser todo un desafío por las limitaciones de las pantallas pequeñas y la necesidad de priorizar el contenido sobre los componentes de la interface.
+La Navegación en tu app debe ser intuitiva y predecible, tanto para usuarios nuevos, como para quienes vuelven a usarla. Debe ser simple de descubrir cómo moverse en las distintas secciones con comodidad, pero lograr que la navegación sea precedible y accesible puede ser un desafío por las limitaciones de las pantallas pequeñas y la necesidad de priorizar el contenido sobre los componentes de la interfaz.
 
-Los menus son una herramienta básica de navegación que utilizan la mayoría de las aplicaciones móviles ya que son intuitivos para los usuarios y útiles den lado de desarrollo de la aplicación. En esta sesión veremos la forma de implementarlos en nuestra app, así como diferentes estilos de estos.
+Los menús son una herramienta básica de navegación que utilizan la mayoría de las aplicaciones móviles, ya que son intuitivos para los usuarios y útiles del lado de desarrollo de la aplicación. En esta sesión aprenderemos la forma de implementarlos en nuestra app, así como diferentes estilos de estos.
 
 
 ### 2. Contenido :blue_book:
@@ -30,7 +30,7 @@ Los menus son una herramienta básica de navegación que utilizan la mayoría de
 
 #### <ins>Tipos de menus en Android</ins>
 
-Implementación de los tres tipos de menú en Android. Abarcando desde la interfaz gráfica con grupos de elementos hasta la creación mediante código. Los menús vistos: __PopUp__, __Contextual__ y __Opciones__.
+Implementación de los tres tipos de menú en Android, abarcando desde la interfaz gráfica con grupos de elementos, hasta la creación mediante código. Los menús vistos serán: __PopUp__, __Contextual__ y __Opciones__.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -41,7 +41,7 @@ Implementación de los tres tipos de menú en Android. Abarcando desde la interf
 
 #### <ins>Menus y Eventos</ins>
 
-Crearemos menus que sean capaces de ejecutar acciones.
+Crearemos menús que sean capaces de ejecutar acciones.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 2`**](Reto-02/Readme.md)
@@ -52,7 +52,7 @@ Crearemos menus que sean capaces de ejecutar acciones.
 
 #### <ins>Implementación de ActionModes </ins>
 
-Crearemos menus contextuales flotantes.
+Crearemos menús contextuales flotantes.
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
 - [**`RETO 3`**](Reto-03/Readme.md)
