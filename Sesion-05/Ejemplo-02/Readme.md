@@ -6,22 +6,25 @@
 
 ### 1. Objetivos :dart:
 
-- Adaptar un diseño de acuerdo al tamaño de una pantalla.
+- Adaptar un diseño de interfaz en relación con el tamaño de una pantalla.
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-En este ejemplo abordaremos una aplicación que sigue el patrón `lista-detalle`, en el cual tendremos una lista de productos y al seleccionar uno, visualizaremos sus detalles. En este ejercicio ejemplificamos el uso de `Fragments` para un diseño de interfaz flexible, ya que para un teléfono móvil convencional, la lista se mostrará en una pantalla y el detalle en otra. En el caso de una tablet, que consta de una pantalla grande, pondremos la vista y el detalle en la misma pantalla. El siguiente diagrama nos ayudará a visualizar la idea.
+En este ejemplo abordaremos una aplicación que sigue el patrón `lista-detalle`, en el cual tendremos una lista de productos, y al seleccionar cada uno visualizaremos sus detalles. 
+    
+Este ejercicio permite ejemplificar el uso de `Fragments` para un diseño de interfaz flexible, pues para un teléfono móvil convencional la lista se mostrará en una pantalla y el detalle en otra. Así, en el caso de una tablet, que posee una pantalla grande, ubicaremos la vista y el detalle en la misma pantalla. El sisguiente diagrama ayuda a vissualizar esta idea.
 
 <img src="images/1.png" width="70%">
 
 La diferencia es que las dos pantallas irán en orden vertical para el caso de la tablet.
 
 
+Realiza los siguientes pasos para desarrollar esta adaptación.    
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
 2. Copiaremos las imágenes que se encuentran en [Esta carpeta](ListDetailFragment/app/src/main/res/drawable-v24) y las pegamos en nuestro directorio de recursos `drawable` para poder utilizarlos en nuestros productos.
@@ -112,7 +115,7 @@ Los textos introducidos por default se reemplazarán por los del producto. El `l
 
 <img src="images/2.png" width="70%">
 
-4. De forma similar, vamos a crear un layout `fragment_detail.xml` donde irá el detalle de nuestro producto seleccionado.
+4. De forma similar, vamos a crear un layout `fragment_detail.xml` donde estará el detalle de nuestro producto seleccionado.
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -197,13 +200,13 @@ El layout debe verse de esta forma:
 
 <img src="images/3.png" width="40%">
 
-Ahora vamos a ocultar el layout, mas adelante veremos por qué lo haremos, modificaremos la propiedad de visibilidad del `ConstraintLayout`.
+Ahora necesitamos ocultar el layout; más adelante veremos por qué. Para ello modificaremos la propiedad de visibilidad del `ConstraintLayout`.
 
 ```xml
 android:visibility="invisible"
 ```
 
-5. Ahora crearemos un nuevo archivo _xml_ llamado `fragment_list` para nuestro `Fragment`. Este layout representará la lista de productos en venta, por lo tanto, utilizaremos un `RecyclerView` Dentro del layout.
+5. Ahora crearemos un nuevo archivo _xml_ llamado `fragment_list` para nuestro `Fragment`. Este layout representará la lista de productos en venta, por lo tanto, utilizaremos un `RecyclerView` dentro del layout.
 
 ```xml
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -219,7 +222,7 @@ android:visibility="invisible"
 </FrameLayout>
 ```
 
-6. Perfecto! Ahora modificaremos nuestro `activity`main.xml_ para que muestre únicamente la lista de productos (teléfono móvil), por lo tanto únicamente agregaremos nuestro `fragment` al layout.
+6. ¡Perfecto! Ahora modificaremos nuestro `activity`main.xml_ para que muestre únicamente la lista de productos (teléfono móvil), por lo tanto únicamente agregaremos nuestro `fragment` al layout.
 
 ```xml
 <LinearLayout
@@ -259,7 +262,7 @@ android:visibility="invisible"
 
 8. Al parecer tenemos todo listo... 
 
-Pero, ¿En qué momento creamos la pantalla para la versión tablet? Para este caso, debemos crear un `layout` específico que reemplace al `activity_main` original cuando la pantalla sea grande. Para esto, damos click derecho en `res` y nos vamos a _New > Android Resource Directory_.
+...pero, ¿En qué momento creamos la pantalla para la versión de tablet? Para este caso, debemos crear un `layout` específico que reemplace al `activity_main` original cuando la pantalla sea grande. Para esto, hacemos click derecho en `res` y nos dirigimos a _New > Android Resource Directory_.
 
 <img src="images/4.png" width="70%">
 
@@ -267,11 +270,11 @@ En este menú, seleccionamos las siguientes opciones:
 
 <img src="images/5.png" width="70%">
 
-El *qualifier* nos servirá para saber qué layouts debe elegir la app, en este caso el parámetro será el tamaño de la pantalla, por lo que seleccionaremos `size` y utilizaremos la opción `large`.
+El *qualifier* nos servirá para saber qué layouts debe elegir la app. En este caso el parámetro será el tamaño de la pantalla, por lo que seleccionaremos `size` y utilizaremos la opción `large`.
 
 <img src="images/6.png" width="30%">
 
-Listo! ahí guardaremos el `layout` de la versión tablet. 
+¡Listo! Ahí guardaremos el `layout` de la versión tablet. 
 
 Nos podemos ahorrar estos pasos simplemente creando un directorio con el nombre `layout-large`.
 
@@ -312,7 +315,9 @@ Nos podemos ahorrar estos pasos simplemente creando un directorio con el nombre 
         app:layout_constraintGuide_percent=".5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-Y con eso quedo listo el apartado gráfico, en el siguiente ejemplo implementaremos el patrón del lado de Kotlin,
+Y con eso quedo listo el apartado gráfico.
+    
+En el siguiente ejemplo implementaremos el patrón del lado de Kotlin.
 
 
 
