@@ -1,7 +1,7 @@
 [`Kotlin-Intermedio`](../Readme.md) > `Sesión 7`
 
 
-## Sesión 7: Menus
+## Sesión 7: Menús
 
 > <div style="text-align: justify;">
   
