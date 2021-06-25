@@ -2,7 +2,7 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 07`](../Readme.md) > `Ejemplo 1`
 
 
-## Ejemplo 1: Tipos de Menu en Android
+## Ejemplo 1: Tipos de Menú en Android
 
 ### 1. Objetivos :dart:
 
