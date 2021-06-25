@@ -6,9 +6,9 @@
 
 ### 1. Objetivos :dart:
 
-- Crear menus de opciones utilizando las clases dedicadas a esto incluidas en el SDK de Android.
-- Entender los elementos que conforman a cada uno de estos tres tipos de menu.
-- Aprender a definir y crear los tres tipos de menus en Android: PopUp, Contextual y Opciones.
+- Crear los tres tipos de menú en Android (PopUp, Contextual y Opciones) y reconocer los elementos que los conforman.
+- Crear menús de opciones mediante las clases dedicadas a esto incluidas en el SDK de Android.
+
 
 ### 2. Requisitos :clipboard:
 
@@ -19,7 +19,7 @@
 
 ### 3. Desarrollo :computer:
 
-Los Menus de opciones en Android pertenecen a una interfaz llamada de la misma forma, [Menu](
+Los Menús de opciones en Android pertenecen a una interfaz llamada de la misma forma, [Menu](
 https://developer.android.com/reference/kotlin/android/view/Menu?hl=es#).
 
 > interface Menu
@@ -30,7 +30,7 @@ La manera mas simple de agregar un menú es "inflando" un archivo XML utilizando
 
 Y para recibir la acción de selección de alguna opción, nos basaremos en los métodos `onOptionsItemSelected(MenuItem)` y `onContextItemSelected(MenuItem)`.
 
-Hay algunas funcionalidades que no son soportadas. Por ejemplo iconos en el caso de `ContextMenus` y `CheckMarks` en el caso de `OptionMenus`.
+Hay algunas funcionalidades que no son soportadas. Por ejemplo, íconos en el caso de `ContextMenus` y `CheckMarks` en el caso de `OptionMenus`.
 
 
 #### Definiendo un menú en XML
@@ -63,28 +63,28 @@ Ejemplo de menú en xml:
 </menu>
 ```
 
-En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"`. Esto indica que se mostrará el menú si hay espacio en pantalla. Para ver mas sobre esta opción ver la [documentación](https://developer.android.com/guide/topics/resources/menu-resource?hl=es).
+En este código se observa una propiedad llamada `android:showAsAction="ifRoom"`. Esto indica que se mostrará el menú si hay espacio en pantalla. Para ver más sobre esta opción ver la [documentación](https://developer.android.com/guide/topics/resources/menu-resource?hl=es).
 
 
 <!-- #### Creamos un proyecto nuevo... -->
 
-Ahora veamos los tres tipos de menus que podemos crear para una aplicación Android.
+Ahora identificaremos los tres tipos de menús que podemos crear para una aplicación Android y cómo hacerlo.
 
 ---
 
 ### OPTIONS MENU
 
-Vamos a crear un proyecto nuevo en Android, agregaremos un icono en nuestro folder `res` en `drawables`.  Para agregar un icono, damos click derecho y seleccionamos las siguientes opciones _New > Vector Asset_, elegimos un nombre.
+Crearemos un proyecto nuevo en Android, agregaremos un ícono en nuestro folder `res` en `drawables`.  Para agregar un ícono hacemos click derecho y seleccionamos las siguientes opciones _New > Vector Asset_, elegimos un nombre.
 
 ![Elemento de Menu](./images/res_icon.png)
 
-Para crear los menus, crearemos un nuevo directorio. Click derecho sobre `res` y dando click derecho, elegimos _New > Directory_, escribimos **Menu**.
+Para crear los menús generaremos un nuevo directorio. Click derecho sobre `res` y haciendo click derecho, elegimos _New > Directory_, escribimos **Menu**.
 
-En la carpeta generada, damos click derecho y elegimos _New > Menu Resource File_, para agregar el elemento de Menu, escribimos un nombre y lo creamos.
+En la carpeta generada, hacemos click derecho y elegimos _New > Menu Resource File_, para agregar el elemento de Menú, escribimos un nombre y lo creamos.
 
 ![Elemento de Menu](./images/res_menu.png)
 
-En este archivo en XML vamos a definir los elementos del Menu de Opciones.
+En este archivo en XML vamos a definir los elementos del Menú de Opciones.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -102,11 +102,11 @@ En este archivo en XML vamos a definir los elementos del Menu de Opciones.
 Agregamos otro elemento de menú.
 
 > **OJO** 👀
-> observamos que se agrega otro botón de buscar. Para corregir esto nos dirigimos a `showAsAtion` en el código XML, lo cambiamos a `never`.
+> Observamos que se agrega otro botón de buscar. Para corregir esto nos dirigimos a `showAsAtion` en el código XML, lo cambiamos a `never`.
 
 ![Elemento de Menu](./images/2.gif)
 
-Ahora, agregaremos un Submenu. Para lograr esto, escribimos dentro de `Item` un bloque de `Menu` con Items en el interior, estos Items serán las opciones del submenú.
+Ahora, agregaremos un Submenú. Para lograr esto, escribimos dentro de `Item` un bloque de `Menu` con Items en el interior, estos Items serán las opciones del submenú.
 
 ```
     <item android:id="@+id/item3"
@@ -152,9 +152,9 @@ class MainActivity : AppCompatActivity() {
 
 ### CONTEXTUAL MENU
 
-Creamos un nuevo proyecto, en el cuál nos dirigimos al `activity_mail.xml`. Agregamos un Elemento de Layout como un TextView.
+Creamos un nuevo proyecto y dentro nos dirigimos al `activity_mail.xml`. Agregamos un Elemento de Layout como un TextView.
 
-Creamos un directorio de Menu  y agregamos un Menu Resource File llamado `menu_context`. Este menú tendra las opciones de click derecho como Cortar, Copiar, Pegar, etc.
+Creamos un directorio de Menú y agregamos un Menu Resource File llamado `menu_context`. Este menú tendra las opciones de click derecho como Cortar, Copiar, Pegar, etcétera.
 
 ![MainActivity](./images/5.png)
 
@@ -184,13 +184,13 @@ override fun onCreateContextMenu( menu: ContextMenu?, v: View?, menuInfo: Contex
 
 ### POPUP MENU
 
-Al igual que con los menús anteriores. Creamos un proyecto nuevo, nos dirigimos al `activity_main.xml` y agregamos un botón.
+Al igual que con los menús anteriores, es necesario crear un proyecto nuevo, después nos dirigimos al `activity_main.xml` y agregamos un botón.
 
 Este **botón** servirá para lanzar el PopUp Menu.
 
-Creamos un Directorio de Menu y un `Menu Item` en XML con las opciones que necesitemos. 
+Creamos un Directorio de Menú y un `Menu Item` en XML con las opciones que necesitemos. 
 
-La implementación de este tipo de menu es muy similar a la que vimos para Context Menu.
+La implementación de este tipo de menú es muy similar a la que vimos para Context Menu.
 
 Vamos al MainActivity, agregamos un `Listener` en la clase.
 
