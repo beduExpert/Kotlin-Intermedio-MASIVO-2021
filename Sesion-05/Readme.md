@@ -11,13 +11,16 @@
 
 
 
-Como el nombre lo indica, es un fragmento de la UI que implementa tanto un ciclo de vida y eventos propios. utilizaremos Fragments cuando:
-
+Como el nombre lo indica, es un fragmento de la UI que implementa tanto un ciclo de vida como eventos propios. 
+  
+Utilizaremos Fragments cuando:
 - Requiramos una interfaz de usuario dinámica. 
 - Necesitemos reutilizar un pedazo de interfaz con funcionalidad en diversos puntos de nuestra app.
 - La navegación en una parte del flujo de la app sea mejor manejable al usar Fragments.
 
-Puedes pensar en un fragmento como una sección modular de una actividad que tiene un ciclo de vida propio, que recibe sus propios eventos de entrada y que puedes agregar o quitar mientras la actividad se esté ejecutando (algo así como una "subactividad" que puedes volver a usar en diferentes actividades). El ciclo de vida de un `Fragment` se puede ver en la siguiente imagen:
+Puedes pensar en un fragmento como una sección modular de una actividad que tiene un ciclo de vida propio, que recibe sus propios eventos de entrada, y el cual puedes agregar o quitar mientras la actividad se esté ejecutando (algo así como una "subactividad" que puedes volver a usar en diferentes actividades). 
+  
+El ciclo de vida de un `Fragment` se observa en el siguiente esquema:
 
 
 <img src="images/fragment-cycle.png">
@@ -43,7 +46,7 @@ Puedes pensar en un fragmento como una sección modular de una actividad que tie
 
 #### <ins>Agregar un Fragment</ins>
 
-Para este ejemplo agregaremos un fragmento al layout del _Activity_ principal y se implementara la funcionalidad correspondiente.
+Para este ejemplo agregaremos un fragmento al layout del _Activity_ principal y se implementará la funcionalidad correspondiente.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -54,7 +57,7 @@ Para este ejemplo agregaremos un fragmento al layout del _Activity_ principal y 
 
 #### <ins>Flexibilidad: patrón lista-detalle</ins>
 
-Para este ejemplo se usa el patrón lista-detalle que es ampliamente utilizado en aplicaciones y sirve ejemplificar la flexibilidad de un `Fragment`.
+Para este ejemplo se usa el patrón lista-detalle, que es ampliamente empleado en aplicaciones y sirve ejemplificar la flexibilidad de un `Fragment`.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 
@@ -68,7 +71,7 @@ Para este ejemplo se usa el patrón lista-detalle que es ampliamente utilizado e
 
 #### <ins>Transactions</ins>
 
-Ejecutaremos una serie de transacciones para los `fragments` dentro de un contenedor.
+Aquí ejecutaremos una serie de transacciones para los `fragments` dentro de un contenedor.
 
 - [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 
@@ -77,13 +80,13 @@ Ejecutaremos una serie de transacciones para los `fragments` dentro de un conten
 
 ### 3. Proyecto :hammer:
 
-Con los temas anteriores, elige entre la construcción de una vista lista-detalle, un flujo de Fragments, o idea tu propuesta.
+Con los temas anteriores, elige entre la construcción de una vista lista-detalle, un flujo de Fragments, o idea una propuesta.
 
 - [**`PROYECTO SESIÓN 5`**](Proyecto/Readme.md)
 
 ### 4. Postwork :memo:
 
-Con lo aprendido en esta sesión, continúa con la implementación de Fragments en tu proyecto.
+Con lo aprendido en esta sesión continuarás con la implementación de Fragments en tu proyecto.
 
 - [**`POSTWORK SESIÓN 5`**](Postwork/Readme.md)
 
