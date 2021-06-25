@@ -16,14 +16,14 @@ El módulo consta de 8 sesiones en su mayoría prácticas que abordarán los sig
 
 | Sesión | Tema                                  | Descripción                                      |
 |--------|---------------------------------------|---------------------------------------------------|
-|    1   | [Introducción a Android Studio](Sesion-01/Readme.md)         | Crea un proyecto Android desde cero               |
-|    2   | [Views](Sesion-02/Readme.md)                                 | Interfaz básica                                   |
-|    3   | [Activities y Layouts](Sesion-03/Readme.md)                  | Crea e inicia actividades con una interfaz básica |
-|    4   | [Listas](Sesion-04/Readme.md)                                | Organiza con contenedores de lista                |
-|    5   | [Fragments](Sesion-05/Readme.md)                             | Agrega “subactividades”                           |
-|    6   | [Material Design](Sesion-06/Readme.md)                       | Cambia el diseño de vista                         |
-|    7   | [Menús](Sesion-07/Readme.md)                                 | Personaliza el menú                               |
-|    8   | [Gradle y Preparación para lanzamiento](Sesion-08/Readme.md) | Compila la app para su lanzamiento                |
+|    1   | [Introducción a Android Studio](Sesion-01/Readme.md)         | Crea un proyecto Android desde cero.               |
+|    2   | [Views](Sesion-02/Readme.md)                                 | Interfaz básica.                                   |
+|    3   | [Activities y Layouts](Sesion-03/Readme.md)                  | Crea e inicia actividades con una interfaz básica. |
+|    4   | [Listas](Sesion-04/Readme.md)                                | Organiza con contenedores de lista.                |
+|    5   | [Fragments](Sesion-05/Readme.md)                             | Agrega “subactividades”.                           |
+|    6   | [Material Design](Sesion-06/Readme.md)                       | Cambia y estiliza el diseño de vista.              |
+|    7   | [Menús](Sesion-07/Readme.md)                                 | Personaliza el menú.                               |
+|    8   | [Gradle y Preparación para lanzamiento](Sesion-08/Readme.md) | Compila la app para su lanzamiento.                |
  
 
 ### Instalaciones:
