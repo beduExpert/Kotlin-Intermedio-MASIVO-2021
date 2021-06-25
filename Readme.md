@@ -22,7 +22,7 @@ El módulo consta de 8 sesiones en su mayoría prácticas que abordarán los sig
 |    4   | [Listas](Sesion-04/Readme.md)                                | Organiza con contenedores de lista.                |
 |    5   | [Fragments](Sesion-05/Readme.md)                             | Agrega “subactividades”.                           |
 |    6   | [Material Design](Sesion-06/Readme.md)                       | Cambia y estiliza el diseño de vista.              |
-|    7   | [Menús](Sesion-07/Readme.md)                                 | Personaliza el menú.                               |
+|    7   | [Menús](Sesion-07/Readme.md)                                 | Personaliza los tipos de menús.                    |
 |    8   | [Gradle y Preparación para lanzamiento](Sesion-08/Readme.md) | Compila la app para su lanzamiento.                |
  
 
