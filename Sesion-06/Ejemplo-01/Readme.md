@@ -15,7 +15,9 @@
 
 ### 3. Desarrollo :computer:
 
-La meta de este ejercicio es simple: Agregar algunos de los components básicos a nuestro _layout_ y asignarles funcionalidad.
+La meta de este ejercicio es simple: agregar algunos de los components básicos a nuestro _layout_ y asignarles funcionalidad.
+
+Para lograrlo realiza los siguientes pasos:
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
@@ -33,7 +35,7 @@ Esto para tener disponible los componentes.
 parent="Theme.MaterialComponents.Light.DarkActionBar"
 ```
 
-4. Abrimos el archivo ___activity_main.xml___, donde colocaremos algunos de los componentes que nos provee la librería de material. Recordemos antes de existir la librería ___com.google.android.material___,  utilizábamos ___com.android.support:design___.
+4. Abrimos el archivo ___activity_main.xml___, donde colocaremos algunos de los componentes que nos provee la librería de material. Recordemos que antes de existir la librería ___com.google.android.material___,  utilizábamos ___com.android.support:design___.
 
 
 Ahora, vamos a utilizar el primer `component`: `TextInputLayout`.
@@ -117,7 +119,7 @@ cancelButton.setOnClickListener{
 }
 ```
 
-6. La librería contiene muchos otros componentes listos para utilizarse, implementaremos otros dos: 
+6. La librería contiene muchos otros componentes listos para utilizarse, así que implementaremos otros dos: 
 
 ```xml
     <com.google.android.material.slider.Slider
