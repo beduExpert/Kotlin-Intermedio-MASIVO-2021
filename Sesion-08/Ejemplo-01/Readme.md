@@ -1,27 +1,27 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 08`](../Readme.md) > `Ejemplo 1`
 
-## Ejemplo 1: Configuracion de gradle
+## Ejemplo 1: Configuración de gradle
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Manifestar la versión de compilación a utilizar
-- Declarar la configuración de los build types
-- Ofuscar el código para reducir el tamaño de la app
+- Manifestar la versión de compilación a utilizar.
+- Declarar la configuración de los build types.
+- Ofuscar el código para reducir el tamaño de la app.
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-Antes de liberar una aplicación, hay una serie de pasos que se tienen qué realizar para obtener un despliegue exitoso.
+Antes de liberar una aplicación hay una serie de pasos que deben realizarse para obtener un despliegue exitoso. Síguelos a continuación:
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-2. En este proyecto se tiene qué validar que se hayan removido el código cuyo único propósito era el de debugging. Cualquier _Log_ que se haya realizado, es recomendado quitarlo, especialmente si está imprimiendo valores sensibles que puedan comprometer la seguridad de la app o del cliente.
+2. En este proyecto se tiene que validar que se haya removido el código cuyo único propósito era el de debugging. Es recomendable quitar cualquier _Log_ realizado, especialmente si está imprimiendo valores sensibles que puedan comprometer la seguridad de la app o del cliente.
 
 3. Abriremos el archivo ___build.gradle___ de la carpeta raíz, este archivo define las configuraciones de compilación que se aplican a todos los módulos del proyecto. Aquí definimos los repositorios de donde extraemos nuestras dependencias. Todos los archivos ___build.gradle___ son archivos de configuración para la compilación.
 
@@ -44,7 +44,7 @@ buildscript {
     }
 }
 
-// En esta sección puedes configurar dependencias y repositorios para todos los módulos en tu aplicación, incluídos módulos externos
+// En esta sección puedes configurar dependencias y repositorios para todos los módulos en tu aplicación, incluidos módulos externos
 allprojects {
     repositories {
         google()
@@ -58,10 +58,10 @@ task clean(type: Delete) {
 ```
 
 > Ojo 👀
-No cierres este archivo en un momento volveremos a él.
+No cierres este archivo, en un momento volveremos a él.
 
 
-4.Ahora toca abrir el archivo ___app/build.gradle___, que es un archivo de configuración local (para el módulo donde está contenido). En este caso, define toda la configuración para la compilación de nuestro módulo ___app___. Ejemplificaremos con el _build.gradle_ de un proyecto en blanco.
+4.Ahora debe abrise el archivo ___app/build.gradle___, que es un archivo de configuración local (para el módulo donde está contenido). En este caso, define toda la configuración para la compilación de nuestro módulo ___app___. Ejemplificaremos con el _build.gradle_ de un proyecto en blanco.
 
 ```kotlin
 //aplicamos plugins
@@ -110,7 +110,7 @@ dependencies {
 }
 ```
 
-Vamos a declarar algunas de las versiones en el ___build.gradle___ raíz, esto para que cada módulo pueda tener acceso a él y evitar inconsistencias por versiones distintas entre módulos
+Vamos a declarar algunas de las versiones en el ___build.gradle___ raíz, esto para que cada módulo pueda tener acceso a él y se eviten inconsistencias por versiones distintas entre módulos
 
 ```kotlin
 buildscript {...}
@@ -153,7 +153,7 @@ dependencies {
 }
 ```
 
-En _buildTypes->release_, habilitaremos la ofuscación y depuracion del código cambiando el valor de ___minifyEnabled___ y ___shrinkResources___ a _true_. Esto sólo se recomienda antes de liberar la app ya que hace que el proceso de compilación sea más tardado, pero es necesario para garantizar que la aplicacion funciona corretamente.
+En _buildTypes->release_, habilitaremos la ofuscación y depuración del código cambiando el valor de ___minifyEnabled___ y ___shrinkResources___ a _true_. Esto sólo se recomienda antes de liberar la app ya que hace que el proceso de compilación sea más tardado, pero es necesario para garantizar que la aplicación funciona corretamente.
 
 ```kotlin
 release {
