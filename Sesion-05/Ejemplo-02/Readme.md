@@ -17,7 +17,7 @@
 
 En este ejemplo abordaremos una aplicación que sigue el patrón `lista-detalle`, en el cual tendremos una lista de productos, y al seleccionar cada uno visualizaremos sus detalles. 
     
-Este ejercicio permite ejemplificar el uso de `Fragments` para un diseño de interfaz flexible, pues para un teléfono móvil convencional la lista se mostrará en una pantalla y el detalle en otra. Así, en el caso de una tablet, que posee una pantalla grande, ubicaremos la vista y el detalle en la misma pantalla. El sisguiente diagrama ayuda a vissualizar esta idea.
+Este ejercicio permite ejemplificar el uso de `Fragments` para un diseño de interfaz flexible, pues para un teléfono móvil convencional la lista se mostrará en una pantalla y el detalle en otra. Así, en el caso de una tablet, que posee una pantalla grande, ubicaremos la vista y el detalle en la misma pantalla. El siguiente diagrama ayuda a visualizar esta idea.
 
 <img src="images/1.png" width="70%">
 
