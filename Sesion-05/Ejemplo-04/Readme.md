@@ -158,7 +158,7 @@ class BeduFragment : Fragment() {
 }
 ```
 
-Recuerdas el [../Reto-01]? Ahí examinamos el ciclo de vida de un `Fragment`, así que tomaremos la implementación de _callbacks_ para analizar el ciclo de vida cuando hagamos una transacción.
+¿Recuerdas el [../Reto-01]? Ahí examinamos el ciclo de vida de un `Fragment`, así que tomaremos la implementación de _callbacks_ para analizar el ciclo de vida cuando hagamos una transacción.
 
 4. Para el segundo Fragment, repetimos el paso anterior, cambiando los nombres a `fragment_beto.xml` y a `BetoFragment` respectivamente. El nombre de la imagen del layout será ___beto.png___. Para los _Logs_, podemos poner un identificador en el texto para distinguirlos.
 
@@ -193,7 +193,7 @@ removeButton.setOnClickListener {
         }
 ```
 
-Corremos el código e inmediatemente pulsamos el botón remover... Qué sucede?
+Corremos el código e inmediatemente pulsamos el botón remover... ¿Qué sucede?
 
 <img src="images/1.png" width="80%">
 
@@ -212,8 +212,7 @@ if(fragmentTag!=null){
 }
 ```
             
-Corremos nuevamente el código y hacemos los siguientes ejercicios. Discutir los resultados y analizar cómo se comporta el ciclo de vida para cada uno.
-
+Corremos nuevamente el código y hacemos los siguientes ejercicios. Asimismo, deben discutirse los resultados y analizarse cómo se comporta el ciclo de vida para cada uno.
 - Remover sin que exista un `Fragment`
 - Agregar un fragment y eliminarlo
 - Agregar tres fragments y eliminar dos
@@ -249,13 +248,13 @@ transaction.detach(fragment)
 
 [`Anterior`](../Readme.md) | [`Siguiente`](../Reto-02)
 
-Corremos nuevamente el códido y hacemos los siguientes ejercicios. 
+Corremos nuevamente el código y hacemos los siguientes ejercicios. 
 
 - Attach/detach sin que exista un `Fragment`
 - Agregar un fragment, Attach y Detach
 
 
-8. Ahora vamos a agregar la opción de agregar/eliminar un segundo `fragment`, es aquí donde `BetoFragment` entra en acción.El código es el mismo que para el primer `fragment`, pero adaptado para el segundo `fragment`.
+8. Ahora vamos a agregar la opción de agregar/eliminar un segundo `fragment`, es aquí donde `BetoFragment` entra en acción. El código es el mismo que para el primer `fragment`, pero adaptado para el segundo `fragment`.
 
 ```kotlin
 add2Button.setOnClickListener {
