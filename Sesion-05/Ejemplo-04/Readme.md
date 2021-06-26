@@ -118,7 +118,7 @@ Hasta ahora hemos declarado `Fragments` por medio del tag `fragment` dentro del 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-3. Crearemos dos `Fragments`: El primero llevará el [Logo de Bedu](../images/bedu-logo.png) y su `layout` llamará `fragment_bedu.xml`.
+3. Crearemos dos `Fragments`: El primero llevará el [Logo de Bedu](images/bedu-logo.png) y su `layout` llamará `fragment_bedu.xml`.
 
 ```xml 
 <?xml version="1.0" encoding="utf-8"?>
