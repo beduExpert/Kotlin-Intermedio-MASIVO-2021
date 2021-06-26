@@ -9,7 +9,7 @@
   
 ### Introducción: Qué es un Fragment 
 
-<img src="images/fragment-cycle.png" height="850" align="right">
+
 
 Como el nombre lo indica, es un fragmento de la UI que implementa tanto un ciclo de vida como eventos propios. 
   
@@ -22,7 +22,7 @@ Puedes pensar en un fragmento como una sección modular de una actividad que tie
   
 El ciclo de vida de un `Fragment` se observa en el siguiente esquema:
 
-
+<img src="images/fragment-cycle.png" height="850" >
 
 ### 1. Objetivos :dart: 
 
