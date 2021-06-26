@@ -14,7 +14,7 @@
 
 ### 3. Desarrollo :computer:
 
-Tomaremos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y haremos le unas modificaciones:
+Tomaremos el ejercicio realizado en el [Ejemplo 2](../../Sesion-08/Ejemplo-02) y haremos le unas modificaciones:
 
 - Tanto la versión _free_ como _paid_ utilizarán el formulario, que estará ahora en un fragment ___fragment_login.xml___, que el ___activity_main.xml___ incluirá.
 - Al dar click al login en _free_, un ___Toast___ nos advertirá que es la versión gratuita.
