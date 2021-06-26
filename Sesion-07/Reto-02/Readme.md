@@ -39,7 +39,7 @@ Se debe identificar en qué parte del proyecto debe agregarse este código, y, a
 
 <details><summary>Solución</summary>
 
-Se puede ver la solución en el siguiente [enlace](option_menu/MenusApp)
+Se puede ver la solución en el siguiente [enlace](./options_menu/MenusApp)
 </details>
 
 
