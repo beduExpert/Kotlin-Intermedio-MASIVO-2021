@@ -17,7 +17,7 @@
 
 Apoyándonos del diagrama que representa el ciclo de vida de un ___Fragment___, realizaremos las tareas enumeradas a continuación.
 
- <img src="../images/fragment-cycle.png">
+ <img src="../images/fragment-cycle.png" height="850">
  
  
  También nos apoyaremos de esta tabla que relaciona el ciclo de vida de nuestro fragment con el ciclo del Activity al que lo adjuntamos.
