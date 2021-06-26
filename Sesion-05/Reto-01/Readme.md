@@ -33,7 +33,7 @@ Stopped	| onStop() | Fragment parado e invisible.
 Destroyed |	onDestroyView(), onDestroy(), onDetach() | El Fragmento es destruído.
 
 
-1. Utilizando el ejemplo anterior, utilizaremos todos los callbacks para imprimir un texto cuando este se halla mandado a llamar. Observar como se imprimen los logs en el _logcat_ con diversas acciones (abrir la app, cerrar la app, voltear el teléfono, enviar a segundo plano, etc.).
+1. Utilizando el ejemplo anterior, emplearemos todos los callbacks para imprimir un texto cuando este se haya mandado a llamar. Así, observaremos cómo se imprimen los logs en el _logcat_ con diversas acciones: abrir la app, cerrar la app, voltear el teléfono, enviar a segundo plano, etcétera.
 
 
 <details><summary>Solución</summary>
@@ -107,12 +107,12 @@ Destroyed |	onDestroyView(), onDestroy(), onDetach() | El Fragmento es destruíd
 </details>
 <br/>
 
-2. Agregar un botón que permita navegar a una nueva _Activity_ que crearemos y cuyo diseño de _layout_ sea abierto. Analizar cómo se comporta el ciclo de vida al navegar a dicha _Activity_ y al regresar de ella.
+2. Agregar un botón que permita navegar a una nueva _Activity_ que crearemos, y cuyo diseño de _layout_ sea abierto. El fin es analizar cómo se comporta el ciclo de vida al navegar a dicha _Activity_, y al regresar de ella.
 
 <details><summary>Solución</summary>
 <p>
 
-Dentro del _layout_ del _Fragment_ crearemos un botón, el código xml queda similar al siguiente:
+Dentro del _layout_ del _Fragment_ crearemos un botón; el código xml resulta similar al siguiente:
 
 ```xml
 <Button
@@ -126,7 +126,7 @@ Dentro del _layout_ del _Fragment_ crearemos un botón, el código xml queda sim
 ```
 
 
-El callback ___onCreateView___ debe quedar parecido a lo siguiente
+El callback ___onCreateView___ debe ser semejante al siguiente:
 	
 ```kotlin
     override fun onCreateView(
@@ -149,7 +149,7 @@ El callback ___onCreateView___ debe quedar parecido a lo siguiente
     }
 ```
 
-mediante la variable ___root___ podemos encontrar nuestra representación del botón creado y poder asignarle un _listener_ al darle click. Ahí, podemos declarar un ___Intent___ que nos lleve al nuevo ___Activity___.
+Mediante la variable ___root___ podemos encontrar nuestra representación del botón creado, y así podemos asignarle un _listener_ al darle click. Ahí, podemos declarar un ___Intent___ que nos lleve al nuevo ___Activity___.
 
 </p>
 </details>

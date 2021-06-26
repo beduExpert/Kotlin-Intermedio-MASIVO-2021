@@ -6,16 +6,18 @@
 
 ### 1. Objetivos :dart:
 
-- Adaptar un diseño de acuerdo al tamaño de una pantalla.
+- Adaptar un diseño de interfaz en relación con el tamaño de una pantalla.
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+1. Android Studio instalado en nuestra computadora.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-Continuemos con la aplicación del patron `lista-detalle`, en el ejemplo anterior nos concentramos en dejar listas las vistas para que el patrón funcionara, ahora es momento de Kotlin.
+Continuaremos con la aplicación del patron `lista-detalle`. En el ejemplo anterior nos concentramos en dejar listas las vistas para que el patrón funcionara. Ahora es momento de Kotlin.
+    
+Realiza los pasos siguientes:
 
 1. Vamos a requerir un `Adapter` para nuestro `RecyclerView`, por lo que utilizaremos este código para nuestra clase `RecyclerAdapter`.
 ```kotlin
@@ -65,7 +67,7 @@ class RecyclerAdapter(
 }
 ```
 
-1. También requerimos el modelo de nuestro producto.
+2. También requerimos el modelo de nuestro producto.
 
 ```kotlin
 data class Product (
@@ -76,7 +78,7 @@ data class Product (
     val idImage: Int
 ):
 ```
-Para teléfonos móviles, requeriremos en un punto pasar un producto de un `Activity` a otro, por lo que requeriremos que nuestro Producto sea `Parcelable` (una implementación del SDK de andriod similar al Serializer clásico de Java), por lo cual nuestra clase queda así:
+3. Para teléfonos móviles, requeriremos, en determinado punto, pasar un producto de un `Activity` a otro, por lo que necesitamos que el Producto sea `Parcelable` (una implementación del SDK de andriod similar al Serializer clásico de Java). Para ello nuestra clase queda así:
 
 ```kotlin
 import android.os.Parcel
@@ -122,7 +124,7 @@ class Product (
 }
 ```
 
-1. Creamos la clase para nuestra lista `FragmentList`. Este es el esqueleto:
+4. Creamos la clase para nuestra lista `FragmentList`. Este es el esqueleto:
 
 ```kotlin
 class ListFragment : Fragment() {
@@ -137,14 +139,14 @@ class ListFragment : Fragment() {
 }
 ```
 
-Crearemos dos atributos en nuestra clase para setear el adaptador, y la otra será un método que nos indicará qué ejecutar cuando demos click a un elemento de la lista.
+5. Crearemos dos atributos en nuestra clase para setear el adaptador, y la otra será un método que nos indicará qué ejecutar cuando hagamos click a un elemento de la lista.
 
 ```kotlin
  private lateinit var mAdapter : RecyclerAdapter
     private var listener : (Product) ->Unit = {}
 ```
 
-Generamos los métodos para configurar la lista de productos...
+6. Generamos los métodos para configurar la lista de productos...
 
 ```kotlin
     //generamos datos dummy con este método
@@ -170,7 +172,7 @@ Generamos los métodos para configurar la lista de productos...
     }
 ```
 
-Y ejecutamos la configuración en el método `onActivityCreated`.
+7. Y ejecutamos la configuración en el método `onActivityCreated`.
 
 ```kotlin
 override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -187,7 +189,7 @@ Con este método, asignaremos más tarde la tarea a ejecutar al darle click a un
     }
 ```
 
-1. Para el detalle del producto, creamos nuestra clase `DetailFragment`. Relacionaremos todas nuestras Views a variables para poder manipular su contenido. 
+8. Para el detalle del producto, creamos nuestra clase `DetailFragment`. Relacionaremos todas nuestras Views a variables para poder manipular su contenido. 
 
 ```kotlin
 class DetailFragment : Fragment() {
@@ -215,7 +217,7 @@ class DetailFragment : Fragment() {
 }
 ```
 
-Recuerdas que inicialmente pusimos el `layout` de nuestro detalle invisible? esto es debido a que en modo tablet, al principio no hemos seleccionado ningún producto, por lo tanto no debemos mostrar nada. Con la función showProduct, haremos visible nuestra información y desplegaremos la información de nuestro producto en los `Views`.
+9. ¿Recuerdas que inicialmente pusimos el `layout` de nuestro detalle invisible? Esto es debido a que en modo tablet al principio no hemos seleccionado ningún producto, por lo tanto no debemos mostrar nada. Con la función showProduct, haremos visible nuestra información y desplegaremos la información de nuestro producto en los `Views`.
 
 ```kotlin
     fun showProduct(product: Product){
@@ -229,9 +231,9 @@ Recuerdas que inicialmente pusimos el `layout` de nuestro detalle invisible? est
     }
 ```
 
-1. Debido a que nuestros `Fragments` son modulares (y reutilizables), debemos gestionar cómo se va a mostrar nuestro `DetailFragment`, debido a que en versión tablet, nuestros dos `Fragments` se muestran al mismo tiempo en nuestra `MainActivity`; mientras que en versión móvil, visualizar nuestro detalle implica navegar a un nuevo `Activity`.
+10. Debido a que nuestros `Fragments` son modulares (y reutilizables), debemos gestionar cómo se va a mostrar nuestro `DetailFragment`, pues en versión tablet nuestros dos `Fragments` se muestran al mismo tiempo en nuestra `MainActivity`, mientras que en versión móvil para visualizar nuestro detalle implica navegar a un nuevo `Activity`.
 
-Obtenemos nuestro Fragment `listFragment` y le asignaremos un listener que corresponde a cuando pulsamos a un elemento de la lista, por medio del método `setListener`; en dicho método revisamos si el `fragmentDetail` existe en nuestro `Activity`, es la versión tablet y solo tendremos qué mostrar el contenido mediante el método `showProduct` que creamos previamente para esa clase; en caso contrario, creamos un `Intent`, pasamos como información extra nuestro producto, e iniciamos el nuevo `Activity`.   
+Obtenemos nuestro Fragment `listFragment` y le asignaremos un listener que corresponde a cuando pulsamos a un elemento de la lista, por medio del método `setListener`; en dicho método revisamos si el `fragmentDetail` existe en nuestro `Activity`, es la versión tablet y solo tendremos que mostrar el contenido mediante el método `showProduct` que creamos previamente para esa clase. En caso contrario, creamos un `Intent`, pasamos como información extra nuestro producto, e iniciamos el nuevo `Activity`.   
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
@@ -258,7 +260,7 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-1. El último paso que nos resta hacer, es crear la clase `DetailActivity` para nuestro detalle. En esta clase, lo que haremos es recuperar la información de nuestro producto y mostrarlo desde nuestro `Fragment`  mediante el método `showProduct`.
+11. El último paso es crear la clase `DetailActivity` para nuestro detalle. En esta clase lo que haremos es recuperar la información de nuestro producto y mostrarlo desde nuestro `Fragment` mediante el método `showProduct`.
 
 ```kotlin
 package org.bedu.listdetailfragment
@@ -284,7 +286,7 @@ class DetailActivity : AppCompatActivity() {
 }
 ```
 
-Al correr la aplicación en un móvil, se debe visualizar este flujo:
+12. Finalmente, al correr la aplicación en un móvil se debe visualizar este flujo:
 
 <img src="images/7.png" width="40%">
 
@@ -295,7 +297,7 @@ Al correr la aplicación en un móvil, se debe visualizar este flujo:
 <sub><sup>detalle de producto</sup></sub>
 
 
-Mientras que en un dispositivo tablet, obtendremos lo siguiente:
+Por otro lado, en un dispositivo tablet obtendremos lo siguiente:
 
 <img src="images/9.png" width="40%">
 

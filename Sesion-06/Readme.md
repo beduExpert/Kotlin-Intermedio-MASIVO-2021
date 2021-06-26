@@ -55,7 +55,7 @@ Un component es un _View_ apegado a los estándares y usos de _Material Design_.
 
 #### <ins>Appbar y Navigation drawer</ins>
 
-Crearemos y personalizaremos la barra superior de nuestra aplicación y agregarles `items` con funcionalidades. Agregaremos también un `Navigation drawer` con distintas opciones de navegación y datos de perfil.
+Crearemos y personalizaremos la barra superior de nuestra aplicación y añadiremos `items` con funcionalidades. Agregaremos también un `Navigation drawer` con distintas opciones de navegación y datos de perfil.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 

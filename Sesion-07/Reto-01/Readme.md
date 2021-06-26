@@ -8,7 +8,7 @@
 
 ### 1. Objetivos :dart:
 
-- Agregar mas elementos a los menus de opciones
+- Añadir más elementos a los menús de opciones de Android.
 
 ### 2. Requisitos :clipboard:
 
@@ -19,9 +19,7 @@
 
 ### 3. Desarrollo :computer:
 
-El reto consiste en agregar un `CheckBox` en cada elemento de menú.
-Mostrar iconos en cada opción de menú.
-Agregar al menos 5 opciones y con ellas crea agrupaciones.
+El reto consiste en agregar un `CheckBox` en cada elemento de menú, mostrar íconos en cada opción de menú y añadir al menos 5 opciones, y con ellas crear agrupaciones.
 
 ![Elemento de Menu](./images/1.png)
 ![Elemento de Menu](./images/2.png)

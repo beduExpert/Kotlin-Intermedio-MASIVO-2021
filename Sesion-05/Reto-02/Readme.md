@@ -7,6 +7,7 @@
 ### 1. Objetivos :dart:
 
 - Analizar el ciclo de vida de un _Fragment_ y su comportamiento al realizar diversas acciones.
+- Adaptar un diseño de interfaz en relación con el tamaño de una pantalla.
 
 ### 2. Requisitos :clipboard:
 
@@ -15,21 +16,23 @@
 
 ### 3. Desarrollo :computer:
 
-El ejerecicio anterior tiene un layout similar a este:
+El ejercicio anterior tiene un layout similar a este:
 
  <img src="../Ejemplo-02/images/9.png" width="33%">
 
-Sin embargo, queremos que para el caso de una tablet, tengamos una Interfaz más parecida a la del diagrama:
+Sin embargo, la intención es que para para la visualización desde una tablet tengamos una Interfaz parecida a la del diagrama siguiente:
 
  <img src="../Ejemplo-02/images/1.png" width="70%">
  
- El ejercicio consistirá en adaptar el layout para tenerlo de la forma vertical para la versión ___portrait___, como para la ___landscape___.
+ Este reto consiste en adaptar el layout para tenerlo de forma vertical para las versiones ___portrait___ y ___landscape___.
+	
+Las indicaciones generales son:
 
-1. Utilizando el ejemplo anterior, modificar únicamente el layout para dispositivos grandes (la lista debe abarcar el 40% de la pantalla).
+1. Utilizando el ejemplo anterior, modifica únicamente el layout para dispositivos grandes (la lista debe abarcar el 40% de la pantalla).
 
-2. Crear una versión landscape para cuando la tablet esté en posición horizontal (la lista debe abarcar el 35% de la pantalla).
+2. Crea una versión landscape para cuando la tablet esté en posición horizontal (la lista debe abarcar el 35% de la pantalla).
 
-Para que nuestro diseño reacciones a la orientación del teléfono, abriremos nuestro ___AndroidManifest.xml___ e ingresamos en nuestro tag aludiendo a ___MainActivity___.
+Para que nuestro diseño reaccione a la orientación del teléfono abriremos nuestro ___AndroidManifest.xml___ e ingresamos en nuestro tag aludiendo a ___MainActivity___.
 
 ```xml
 android:screenOrientation="sensor"
@@ -39,7 +42,7 @@ android:screenOrientation="sensor"
 
 Para tener una versión landscape, crearemos un ___android resource directory___ con los _qualifiers_ ___Size___ con valor ___large___ y ___orientation___ con valor ___landscape___.
 	
-el código quedaría de esta forma:
+El código resultaría de esta forma:
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,7 +80,7 @@ el código quedaría de esta forma:
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-Para la versión _portrait_, bastaría únicamente modificar reutilizar el código anterior para ___fragment_detail___ de nuestro directorio ___layout-large___ y que tenga el 0.5 de porcentaje.
+Para la versión _portrait_ bastaría únicamente reutilizar el código anterior para ___fragment_detail___ de nuestro directorio ___layout-large___ y que tenga el 0.5 de porcentaje.
 
 </details>
 <br/>

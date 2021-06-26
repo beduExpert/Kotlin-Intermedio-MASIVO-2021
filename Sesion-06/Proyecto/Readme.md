@@ -34,11 +34,11 @@ Los puntos a cubrir en este proyecto serán los siguientes:
 
 * [Guía de aplicación de colores de Material Design](https://material.io/design/color/applying-color-to-ui.html#usage)
 * [Guía de Componentes y como implementarlos](https://material.io/components)
-* [Indice de paquetes de com.google.android.material](https://developer.android.com/reference/com/google/android/material/packages)
+* [Índice de paquetes de com.google.android.material](https://developer.android.com/reference/com/google/android/material/packages)
 
 ### Lineamientos
 
-1. Cubrir al menos dos de los cuatro puntos.
+1. Cubrir al menos dos de los cinco puntos.
 2. Si algún punto anterior no se puede implementar en un punto de nuestra app, se debe crear algo que pueda encajar con dicho punto.
 3. Se recomienda ampliamente verificar la guía de estilo y de componentes del [sitio web oficial](https://material.io/)
 

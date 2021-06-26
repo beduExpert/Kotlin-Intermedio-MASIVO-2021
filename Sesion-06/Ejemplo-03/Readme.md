@@ -6,7 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Estilizar una aplicación.
+- Estilizar una aplicación android mediante principios de Material Design.
 
 ### 2. Requisitos :clipboard:
 
@@ -17,7 +17,7 @@
 
 Para personalizar el estilo de una aplicación y que utilice **Material Design** existen algunas reglas de diseño, por ejemplo la elección de paletas de colores, el tamaño y fuente de nuestras letras, etc. Todo esto compone el `Theme` de nuestra aplicación.
 
-En este ejemplo, aplicaremos un `Theme` personalizado a nuestra aplicación, para eso, utilizaremos una app preestablecida la cuál modificaremos con nuestra personalización. 
+En este ejemplo, aplicaremos un `Theme` personalizado a nuestra aplicación, para eso, utilizaremos una app preestablecida la cual modificaremos con nuestra personalización. 
 
 1. Descarga [Este proyecto](Themes), con el cual trabajaremos en este ejemplo. El proyecto cuenta con las dos pantallas siguientes:
 
@@ -52,7 +52,7 @@ Para exportar la paleta de colores desde el sitio al archivo _colors.xml_, darem
 </resources>
 ```
 
-Ahora, hay qué reemplazar los viejos colores por los nuevos. En el `AppTheme` de _styles.xml_ hacemos las siguientes sustituciones:
+Ahora, hay que reemplazar los viejos colores por los nuevos. En el `AppTheme` de _styles.xml_ hacemos las siguientes sustituciones:
 
 * `colorPrimary` por `primaryColor`.
 * `colorPrimaryDark` por `primaryDarkColor`.
@@ -96,7 +96,7 @@ Utilizaremos el tipo `outlined` para este caso, lo cual lo lograremos heredando 
         <item name="boxStrokeColor">?attr/colorAccent</item>
     </style>
 ```
-el atributo `hintTextAppearance` hace referencia al estilo `Bedu.HintText`, que define el tamaño, color, etc. del `hint` cuando no está como `label`.Le daremos una apariencia de Subtítulo (probar con distintos) y sobreescribiremos el color original al color de texto primario.
+el atributo `hintTextAppearance` hace referencia al estilo `Bedu.HintText`, que define el tamaño, color, etc. del `hint` cuando no está como `label`. Le daremos una apariencia de Subtítulo (probar con distintos) y sobreescribiremos el color original al color de texto primario.
 
 ```xml
 <style name="Bedu.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
@@ -234,7 +234,9 @@ Nuestra pantalla debe quedar de la siguiente forma:
 <img src="images/9.png" width="35%">
 
 
-5. La app está lista, pero qué pasa si quisiéramos tener una versión alterna de nuestro `AppTheme`? crearemos uno nuevo:
+5. La app está lista, pero, ¿qué pasa si quisiéramos tener una versión alterna de nuestro `AppTheme`? 
+	    
+Crearemos uno nuevo:
 
 ```xml
     <style name="AppTheme.RedBlue" parent="Theme.MaterialComponents.Light.NoActionBar">\
