@@ -23,7 +23,7 @@ Puedes pensar en un fragmento como una sección modular de una actividad que tie
 El ciclo de vida de un `Fragment` se observa en el siguiente esquema:
 
 
-<img src="images/fragment-cycle.png" height="350">
+<img src="images/fragment-cycle.png" height="500">
 <h5>Ciclo de vida de un Fragment</h5>
 
 ### 1. Objetivos :dart: 
