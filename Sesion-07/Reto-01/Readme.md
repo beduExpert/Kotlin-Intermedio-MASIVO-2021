@@ -25,6 +25,12 @@ El reto consiste en agregar un `CheckBox` en cada elemento de menú, mostrar íc
 ![Elemento de Menu](./images/2.png)
 
 
+<details><summary>Solución</summary>
+
+Se puede ver la solución en el siguiente [enlace](option_menu/MenusApp)
+</details>
+
+
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)
 
 

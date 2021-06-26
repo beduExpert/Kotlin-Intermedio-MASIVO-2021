@@ -37,6 +37,12 @@ Se debe identificar en qué parte del proyecto debe agregarse este código, y, a
 
 ![Elemento de Menu](./images/1.gif)
 
+<details><summary>Solución</summary>
+
+Se puede ver la solución en el siguiente [enlace](option_menu/MenusApp)
+</details>
+
+
 
 [`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
 
