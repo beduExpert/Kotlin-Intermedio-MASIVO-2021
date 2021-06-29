@@ -15,7 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-1. Para la tienda, hay qué crear visualmente una lista similar a la del [Reto 1](../Reto-01) 
+1. Para la tienda, hay que crear visualmente una lista similar a la del [Reto 1](../Reto-01) 
 
 <img src="../Ejemplo-01a/result.png" width="33%" align="center"/>
 
