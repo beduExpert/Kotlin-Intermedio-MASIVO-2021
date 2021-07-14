@@ -49,7 +49,16 @@ En la ventana __Project__ es posible observar un selector que tiene elegida la o
    
 Esta versión contiene la organización real del proyecto. Algunas cosas a notar son las carpetas repetidas en res, tales como __drawable__ o __mipmap__. 
 
-Tomando como ejemplo el anterior, se puede ver una nomenclatura como __hdpi__ o __mdpi__. Se organiza así para definir imágenes con distintas densidades y para que el sistema asigne el recurso de acuerdo a la resolución de la pantalla del dispositivo android. 
+Tomando como ejemplo el anterior, se puede ver una nomenclatura como __hdpi__ o __mdpi__. Se organiza así para definir imágenes con distintas densidades y para que el sistema asigne el recurso de acuerdo a la resolución de la pantalla del dispositivo android. Definen que tan expandible es una imagen usando la siguiente métrica:
+
+|         | Tamaño de la pantalla   |
+|---------|-------------------------|
+|    LDPI |          0.75x          |
+|    MDPI |  1.0x (tamaño original) |
+|    HDPI |           1.5x          |
+|   XHDPI |           2.0x          |
+|  XXHDPI |           3.0x          |
+| XXXHDPI |           4.0x          |
 
 Existen nomenclaturas para otros tipos de clasificación, como el idioma o versión.
 
