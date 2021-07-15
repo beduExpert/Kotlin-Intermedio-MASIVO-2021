@@ -23,9 +23,9 @@ Para poder instalar aplicaciones de debugging desde Android Studio, es necesario
 
 3. Ve hasta abajo del menú y pulsa en ___Acerca del teléfono___.
 
-4. Nuevamente desplázate hasta la parte inferior, localiza la opción ___Número de compilación___ y presiona 7 veces. Con esto, habrás habilitado las ___Opciones para desarrolladores___.
+4. Nuevamente desplázate hasta la parte inferior, localiza la opción ___Número de compilación___ o ___Versión de Software___ y presiona 7 veces. Con esto, habrás habilitado las ___Opciones para desarrolladores___ .
 
-5. Regresa al menú anterior, En la parte inferior localizarás las ___Opciones para desarrolladores___. Haz clic ahí.
+5. Regresa al menú anterior, En la parte inferior localizarás las ___Opciones para desarrolladores___, si no encuentras esta opción en el menu principal de configuraciones ve a la opción de ___Sistema___ y ahí deberías encontrarlo. Haz clic ahí. 
 
 6. Finalmente, activa la opción que diga ___Depuración de USB___.
 
