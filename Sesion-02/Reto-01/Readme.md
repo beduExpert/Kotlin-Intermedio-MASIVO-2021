@@ -28,7 +28,7 @@ Para realizar este reto es necesario realizar las siguientes instrucciones.
 - Las letras del _TextView_ y _Button_ color gris claro (usar el atributo ___textColor___)
 
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 <p>
 
 agregar los colores al archivo _colors.xml_:
@@ -51,12 +51,12 @@ android:textColor="@color/grayClear"
 ```
 
 </p>
-</details>
+</details> -->
 <br/>
 
 2. El contenido de un _Button_ es su texto. Aumentar el espacio del botón en 8dp verticalmente y 16dp horizontalmente.  
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 <p>
 	
 ```xml
@@ -65,12 +65,12 @@ android:paddingHorizontal="16dp"
 ```
 
 </p>
-</details>
+</details> -->
 <br/>
 
 3. Cuando el usuario pulse el botón, este debe deshabilitarase (atributo ___enabled___ tipo booleano) y el texto debe hacerse invisible (atributo ___visibility___ con valores View.VISIBLE, View.INVISIBLE y View.GONE)
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 <p>
 	
 En el listener del click en el botón, agregar lo siguiente:
@@ -79,7 +79,7 @@ text.visibility = View.INVISIBLE
 btnAccept.isEnabled = false
 ```
 </p>
-</details>
+</details> -->
 <br/>
 
 <!-- 4. Experimentar con las medidas del botón y el text. 

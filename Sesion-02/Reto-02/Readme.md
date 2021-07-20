@@ -64,7 +64,7 @@ Este estilo se utiliza en un View como:
 ```
 
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 <p>
 
 El layout principal queda algo similar a esto:
@@ -166,7 +166,7 @@ buttonAccept.setOnClickListener {
         }
 ```
 </p>
-</details>
+</details> -->
 <br/>
 
 
