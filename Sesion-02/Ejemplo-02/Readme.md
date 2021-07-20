@@ -18,7 +18,7 @@
 
 ### ImageView
 
-1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
+1. Abre __Android Studio__.
 
 2. Después abrimos el archivo XML encontrado en la carpeta _layout_.
    
@@ -94,9 +94,23 @@ Visualizaremos lo siguiente:
         android:layout_marginHorizontal="24dp"
         android:inputType="text"
         android:drawableLeft="@drawable/boy"
-        android:drawablePadding="12dp
+        android:drawablePadding="12dp"
         />
 ```
+
+también agregamos los valores de la cadena `add_text`
+```xml
+<string name="add_text">Ingresa un texto</string>
+```
+
+y el color `colorAccent`
+
+```xml
+<color name="colorAccent">#03DAC5</color>
+
+```
+
+en los __resourses__ correspondientes.
 
 3. En este caso, utilizamos el ancho de nuestro _LinearLayout_ con un margen de 24dp para cada lado, e incluimos el ___inputType___ como text, y con eso evitamos un texto multilínea. Este último atributo regula el tipo de dato que introducimos y, por ende, modifica el teclado, de modo que si nuestro InputType es _phone_, nos desplegará un teclado numérico, o si se trata de un _textEmailAddress_, saldrá un teclado alfanumérico que nos facilita caracteres como el . y @. 
 El texto de descripción se controla por la propiedad ___hint___ y su color por ___textColorHint___. Además, hace falta agregar un string llamado _add_text_ para que funcione correctamente. Finalmente, ___drawableLeft___ brinda la posibilidad de poner una imagen del lado izquierdo para personalizarlo. Existen otros atributos para agregar en otros lados las imágenes e incluso para añadir padding al drawable con ___drawablePadding___.
@@ -121,6 +135,15 @@ Agregaremos un nuevo _EditText_ que pida un teléfono. Para esto limitaremos los
         />
 ```
 
+Agregamos la cadena `phone`
+
+```xml
+<string name="phone">Teléfono</string>
+
+```
+
+y el ___drawable___ del teléfono que está en el [link](https://github.com/beduExpert/Kotlin-Intermedio-Santander-2021/blob/main/Sesion-02/Ejemplo-02/phone.png)
+
 Al correr el código tenemos lo siguiente:
 
 <img src="images/inputs.gif" width="40%">
@@ -139,6 +162,33 @@ También, esto se puede hacer de forma programática.
 
 
 5. Ahora, nos queda manejar algunos eventos del _EditText_. Primero vamos a detonar una acción cuando el texto se modifique. Para eso utilizaremos un _TextWatcher_.
+
+En el ___layout___ agregamos un `textView`
+
+```xml
+<TextView
+        android:layout_marginTop="24dp"
+        android:textSize="18dp"
+        android:text="@string/here_text"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+```
+
+agregamos la cadena `here_text` a los valores.
+
+```xml
+<string name="here_text">Aquí el texto del EditText</string>
+```
+
+Importamos lo siguiente en el archivo ___MainActivity.kt___:
+
+```kotlin
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
+
+```
 
    Agregamos las variables:
 
@@ -184,7 +234,7 @@ Utilizamos el último callback y asignaremos el texto del _EditText_ en nuestro 
 
 <img src="images/text_changed.gif" width="40%">
 
-Por último, imprimiremos los valores de los editText, y para esto imprimiremos los valores en nuestra línea de comandos ___Logcat___ al pulsar sobre un botón.
+<!-- Por último, imprimiremos los valores de los editText, y para esto imprimiremos los valores en nuestra línea de comandos ___Logcat___ al pulsar sobre un botón.
 
 ```xml
 <Button
@@ -204,7 +254,7 @@ Log.d("Test","Los valores son: ${editText.text} y ${editText2.text}")
 Y terminamos con la corroboración del funcionamiento:
 
 <img src="images/1.png" width="70%"/>
-
+ -->
 
 
 [`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Reto-02/Readme.md)

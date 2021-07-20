@@ -16,7 +16,7 @@
 
 ### 3. Desarrollo :computer:
 
-1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
+1. Abre __Android Studio__ y abre el proyecto que creamos en la sesión anterior.
 
    <img src="images/0.png" width="40%">
 
@@ -45,10 +45,10 @@
 
 ```kotlin
 <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+   android:id="@+id/text"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+/>
 ```
 
 8. Agregaremos un texto para nuestro _TextView_. Para hacerlo abrirermos el recurso ___strings.xml___ ubicado en ___res/values/___ . Dentro del tag resources, agregamos un nuevo string:
@@ -74,11 +74,11 @@ android:textSize="14sp"
 
 ```xml
 <Button 
-        android:id="@+id/btnAccept"
-        android:background="@color/mexicanPink"
-        android:text="@string/accept_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+   android:id="@+id/btnAccept"
+   android:background="@color/mexicanPink"
+   android:text="@string/accept_button"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content" />
 ```
 
    Ingresamos el texto _accept_button_ en _strings.xml_ :
@@ -99,7 +99,15 @@ En el diseño se visualiza correctamente el botón, sin embargo, el botón está
 android:layout_marginTop="48dp"
 ```
 
-10. Ahora agregaremos funcionalidad a este botón. Abrimos El archivo ___MainActivity.kt___ en ___java/nombre.del.paquete/___. Dentro de la clase homónima, declaramos dos objetos, _Button_ y _TextView_, para representar los Views en nuestra Activity.
+10. Ahora agregaremos funcionalidad a este botón. Abrimos El archivo ___MainActivity.kt___ en ___java/org.bedu.holabedu/___. Importamos las clases necesarias:
+
+```kotlin
+import android.widget.Button
+import android.widget.TextView
+
+```
+
+Dentro de la clase, declaramos dos objetos, _Button_ y _TextView_, para representar los Views en nuestra Activity.
 
 ```kotlin
 private lateinit var btnAccept: Button

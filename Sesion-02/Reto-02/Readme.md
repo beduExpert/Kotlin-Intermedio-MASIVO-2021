@@ -37,7 +37,7 @@ Para hacer este reto es necesario realizar las siguientes instrucciones.
 
 Debe contemplarse lo siguiente:
 
-1. Los recursos gráficos se encuentran en la carpeta (drawable)[./drawable], y se colocan en el directorio homónimo.
+1. Los recursos gráficos se encuentran en la carpeta [drawable](./drawable), y se colocan en el directorio homónimo.
 2. Los colores a utilizar son los siguientes:
 	* ___#9CCDE0___ para el fondo de la pantalla.
 	* ___#3700B3___ para el background del botón.
