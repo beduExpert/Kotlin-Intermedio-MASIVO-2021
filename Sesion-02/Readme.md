@@ -11,7 +11,7 @@
 
 - Modificar el proyecto por defecto.
 - Utilizar los controles esenciales para generar interfaces básicas.
-- Utilizar herramientas básicas para debuggeo.
+<!-- - Utilizar herramientas básicas para debuggeo. -->
 
 ---
 
@@ -81,15 +81,13 @@ Otros elementos que son muy importantes son las imágenes, para las cuales ampli
 
 ---
 
-<img src="images/url_image.png" align="right" height="90"> 
+<!-- <img src="images/url_image.png" align="right" height="90"> 
 
 #### <ins>Imágenes mediante URL</ins>
 
 Se mostrarán imágenes en un ImageView por medio de URLS mediante la biblioteca Coil, disponible en _mavenCentral()_. 
 
-- [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
-
----
+- [**`EJEMPLO 3`**](Ejemplo-03/Readme.md) -->
 
 
 ### 3. Proyecto :hammer:
