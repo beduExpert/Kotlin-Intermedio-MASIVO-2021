@@ -72,9 +72,6 @@ A continuación agrupamos tres _TextViews_ en cadena y variamos entre los 3 modo
 <img src="images/chains.gif" width="50%"> 
 
 
-[`Anterior`](../Readme.md) | [`Siguiente`](../Ejemplo-04)
-
-
 9. Por último, agregaremos ___Guidelines___, que son altamente recomendadas para diseños flexibles. Podemos elegir entre una orientación vertical u horizontal y hay dos formas de agregarlos: Arrastrándolo desde la sección _Layouts_ del _Palette_ o haciendo _click derecho > Helpers > Add Vertical/Horizontal Guideline_.
 
 <img src="images/9.png" width="50%"> 
