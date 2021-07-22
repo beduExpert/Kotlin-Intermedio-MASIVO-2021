@@ -49,7 +49,7 @@ Para este caso, tenemos opciones similares:
 
 - <img src="images/3.png"> ___Wrap Content___, el tamaño se ajusta a la dimensión del contenido.
 - <img src="images/4.png"> ___Fixed___, donde determinamos una medida fija.
-- <img src="images/5.png"> ___Match Constraints___, abarca el tamaño de extremo a extremo con la alineación de sus constraints. __Nota: match_parent nunca debe usarse en un ConstraintLayout__.
+- <img src="images/5.png"> ___Match Constraints___, abarca el tamaño de extremo a extremo con la alineación de sus constraints. 
 
 Hacemos click en las distintas opciones:
 

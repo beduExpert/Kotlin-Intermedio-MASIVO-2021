@@ -14,7 +14,7 @@
 
 ### 3. Desarrollo :computer:
 
-El Relative Layout es un ViewGroup que organiza su contenido de acuerdo a posiciones relativas a su área o a los otros miembros del layout. Para hacer el enlace con otros Views se requiere que declaren id's en el layout de abajo. Los id tienen el nombre del color que representa cada vista para identificarlos mejor.
+El Relative Layout es un ViewGroup que organiza su contenido de acuerdo a posiciones relativas a su área o a los otros miembros del layout. Para hacer el enlace con otros Views se requiere que declaren id's en el layout de abajo.
 
 La siguiente tabla muestra los atributos que tienen relación con el posicionamiento de sus elementos:
 
@@ -22,31 +22,39 @@ La siguiente tabla muestra los atributos que tienen relación con el posicionami
 ATRIBUTO | DESCRIPCIÓN
 ---------|------------
 layout_above | posiciona el borde inferior al borde superiori de la vista con el id que se pase este atributo.
-layout_alignBaseline | posiciona la línea de base con la línea de la vista llamada.
-layout_alignBottom | Hace que se alíneen los bordes inferiores de las vistas.
-layout_alignEnd | Hace que se alíneen los bordes finales de las vistas.
-layout_alignLeft | Hace que se alíneen los bordes izquierdos de las vistas.
+layout_below | posiciona el borde superior al borde inferior de la vista con el id que se le pase a este atributo
+layout_toRightOf | posiciona el borde izquiero junto al derecho del View asignado
+layout_toLeftOf | posiciona el borde derecho junto al izquierdo del View asignado
 layout_alignParentBottom | si true, pone el borde inferior del View sobre el inferior del RelativeLayout 
 layout_alignParentEnd | si true, pone el borde final del View sobre el final del RelativeLayout 
 layout_alignParentLeft | si true, pone el borde izquierdo del View sobre el izquierdo del RelativeLayout 
 ayout_alignParentRight | si true, pone el borde derecho del View sobre el derecho del RelativeLayout 
 ayout_alignParentStart | si true, pone el borde inicial del View sobre el inicial del RelativeLayout 
 layout_alignParentTop | si true, pone el borde superior del View sobre el superior del RelativeLayout
-layout_alignRight | borde derecho con borde derecho del View asignado
-layout_alignStart | borde inicial con borde inicial del View asignado
-layout_alignTop | borde superior con borde superior del View asignado
 layout_centerVertical | si true, centra verticalmente el View con su padre
-layout_above | posiciona el borde inferior al borde superior de la vista con el id que se le pase a este atributo
-layout_below | posiciona el borde superior al borde inferior de la vista con el id que se le pase a este atributo
-layout_toRightOf | posiciona el borde izquiero junto al derecho del View asignado
-layout_toLeftOf | posiciona el borde derecho junto al izquierdo del View asignado
+layout_centerHorizontal | si true, centra horizontalmente el View con su padre
+
 
 
 El ejemplo de abajo ya tiene implementado el RelativeLayout y está ordenado de acuerdo al primer ejercicio: 
 
-1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
+1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity). Y cambia el código de ___activity_main.xml___ para utilizar un Relative Layout, el código queda como sigue
 
-2. Modificamos el activity_main.xml para que quede acorde a esta pantalla (cada cuadro es un View con un background distinto)
+```kotlin
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+</RelativeLayout>
+
+```
+
+2. Vamos a agregar algunos  `View` con colores de fondo diferentes para ver como se organizan en el `layout`. Puedes usar los colores que gustes solo recuerda que cada uno debe ser diferente para poder reconocerlo y como `id` pondremos el nombre del color.
 
 ```xml
     <View
