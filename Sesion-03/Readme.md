@@ -20,7 +20,7 @@
 
 ---
 
-Un *activity* es una acción simple y específica que puede realizar el usuario en nuestra aplicación. **Casi todas** las *activities* dependen de la interacción con el usuario; algunos ejemplos son: mandarle un mensaje, pedirle una confirmación, mostrarle mas contenido, entre otros.
+Un *activity* es una clase de Android que constituye una de las partes fundamentales en el desarrollo de una aplicación. Las Activities son las encargadas de lanzar la ventana donde se proyecta una interfaz gráfica especificada por un layout, también determinado en el Activity. Normalmente, una Activity representa una pantalla en la aplicación.
 
 El **Layout** de una aplicación define la estructura y el orden de los elementos que la conforman. Nos define cómo y en dónde se deben mostrar los elementos.
 
@@ -52,13 +52,13 @@ Utilizaremos el último layout integrado a android, que integra patrones de otro
 
 Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las acciones que podemos hacer en cada una de sus etapas. Es importante entender el ciclo de vida de las *activities* para saber qué esperar de ellas.
 
-- [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
+<!-- - [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 
 ---
 
 <img src="images/intent.png" align="right" height="90"> 
 
-#### <ins>Comunicación entre Activities</ins>
+#### <ins>Comunicación entre Activities</ins> -->
 
 Crearemos dos activities y haremos que se comuniquen entre ellas, transfiriendo datos de una a otra.
 
