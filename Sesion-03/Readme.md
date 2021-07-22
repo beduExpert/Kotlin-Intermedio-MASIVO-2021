@@ -62,7 +62,7 @@ Repasaremos el concepto de _Activity_ en Android, su ciclo de vida y las accione
 
 Crearemos dos activities y haremos que se comuniquen entre ellas, transfiriendo datos de una a otra.
 
-- [**`EJEMPLO 5`**](Ejemplo-05/Readme.md)
+- [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 
 ---
 
