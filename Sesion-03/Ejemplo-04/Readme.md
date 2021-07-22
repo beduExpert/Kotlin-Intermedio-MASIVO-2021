@@ -29,6 +29,8 @@ Recordemos el ciclo de vida de un `Activity`
 | onStop    | El opuesto de onStart(). Se llama cuando la App se va a segundo plano, o se lanza otra activity por encima.                                                                                                                                                                          |
 | onDestroy | El opuesto de onCreate(). Se llama cuando la Activity se destruye. Es lo último que se llamará antes de que la activity desaparezca. 
 
+---
+
 Para navegar entre una _Activity y otra_, se utiliza un objeto de la clase ___Intent___. Un _Intent_ es una descripción de una operación a realizar, entre estas operaciones se encuentran la posibilidad de:
 
 - Navegar hacia una _Activity_ nueva.
@@ -186,11 +188,7 @@ Al hacer clic a __Aceptar__ navegaremos a la siguiente pantalla, obteniendo:
 
 <img src="images/2.png" width="35%">
 
-__Comenta el flujo del ciclo de vida al momento de la navegación y cuando se presiona el botón de__ ___Atrás___.
 
-
-
-[`Anterior`](../Ejemplo-04/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
 7. ¿Recuerdas esos _textViews_ vacíos? los vamos a utilizar para mostrar el nombre y el email del usuario. Existe otra forma de pasar un arreglo de  valores a través del _Intent_: el ___Bundle___. Esta clase representa un map de keys ligadas a valores ___Parcelables___ (objetos que para transmitirse, son serializados).
 
