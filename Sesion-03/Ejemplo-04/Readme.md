@@ -41,194 +41,119 @@ Las intents pueden ser explícitas, declarando qué aplicación o componente las
 
 En este ejercicio, crearemos un flujo entre una pantalla de _Login_ y otra de datos de perfil (sesión iniciada). Para navegar entre estas dos _Activities_, utilizaremos un _Intent_ y esta llevará los datos que necesitemos comunicar.
 
-Como base, utilizaremos el proyecto desarrollado en el [Reto 2](../Sesion-02/Reto-02) de la [Sesión 2](../Sesion-02).
 
-1. En el _MainActivity_, sobreescribimos todas los callbacks del ciclo de vida para ver cómo se comporta
+1. Abre __AndroidStudio__ y crea un nuevo proyecto vacío. Vamos a construir una aplicación que nos de la bienvenida al escribir nuestro nombre.
 
-```kotlin
-    override fun onStart() {
-        super.onStart()
-        Log.d("activities","onStart Login")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("activities","onResume Login")
-    }
-
-    override fun onPause() {
-        Log.d("activities","onPause Login")
-        super.onPause()
-    }
-
-    override fun onStop() {
-        Log.d("activities","onStop Login")
-        super.onStop()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("activities","onRestart Login")
-    }
-
-    override fun onDestroy() {
-        Log.d("activities","onDestroy Login")
-        super.onDestroy()
-    }
-```
-
-Esta línea va en el _onCreate_.
-
-```kotlin
-Log.d("activities","onCreate Login")
-```
-
-2. Al hacer click en el botón aceptar con los campos llenos, navegaremos a nuestra siguiente _Activity_. En el listener de _buttonAccept_, vamos a crear el código necesario para navegar y transmitir la información. Enviaremos el número telefónico como parámetro mediante el método ___putExtra___ (aquí podemos poner datos como Int, String, Float, Boolean, Parcelable así que vale la pena comentarlos).
-
-```kotlin
-val intent = Intent(this, LoggedActivity::class.java).apply {
-        putExtra(USER_PHONE,editPhone.text.toString())
-}
-
-startActivity(intent)
-}
-```
-
-la variable ___USER_PHONE___ es un identificador definido afuera de la clase, que actúa como un label único relacionado a la información guardada en el _Intent_.
-
-```kotlin
-const val USER_PHONE = "org.bedu.activities.USER_PHONE"
-```
-
-6. Debemos crear la siguiente pantalla, que será una pantalla de bienvenida desplegando nuestra información.
+2. En la ___Activity___ principal vamos a agregar un input de texto
 
 ```xml
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/background"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/Hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/welcome"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <TextView
-        android:id="@+id/name"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Hello" />
-    <TextView
-        android:id="@+id/email"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginHorizontal="24dp"
+        android:hint="Escribe tu nombre"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="316dp" />
 ```
 
-Nótese que existen dos _textViews_ que no tienen ningún texto predefinido. Eso lo abordaremos después.
+Y un botón 
 
-La Activity _LoggedActivity_ tiene que tener los callbacks de su ciclo de vida implementados como en el _MainActivity_, pero con un identificador propio para poder diferenciarlos y saber cómo se comporta su flujo. 
+```xml 
+<Button
+        android:id="@+id/buttonAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="393dp" />
+```
 
-En el método ___onCreate___ vamos a recuperar la información de nuestro teléfono y mostrarlo mediante un _Toast_. Como la información que recuperaremos es un _String_, la obtendremos por medio del método ___getStringExtra___.
+3. El objetivo es que al presionar el botón cambie la ___Activity___ y nos lleve a una nueva pantalla en donde nos dé la bienvenida. Para esto vamos a crear una nueva ___Activity___ en la barra de herramientas iremos a 
+
+__File > New > Activity > Empty Activity__
+
+Le pondremos el nombre `WelcomeActivity`
+
+Esto nos creará automáticamente el layout y el controlador de la nueva ___Activity___, también agregará la definición de este al AndroidManifest para que el proyecto sepa de su existencia y lo podamos utilizar.
+
+4. En el layout de la nueva ___Activity___ (`activity_welcome.xml`) agregamos simplemente un `TextView` que posteriormente contendrá el mensaje de bienvenida.
+
+```xml
+<TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"/>
+```
+
+5. Ahora que ya tenemos nuestros dos __layouts__ completos llego la hora de conectarlos, haciendo que uno nos lleve a otro e intercambien información entre ellos. Para esto usaremos ___Intent___. Declaramos nuestros elementos en la clase de la ___Activity___ principal.
 
 ```kotlin
-val phone = intent.getStringExtra(USER_PHONE)
+private lateinit var boton: Button
+private lateinit var input: EditText
+```
+
+y los inicializamos dentro del método `onCreate`
+
+```kotlin
+boton = findViewById(R.id.buttonAccept)
+input = findViewById(R.id.editText)
+```
+
+6. Ahora definimos un __listener__ para el click en el boton del ___Activity___ principal. 
+
+```kotlin
+boton.setOnClickListener {
+    val bundle = Bundle()
+
+    bundle.putString(USER_NAME, input.text.toString())
+
+    val intent = Intent(this, NameActivity::class.java ).apply{
+        putExtras(bundle)
+    }
+
+    startActivity(intent)
+}
+```
+ La funcionalidad del listener es la siguiente:
+
+ - Primero se crea un `Bundle` en el cual servirá como transportador de datos entre ___Activities___
+ - Guardamos la cadena de texto del `EditText` en el bundle. 
+ - Creamos un objeto de la clase `Intent`, esta clase en Kotlin nos sirve representar una intención en el flujo de ejecución de la aplicación, en este caso cargar una nueva ___Activity___. Utilizamos `putExtras` para pasar nuestro bundle entre las ___Activities___.
+ - Por último inicializamos la ___Activity___ definida en el ___Intent___.
+
+ La variable USER_PHONE es un identificador definido afuera de la clase, que actúa como un label único relacionado a la información guardada en el Intent.
+
+ ```kotlin
+ const val USER_NAME = "org.bedu.tests3a.USER_NAME"
+ ```
+
+7. En este momento ya enviamos la información desde la ___Activity___ principal, ahora vamos a definir como va a reaccionar a esto `NameActivity`. Primero en la clase de la ___Activity___ definimos e inicializamos el `TextView` de nuestro Layout.
+
+```kotlin
+private lateinit var text: TextView
 ...
-Log.d("activities","El telefono es $phone")
+text = findViewById(R.id.textView)
 ```
 
-Después corremos la aplicación.
-
-
-Deberíamos visualizar el siguiente error: 
-
-<img src="images/1.png" width="70%">
-
-Esto se debe a que la segunda _Activity_ no está declarada en el ___AndroidManifest.xml___, así que abrimos el archivo, y dentro del tag ___application___, la declaramos:
-
-```xml
-<activity android:name=".LoggedActivity"/>
-```
-
-Ahora sí, corremos la aplicación nuevamente y obtenemos lo siguiente: 
-
-<img src="images/2.png" width="35%">
-
-Al hacer clic a __Aceptar__ navegaremos a la siguiente pantalla, obteniendo:
-
-<img src="images/2.png" width="35%">
-
-
-
-7. ¿Recuerdas esos _textViews_ vacíos? los vamos a utilizar para mostrar el nombre y el email del usuario. Existe otra forma de pasar un arreglo de  valores a través del _Intent_: el ___Bundle___. Esta clase representa un map de keys ligadas a valores ___Parcelables___ (objetos que para transmitirse, son serializados).
-
-Enviaremos tanto el nombre completo del usuario como su correo mediante un bundle, por tanto agregaremos estas líneas de código:
-
-```kotlin
-val bundle = Bundle()
-// todas las variables que no son String llaman al método toString()
-val fullName = "${editName.text} ${editLastName.text}"
-
-bundle.putString(USER_NAME, editName.text.toString())
-bundle.putString(USER_EMAIL, fullName)
-```
-
-recordemos que _USER_NAME_ y _USER_MAIL_ también son constantes
-
-```kotlin
-const val USER_NAME = "org.bedu.activities.USER_NAME"
-const val USER_EMAIL = "org.bedu.activities.USER_EMAIL"
-```
-
-dentro del ___apply___ de nuestro _Intent_, agregamos nuestro bundle mediante:
-
-```kotlin 
-putExtra(USER_PHONE,editPhone.text.toString())
-```
-
-8. Recuperaremos la información y la mostraremos en los _TextViews_, entonces buscamos por id estas views.
-
-Debemos recuperar el bundle, y extraer tanto el nombre como el email y ponerlos en los _TextViews_, por lo tanto agregamos lo siguiente:
+Definimos una variable `bundle` en la cual vamos a recuperar el contenido del ___Intent___ que activo esta ___Activity___.
 
 ```kotlin
 val bundle = intent.extras
+```
 
-        val name = bundle?.getString(USER_NAME)
-        val email = bundle?.getString(USER_EMAIL)
+Recuperamos el nombre directo del bundle que se recibió
+```kotlin
+val name = bundle?.getString(USER_NAME)
+```
 
-        textName.text = name
-        textEmail.text = email
+Cambiamos el texto que muestra la etiqueta para que dé la bienvenida al usuario.
 
+```kotlin
+text.text = "Bienvenido ${name}"
 ```
 
 Obtendremos lo siguiente:
