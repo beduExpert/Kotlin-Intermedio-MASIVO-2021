@@ -30,7 +30,6 @@ y al dar click al botón continuar, salga un diálgo con el saludo en su idioma:
 
 
 - Los recursos se encuentran en la carpeta [Resources](Resources/)
-- La construcción del adapter, del modelo y la lógica en general es casi idéntica a la del [Reto 01](../Reto-01), así que se puede tomar de guía
 
 
 Se facilitan estas dos funciones, que sirven para generar los datos del país y para mostrar un diálogo de alerta.

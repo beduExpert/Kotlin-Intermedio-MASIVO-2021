@@ -28,7 +28,7 @@
         />
 ```
 
-3.- Crear un arreglo con una lista de cualquier clasificación de tu preferencia. En este  ejemplo se optó por modelos de coches.
+3.- Crear un arreglo con una lista de cualquier clasificación de tu preferencia en `MainActivity.kt` antes del metodo `onCreate()`. En este  ejemplo se optó por modelos de coches.
 
 ```kotlin
 val modeloCoches = arrayOf(
@@ -57,7 +57,15 @@ val modeloCoches = arrayOf(
         )
 ```
 
-4.- En el método onCreate, inicializar el adaptador, por practicidad se opta por un ArrayAdapter (para tomar como modelo un simple array de strings).
+Inicializamos el `ListView` de nuestra UI.
+
+```kotlin
+private lateinit var listView : ListView
+...
+listView = findViewById(R.id.listView)
+```
+
+4.- En el método onCreate, inicializar el adaptador, por practicidad se opta por un ArrayAdapter (para tomar como modelo un simple array de strings). De esta forma definimos el contenido de nuestra lista con el arreglo de coches.
 
 ```kotlin
  val itemsAdapter =

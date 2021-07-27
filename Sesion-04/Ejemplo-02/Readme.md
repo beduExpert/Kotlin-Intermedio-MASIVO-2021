@@ -79,6 +79,7 @@ Para realizar este ejemplo es necesario seguir los pasos a continuación:
 ```kotlin
 override fun onNothingSelected(parent: AdapterView<*>?) {
         showDialog("No seleccionaste idioma","Vuelve a desplegar la lista y asegúrate de elegir correctamente a alguna")
+        Toast.makeText(applicationContext, "No idioma" , Toast.LENGTH_LONG).show()
 }
             
             ...
@@ -91,6 +92,24 @@ private fun showDialog(title:String,message:String){
              .create()
              .show()
 }
+```
+
+6.- Similar al ListView del Ejemplo 1, usaremos un ArrayAdapter con un layout prefabricado el layout simple_spinner_item es el layout del item cuando esta seleccionado
+
+```kotlin 
+val languageAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, language)
+```
+
+7.- Seteamos el layout de un Item cuando el Spinner está desplegado
+
+```kotlin
+languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+```
+
+8.- Asignamod el adaptador al Spinner.
+
+```kotlin
+spinner.adapter = languageAdapter
 ```
 
 La app debe lucir semejante a la siguiente imagen:

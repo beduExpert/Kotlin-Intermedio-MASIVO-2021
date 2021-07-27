@@ -23,7 +23,7 @@
 Las imágenes dentro de cada Item de la lista están en la siguiente [Ruta](resources) (se deben de pasar al directorio *drawable*).
 
 
-1.- Crear un nuevo Layout para cada Item de nuestra lista, proponemos esta, pero cualquiera que se ajuste al modelo de datos es bien recibido:
+1.- Crear un nuevo Layout para cada Item de nuestra lista, proponemos esta, pero cualquiera que se ajuste al modelo de datos es bien recibido, en este momento no nos importa mucho la interfaz.
 
 ```kotlin
 <?xml version="1.0" encoding="utf-8"?>
@@ -152,14 +152,106 @@ Las imágenes dentro de cada Item de la lista están en la siguiente [Ruta](reso
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-2.- Crear un modelo que consta de una Clase con únicamente constructor y los atributos titulo(String), categoria(String), ESRB(String), rating (Float), idPortrait(Int).
+2.- Crear un modelo `GameModel` que consta de una Clase con únicamente constructor y los atributos titulo(String), categoria(String), ESRB(String), rating (Float), idPortrait(Int), el modelo es un archivo de Kotlin nuevo.
 
-3.- En el [Ejemplo 1](../Ejemplo-01) usábamos un ArrayAdapter con un layout predefinido y con datos simples (un arreglo de Strings)
+```kotlin
+package org.bedu.listview;
+
+class GameModel(
+    val title: String,
+    val category: String,
+    val ESRB: String,
+    val rating: Float,
+    val idPortrait: Int) {
+}
+```
+
+Este sirve solo como descripción de los objetos que modelan los juegos que estaremos utilizando.
+
+
+3.- En el [Ejemplo 1](../Ejemplo-01) usábamos un ArrayAdapter con un layout predefinido y con datos simples (un arreglo de Strings).
 
 > val itemsAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, modeloCoches)
 	
-Para este caso, vamos a crear nuestro propio Adaptador, donde el layout sea el anteriormente descrito, y los datos sean un arreglo que contenga instancias de nuestro modelo con la información de los videojuegos ganadores. 
+Para este caso, vamos a crear nuestro propio Adaptador, donde el layout sea el anteriormente descrito, y los datos sean un arreglo que contenga instancias de nuestro modelo con la información de los videojuegos ganadores.  Comenzamos creando un nuevo archivo de Kotlin con el nombre GameAdapter.
 
+
+Dentro de este archivo se define la clase que define el adaptador que estamos creando. Para construir un objeto de esta clase serán necesarios un contexto (el cual entenderemos mas adelante) y la fuente de los datos, en este caso un arreglo de juegos.
+
+```kotlin
+class GameAdapter(private val context: Context,
+                  private val datos: ArrayList<GameModel>
+                    ): BaseAdapter() {
+
+}
+```
+
+Para el funcionamiento del `Adapter` necesitamos definir un `LayoutInflater` que básicamente es el encargado crear una instancia de un archivo layout XML en los correspondientes `Views`, en este caso simplemente lo sacaremos del contexto, en general se hace esto en lugar de manipularlo directamente:
+
+```kotlin
+private val inflater: LayoutInflater
+            = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+```
+
+Ahora sobreescribimos el método `getView` que infla una vista para un Item de la lista.
+
+```kotlin
+override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
+        //inflamos la vista item_game para cada elemento de la lista
+        val rowView = inflater.inflate(R.layout.item_game, parent, false)
+
+        //obtenemos las referencias de cada View de nuestro layout de item_game
+        val tvTitulo = rowView.findViewById<View>(R.id.tvTitulo) as TextView
+        val tvCategoria = rowView.findViewById<View>(R.id.tvCategoria) as TextView
+        val tvClasificacion = rowView.findViewById<View>(R.id.tvClasificacion) as TextView
+        val rbCalificacion = rowView.findViewById<View>(R.id.rbCalificacion) as RatingBar
+        val imgPortada = rowView.findViewById<View>(R.id.imgPortada) as ImageView
+
+        //obtenemos la información del item por medio de getItem()
+        val game = getItem(position) as GameModel
+
+        //seteamos todos los valores a nuestras vistas para desplegar la información
+        tvTitulo.text = game.title
+        tvCategoria.text = game.category
+        tvClasificacion.text = game.ESRB
+        rbCalificacion.rating = game.rating
+        imgPortada.setImageResource(game.idPortrait)
+
+        return rowView
+    }
+```
+
+Básicamente este método esta construyendo los views correspondientes a cada uno de los juegos dentro del arreglo.
+
+Por último sobreescribimos los métodos `getItem()`, `getItemId()` y `getCount()`
+
+```kotlin
+    //regresa un item para ser colocado en la posición position del Listview
+    override fun getItem(position: Int): Any {
+        return datos[position]
+    }
+
+    //Este método define un id para cada item, decidimos usar el index en el array de data
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    //este método le dice al ListView cuantos items mostrar
+    override fun getCount(): Int {
+       return datos.size
+    }
+```
+
+- getView() Se encarga de inflar la vista y de permitir que aquí se muestren los datos
+- getItem(position) se encarga de extraer los datos de un Item en específico y los trata (lo utilizamos nosotros en getView)
+- getItemId(position) identifica a cada item con un identificador único (nosotros decidimos que fuera su index)
+- getCount() sirve al Adaptador para notificarle la cantidad de Items a desplegar
+
+<details><summary>Archivo completo<summary>
+
+<p>
+    
 ```kotlin
 package org.bedu.listview
 
@@ -205,7 +297,7 @@ class GameAdapter(private val context: Context,
 
         return rowView
     }
-    
+
 
     //regresa un item para ser colocado en la posición position del Listview
     override fun getItem(position: Int): Any {
@@ -223,10 +315,9 @@ class GameAdapter(private val context: Context,
     }
 }
 ```
-- getView() Se encarga de inflar la vista y de permitir que aquí se muestren los datos
-- getItem(position) se encarga de extraer los datos de un Item en específico y los trata (lo utilizamos nosotros en getView)
-- getItemId(position) identifica a cada item con un identificador único (nosotros decidimos que fuera su index)
-- getCount() sirve al Adaptador para notificarle la cantidad de Items a desplegar
+
+</p>
+</details>
 
 4.- A continuación proporcionamos un método a manera de recuperación de datos, en este caso de los videojuegos ganadores: 
 ```kotlin
