@@ -252,8 +252,6 @@ Por último sobreescribimos los métodos `getItem()`, `getItemId()` y `getCount(
 <p>
 
 ```kotlin
-package org.bedu.listview
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View

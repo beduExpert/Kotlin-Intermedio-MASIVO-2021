@@ -119,7 +119,7 @@ La app debe lucir semejante a la siguiente imagen:
 
 
 
-[`Anterior`](../Ejemplo-01a/Readme.md) | [`Siguiente`](../Reto-01/Readme.md)
+[`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Reto-01/Readme.md)
 
 
 

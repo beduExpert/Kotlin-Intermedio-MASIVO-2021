@@ -6,8 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Continuar el proceso de aprendizaje de los spinners, desarrollando vistas y acciones personalizadas similares a los vistos en el [EJEMPLO 01-A](../Ejemplo-01a)
-
+- Continuar el proceso de aprendizaje de los spinners, desarrollando vistas y acciones personalizadas.
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
@@ -24,15 +23,10 @@ La pantalla final tiene que quedar así
 
 <img src="Images/01.png" width="33%">
 
-y al dar click al botón continuar, salga un diálgo con el saludo en su idioma: 
-
-<img src="Images/03.png" width="33%">
-
-
 - Los recursos se encuentran en la carpeta [Resources](Resources/)
 
 
-Se facilitan estas dos funciones, que sirven para generar los datos del país y para mostrar un diálogo de alerta.
+<!-- Se facilitan estas dos funciones, que sirven para generar los datos del país y para mostrar un diálogo de alerta.
 
 ```kotlin
 private fun getCountries(): ArrayList<CountryModel>{
@@ -106,7 +100,7 @@ también el xml de MainActivity
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-
+ -->
 
 
 [`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)

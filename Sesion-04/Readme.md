@@ -36,7 +36,7 @@ El objetivo principal es reciclar las interfaces que ya están definidas y solo 
 Se creará una Lista con scrolling vertical simple y lineal, con un Adapter prefabricado a manera de introducción al tema.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
-- [**`EJEMPLO 1-A`**](Ejemplo-01a/Readme.md)
+<!-- - [**`EJEMPLO 1-A`**](Ejemplo-01a/Readme.md) -->
 
 ---
 

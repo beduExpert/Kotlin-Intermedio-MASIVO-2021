@@ -104,7 +104,7 @@ la pantalla debe tener esta forma:
 
 
 
-[`Anterior`](../Readme.md) | [`Siguiente`](../Ejemplo-01a/Readme.md)
+[`Anterior`](../Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)
 
 
 
