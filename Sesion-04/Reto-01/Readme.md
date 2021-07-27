@@ -17,13 +17,18 @@
 1.- Tomar el [Ejemplo 02](../Ejemplo-02) como base del siguiente ejercicio.
 
 
-Se requiere crear una pantalla con selección de país, pero que al seleccionarse, cambie el idioma de los textos en pantalla.
+Se requiere crear una pantalla con selección de país, pero que al seleccionarse, cambie el idioma de los textos en pantalla. Es decir, que cambie el texto del botón y del `TextView` en donde pide seleccionar un país.
 
 La pantalla final tiene que quedar así
 
 <img src="Images/01.png" width="33%">
 
-- Los recursos se encuentran en la carpeta [Resources](Resources/)
+**EXTRA**
+
+Haz que al darle click al botón mande un `Alert` con un mensaje de bienvenida en el idioma que se selecciono.
+
+<!-- 
+- Los recursos se encuentran en la carpeta [Resources](Resources/) -->
 
 
 <!-- Se facilitan estas dos funciones, que sirven para generar los datos del país y para mostrar un diálogo de alerta.
