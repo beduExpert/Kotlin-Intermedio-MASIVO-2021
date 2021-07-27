@@ -17,7 +17,7 @@
 
 1.- Abrir un proyecto con una Actividad vacía.
 
-2.- En el Layout del *activity_main.xml*, agregar un ListView que se ajuste al tamaño del Parent (para mayor facilidad de manejor, reemplazar el ConstraintLayout predefinido por un LinearLayout o RelativeLayout). El ListView se debe ver de la siguiente forma:
+2.- En el Layout del *activity_main.xml*, agregar un ListView que se ajuste al tamaño del Parent (para mayor facilidad de manejar, reemplazar el ConstraintLayout predefinido por un LinearLayout o RelativeLayout). El ListView se debe ver de la siguiente forma:
 
 ```xml
 <ListView
@@ -28,7 +28,7 @@
         />
 ```
 
-3.- Crear un arreglo con una lista de cualquier clasificación de tu preferencia en `MainActivity.kt` antes del metodo `onCreate()`. En este  ejemplo se optó por modelos de coches.
+3.- Crear un arreglo con una lista de cualquier clasificación de tu preferencia en `MainActivity.kt` antes del método `onCreate()`. En este  ejemplo se optó por modelos de coches.
 
 ```kotlin
 val modeloCoches = arrayOf(

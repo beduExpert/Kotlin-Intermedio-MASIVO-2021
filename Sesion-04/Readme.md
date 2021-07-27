@@ -20,7 +20,7 @@
 
 <img src="images/adapter.png" align="right" width="180" hspace="10">
 
-El patrón __Adapter__ es un patrón estructural cuya función principal es comunicar dos interfaces en un principio incompatibles. El __Adpapter__ adapta la información de una interfaz para que pueda ser utilizada por otra. Actuando como un intermediario de adaptación para facilitar la reutilización de  código y evitar el instanciamiento innecesario de la interfaz a adaptar.
+El patrón __Adapter__ es un patrón estructural cuya función principal es comunicar dos interfaces en un principio incompatibles. El __Adapter__ adapta la información de una interfaz para que pueda ser utilizada por otra. Actuando como un intermediario de adaptación para facilitar la reutilización de  código y evitar el instanciamiento innecesario de la interfaz a adaptar.
 
 El objetivo principal es reciclar las interfaces que ya están definidas y solo hacerles adaptaciones en lugar de definirlas completamente desde cero, esto implica menos trabajo para nosotros pero también tiene ventajas en el uso de memoria y la eficiencia de nuestra aplicación.
 

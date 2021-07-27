@@ -31,7 +31,7 @@ Seleccionamos la correspondiente a `RecyclerView`
 
 Y sincronizamos.
 
-`RecyclerView` sirve el mismo propósito que `ListView` sin embargo se trata de un componente mucho mas genérico y versátil que nos permite adaptar la estructura de un listado de elementos de la forma en la que queramos. La flexibilidad de este componente hace que este compuesto de pequeñas piezas, las cuales tenemos que comprender para poder utilizarlo correctamente.
+`RecyclerView` sirve el mismo propósito que `ListView` sin embargo se trata de un componente mucho mas genérico y versátil que nos permite adaptar la estructura de un listado de elementos de la forma en la que queramos. Este componente está compuesto de pequeñas piezas, las cuales tenemos que comprender para poder utilizarlo correctamente.
 
 `RecyclerView` es un **ViewGroup** que va a organizar sus elementos según los parámetros con los que lo definamos.
 
@@ -178,7 +178,7 @@ Hasta ahora tenemos dos cosas pendientes, la definición del `ViewHolder` y la d
 
 Dentro de esta clase solo traemos los views de la interfaz de usuario y definimos una función `bind` que recibe un objeto `Contact` y a partir de el genera un `contact_item` colocando la información en le layout.
 
-7.- Ahora definamos los métodos faltantes dentro de la clase `RecyclerAdpater`
+7.- Ahora definamos los métodos faltantes dentro de la clase `RecyclerAdapater`
 
 - `onCreateViewHolder` Se llama cuando el `RecyclerView` requiere una nueva vista para mostrarla en pantalla porque no se puede reciclar.
 
@@ -276,7 +276,7 @@ recycled.adapter = RecyclerAdapter(listOf(
         ))
 ```
 
-Recordemos que el constructor de `RecyclerAdaopter` recibe una lista de contactos.
+Recordemos que el constructor de `RecyclerAdapter` recibe una lista de contactos.
 
 9.- el resultado debe ser el siguiente
 
