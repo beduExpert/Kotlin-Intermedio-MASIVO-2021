@@ -248,10 +248,9 @@ Por último sobreescribimos los métodos `getItem()`, `getItemId()` y `getCount(
 - getItemId(position) identifica a cada item con un identificador único (nosotros decidimos que fuera su index)
 - getCount() sirve al Adaptador para notificarle la cantidad de Items a desplegar
 
-<details><summary>Archivo completo<summary>
-
+<details><summary>Archivo completo</summary>
 <p>
-    
+
 ```kotlin
 package org.bedu.listview
 
