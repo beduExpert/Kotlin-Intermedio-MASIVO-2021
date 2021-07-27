@@ -108,7 +108,7 @@ Y sincronizamos.
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-Este layout simplemente tiene una imagen de contacto que se puede encontrar en este [enlace](./unknow.jpg) y las etiquetas de texto para el nombre y teléfono.
+Este layout simplemente tiene una imagen de contacto que se puede encontrar en este [enlace](./unknown.jpg) y las etiquetas de texto para el nombre y teléfono.
 
 
 En **activity_main** simplemente definimos un `LinearLayout` y dentro agregamos un componente `RecyclerView`, esto se puede hacer directamente en el código xml o desde la vista de diseño.
