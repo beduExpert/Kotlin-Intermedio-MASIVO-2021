@@ -18,7 +18,4 @@ class DetailActivity : AppCompatActivity() {
         detailFragment?.showProduct(product)
 
     }
-
-
-
 }

@@ -240,7 +240,7 @@ android:visibility="invisible"
 </LinearLayout>
 ```
 
-7. Debido a que la versión de móvil requiere una pantalla para la lista y otra para el detalle, crearemos un `detail_activity.xml` donde contendremos únicamente a nuestro `fragment`.
+7. Debido a que la versión de móvil requiere una pantalla para la lista y otra para el detalle, crearemos un `detail_activity.xml` donde contendremos únicamente a nuestro `fragment`, creamos esta `Activity` con el menú de AndroidStudio para que cree tambien el controlador y la agregue al Manifest.
 
 ```xml
 <LinearLayout
