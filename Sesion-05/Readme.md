@@ -65,7 +65,7 @@ Para este ejemplo se usa el patrón lista-detalle, que es ampliamente empleado e
 
 ---
 
-<img src="images/flow.png" align="right" height="150"> 
+<!-- <img src="images/flow.png" align="right" height="150"> 
 
 #### <ins>Transactions</ins>
 
@@ -73,7 +73,7 @@ Aquí ejecutaremos una serie de transacciones para los `fragments` dentro de un 
 
 - [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
 
----
+--- -->
 
 
 ### 3. Proyecto :hammer:
