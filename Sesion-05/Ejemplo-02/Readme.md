@@ -222,7 +222,7 @@ android:visibility="invisible"
 </FrameLayout>
 ```
 
-6. ¡Perfecto! Ahora modificaremos nuestro `activity`main.xml_ para que muestre únicamente la lista de productos (teléfono móvil), por lo tanto únicamente agregaremos nuestro `fragment` al layout.
+6. ¡Perfecto! Ahora modificaremos nuestro `activity_main.xml` para que muestre únicamente la lista de productos (teléfono móvil), por lo tanto únicamente agregaremos nuestro `fragment` al layout.
 
 ```xml
 <LinearLayout
@@ -323,7 +323,7 @@ En el siguiente ejemplo implementaremos el patrón del lado de Kotlin.
 
 
 
-[`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Reto-02/Readme.md)
+[`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
 
 
 
