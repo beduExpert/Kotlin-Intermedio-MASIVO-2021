@@ -85,7 +85,7 @@ Para la versión _portrait_ bastaría únicamente reutilizar el código anterior
 </details>
 <br/>
 
-[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-04/Readme.md)
+[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Readme.md)
 
 
 
