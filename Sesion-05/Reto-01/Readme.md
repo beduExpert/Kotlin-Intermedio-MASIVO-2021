@@ -36,7 +36,7 @@ Destroyed |	onDestroyView(), onDestroy(), onDetach() | El Fragmento es destruíd
 1. Utilizando el ejemplo anterior, emplearemos todos los callbacks para imprimir un texto cuando este se haya mandado a llamar. Así, observaremos cómo se imprimen los logs en el _logcat_ con diversas acciones: abrir la app, cerrar la app, voltear el teléfono, enviar a segundo plano, etcétera.
 
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 <p>
 
 ```kotlin
@@ -105,11 +105,11 @@ Destroyed |	onDestroyView(), onDestroy(), onDetach() | El Fragmento es destruíd
 
 </p>
 </details>
-<br/>
+<br/> -->
 
 2. Agregar un botón que permita navegar a una nueva _Activity_ que crearemos, y cuyo diseño de _layout_ sea abierto. El fin es analizar cómo se comporta el ciclo de vida al navegar a dicha _Activity_, y al regresar de ella.
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 <p>
 
 Dentro del _layout_ del _Fragment_ crearemos un botón; el código xml resulta similar al siguiente:
@@ -153,7 +153,7 @@ Mediante la variable ___root___ podemos encontrar nuestra representación del bo
 
 </p>
 </details>
-<br/>
+<br/> -->
 
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)
 

@@ -38,7 +38,7 @@ Para que nuestro diseño reaccione a la orientación del teléfono abriremos nue
 android:screenOrientation="sensor"
 ```
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 
 Para tener una versión landscape, crearemos un ___android resource directory___ con los _qualifiers_ ___Size___ con valor ___large___ y ___orientation___ con valor ___landscape___.
 	
@@ -83,7 +83,7 @@ El código resultaría de esta forma:
 Para la versión _portrait_ bastaría únicamente reutilizar el código anterior para ___fragment_detail___ de nuestro directorio ___layout-large___ y que tenga el 0.5 de porcentaje.
 
 </details>
-<br/>
+<br/> -->
 
 [`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Readme.md)
 
