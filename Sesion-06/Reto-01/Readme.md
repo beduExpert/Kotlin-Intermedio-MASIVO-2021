@@ -17,7 +17,7 @@
 Tomaremos el ejercicio realizado en el [Reto 2](../../Sesion-05/Reto-02) de la [Sesión 5](../../Sesion-05) como ejemplo, y reajustaremos el `layout` de cada item en la lista y también la distribución en el `RecyclerView`, de modo que el listado quede de la siguiente forma:
 
 
- <img src="images/1.png" width="33%">
+ <img src="images/1.png">
 
 Utiliza los cards de Materia Design para modelar los items de la lista. 
 
