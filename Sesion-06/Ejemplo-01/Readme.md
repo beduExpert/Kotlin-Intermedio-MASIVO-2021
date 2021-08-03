@@ -29,13 +29,30 @@ api 'com.google.android.material:material:1.3.0-alpha03'
 
 Esto para tener disponible los componentes.
 
-3. Para poder implementar satisfactoriamente nuestros `components`, abrimos ___res/values/styles.mxl___ y verificamos que nuestro ___AppTheme___ contenga la siguiente propiedad:
+3. Para poder implementar satisfactoriamente nuestros `components`, creamos el archivo ___res/values/styles.mxl___ y agregamos el siguiente código. Notemos nuestro ___AppTheme___.
 
-```kotlin
-parent="Theme.MaterialComponents.Light.DarkActionBar"
+```xml
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>
 ```
 
-4. Abrimos el archivo ___activity_main.xml___, donde colocaremos algunos de los componentes que nos provee la librería de material. Recordemos que antes de existir la librería ___com.google.android.material___,  utilizábamos ___com.android.support:design___.
+y agregamos los siguiente colores a los values.
+
+```xml
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+```
+
+4. Abrimos el archivo ___activity_main.xml___, donde colocaremos algunos de los componentes que nos provee la biblioteca de material. Recordemos que antes de existir la biblioteca ___com.google.android.material___,  utilizábamos ___com.android.support:design___.
 
 
 Ahora, vamos a utilizar el primer `component`: `TextInputLayout`.
@@ -57,9 +74,22 @@ Ahora, vamos a utilizar el primer `component`: `TextInputLayout`.
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 ```
-Este componente es un `wrapper` que contiene un EditText, y provee de un `label` el la parte superior igual al hint del `EditText` cuando el usuario ingresa un texto. El `EditText` que utilizamos es un `TextInputEditText`, también perteneciente a la librería de material design.
+Este componente es un `wrapper` que contiene un EditText, y provee de un `label` el la parte superior igual al hint del `EditText` cuando el usuario ingresa un texto. El `EditText` que utilizamos es un `TextInputEditText`, también perteneciente a la biblioteca de material design.
 
-Podemos agregar un `EditText` simple para resaltar la diferencia entre estods dos.
+Podemos agregar un `EditText` simple para resaltar la diferencia entre estos dos.
+
+```xml
+    <EditText
+        android:id="@+id/editNormal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/inputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Usuario"
+        android:maxLines="1"
+        android:layout_margin="4dp"/>
+```
 
 5. El siguiente elemento a probar, será el `MaterialButton`, que viene preconfigurado con el estilo _Material_ por defecto, sin requerir configurar la propiedad `style`.
 
@@ -119,7 +149,7 @@ cancelButton.setOnClickListener{
 }
 ```
 
-6. La librería contiene muchos otros componentes listos para utilizarse, así que implementaremos otros dos: 
+6. La biblioteca contiene muchos otros componentes listos para utilizarse, así que implementaremos otros dos: 
 
 ```xml
     <com.google.android.material.slider.Slider
@@ -154,8 +184,8 @@ Estos elementos pueden ser una representación gráfica de un objeto o una lista
 
 Agregaremos un `CardView` sencillo, con un header superior con color `PrimaryDark` que simule un archivo media en la parte superior, como lo sugiere la imagen anterior. La dotaremos de un título y un subtítulo, contenidos por un `LinearLayout` horizontal.
 
-```kotlin
- <com.google.android.material.card.MaterialCardView
+```xml
+    <com.google.android.material.card.MaterialCardView
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkbox"

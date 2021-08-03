@@ -29,17 +29,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     //asignamos las acciones para cada opción del AppBar
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var msg = ""
-
-        when(item.itemId){
-            R.id.delete -> msg=getString(R.string.delete_element)
-            R.id.share -> msg=getString(R.string.sharing_element)
-        }
-
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
-        return super.onOptionsItemSelected(item)
-    }
 
     private fun setupDrawer(toolbar: Toolbar){
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)

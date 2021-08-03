@@ -23,6 +23,9 @@ Precisamente este diseño basado en objetos es una manera de intentar aproximars
 
 No debemos pensar en Material Design como ese diseño destinado para las aplicaciones móviles de Android. De hecho, es multiplataforma. Tantos los smartphones, tablets, smartwatches o televisores pueden hacer uso de este diseño. También las páginas webs. Material Design ha sido creado pensando en todos los sistemas, no solo Android.
 
+
+Puedes consultar la documentación en la siguiente [liga](https://material.io/design)
+
 <img src="../images/md.jpg" >
 
 ### 1. Objetivos :dart: 

@@ -30,7 +30,7 @@ En este ejemplo, aplicaremos un `Theme` personalizado a nuestra aplicación, par
 
 <img src="images/3.png" width="65%">
 
-La página de _Color Tool_ ya viene configurada en [este enlace]https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=FF1744&primary.color=212121
+La página de _Color Tool_ ya viene configurada en [este enlace](https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=FF1744&primary.color=212121)
 
 El sitio web muestra una serie de implementaciones de la paleta de colores en los elementos de la UI. Nos basaremos en las siguientes sugerencias:
 
@@ -67,7 +67,7 @@ Definiremos también un color para los íconos del `App Bar`, que será de color
 <color name="secondaryTextColor">#ffffff</color>
 ```
 
-y lo utilizaremos dentro de nuestro menú hamburguesa _menu.xml_
+y lo utilizaremos dentro de nuestro menú hamburguesa _menu.xml_ en los **drawables**.
 
 ```xml
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
@@ -150,7 +150,7 @@ Con esto, en nuestro `TextInputLayout` ya no sería necesario agregar estos atri
     </com.google.android.material.textfield.TextInputLayout>
 ```
 
-Por último, estilizaremos el botón:
+Por último, estilizaremos el botón. Recordemos la decepción que fue el `mexicanPink` en la primera sesión :'(, en ese momento el botón no tomo los estilos que queríamos porque ya había unos predefinidos, para corregir eso ahora modificaremos directamente la hoja de estilos y utilizaremos el atributo `backgroundTint`.
 
 ```xml
 <style name="Bedu.Button" parent="Widget.MaterialComponents.Button">
@@ -164,7 +164,7 @@ La pantalla de Login debe quedar de la siguiente forma:
 <img src="images/login.gif" width="35%">
 
 
-4. Ahora vamos a darle estilo al menú principal. Con los cambios que hemos realizado hasta el momento, tenemos lo siguiente:
+<!-- 4. Ahora vamos a darle estilo al menú principal. Con los cambios que hemos realizado hasta el momento, tenemos lo siguiente:
 
 <img src="images/8.png" width="35%">
 
@@ -270,7 +270,7 @@ Ahora resta únicamente definirlo como el `Theme` de la aplicación, para esto a
 Corremos una vez más, podremos ver cómo los colores cambiaron exitosamente:
 
 <img src="images/10.png" width="35%"> <img src="images/11.png" width="35%">
-
+ -->
 
 [`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Reto-02/Readme.md)
 
