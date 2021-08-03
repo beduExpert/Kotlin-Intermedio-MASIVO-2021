@@ -23,7 +23,7 @@ Tomaremos el ejercicio realizado en el proyecto del [Ejemplo 3](../Ejemplo-03) p
 
 <image src="images/1.png" width="35%">
     
-Y al cambiar al `Theme` `AppTheme.RedBlue` quede así:
+<!-- Y al cambiar al `Theme` `AppTheme.RedBlue` quede así: -->
 <!-- 
 <image src="images/2.png" width="35%">
 

@@ -30,7 +30,7 @@ En este ejemplo, aplicaremos un `Theme` personalizado a nuestra aplicación, par
 
 <img src="images/3.png" width="65%">
 
-La página de _Color Tool_ ya viene configurada en [este enlace](https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=FF1744&primary.color=212121)
+La página de _Color Tool_ ya viene configurada en [este enlace](https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=FF1744&primary.color=212121).
 
 El sitio web muestra una serie de implementaciones de la paleta de colores en los elementos de la UI. Nos basaremos en las siguientes sugerencias:
 
@@ -96,7 +96,8 @@ Utilizaremos el tipo `outlined` para este caso, lo cual lo lograremos heredando 
         <item name="boxStrokeColor">?attr/colorAccent</item>
     </style>
 ```
-el atributo `hintTextAppearance` hace referencia al estilo `Bedu.HintText`, que define el tamaño, color, etc. del `hint` cuando no está como `label`. Le daremos una apariencia de Subtítulo (probar con distintos) y sobreescribiremos el color original al color de texto primario.
+
+El atributo `hintTextAppearance` hace referencia al estilo `Bedu.HintText`, que define el tamaño, color, etc. del `hint` cuando no está como `label`. Le daremos una apariencia de Subtítulo (probar con distintos) y sobreescribiremos el color original al color de texto primario.
 
 ```xml
 <style name="Bedu.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
@@ -240,11 +241,11 @@ Crearemos uno nuevo:
 
 ```xml
     <style name="AppTheme.RedBlue" parent="Theme.MaterialComponents.Light.NoActionBar">\
-        <!-- utilizado para el app bar y otros elementos UI primario -->
+         utilizado para el app bar y otros elementos UI primario 
         <item name="colorPrimary">@color/redBluePrimaryColor</item>
-        <!-- utilizado para el status bar, etc. -->
+         utilizado para el status bar, etc. 
         <item name="colorPrimaryDark">@color/redBluePrimaryDarkColor</item>
-        <!-- utilizado por defecto par acentuar en checkboxes inputs, switch, etc. -->
+        utilizado por defecto par acentuar en checkboxes inputs, switch, etc. 
         <item name="colorAccent">@color/redBlueSecondaryColor</item>
         <item name="android:textColorPrimary">@color/redBluePrimaryTextColor</item>
         <item name="android:textColorSecondary">@color/redBlueSecondaryTextColor</item>

@@ -74,7 +74,7 @@ Ahora, vamos a utilizar el primer `component`: `TextInputLayout`.
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 ```
-Este componente es un `wrapper` que contiene un EditText, y provee de un `label` el la parte superior igual al hint del `EditText` cuando el usuario ingresa un texto. El `EditText` que utilizamos es un `TextInputEditText`, también perteneciente a la biblioteca de material design.
+Este componente es un `wrapper` que contiene un EditText, y provee de un `label` en la parte superior igual al hint del `EditText` cuando el usuario ingresa un texto. El `EditText` que utilizamos es un `TextInputEditText`, también perteneciente a la biblioteca de material design.
 
 Podemos agregar un `EditText` simple para resaltar la diferencia entre estos dos.
 
@@ -94,6 +94,7 @@ Podemos agregar un `EditText` simple para resaltar la diferencia entre estos dos
 5. El siguiente elemento a probar, será el `MaterialButton`, que viene preconfigurado con el estilo _Material_ por defecto, sin requerir configurar la propiedad `style`.
 
 <img src="images/1.png" width="40%">
+
 Según Material Design, el botón con mayor importancia es un _contained button_, y la de menor importancia es un `text button`, por lo que vamos a replicar ese patrón:
 
 ```xml
