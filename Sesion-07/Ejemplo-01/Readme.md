@@ -50,7 +50,7 @@ El menú estará conformado por los siguientes elementos:
 
 Ejemplo de menú en xml:
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/new_game"
@@ -86,7 +86,7 @@ En la carpeta generada, hacemos click derecho y elegimos _New > Menu Resource Fi
 
 En este archivo en XML vamos a definir los elementos del Menú de Opciones.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -108,7 +108,7 @@ Agregamos otro elemento de menú.
 
 Ahora, agregaremos un Submenú. Para lograr esto, escribimos dentro de `Item` un bloque de `Menu` con Items en el interior, estos Items serán las opciones del submenú.
 
-```
+```xml
     <item android:id="@+id/item3"
         android:icon="@drawable/ic_search"
         android:title="Item2"
@@ -131,7 +131,7 @@ Ahora, agregaremos un Submenú. Para lograr esto, escribimos dentro de `Item` un
 
 Ahora bien, nos dirigimos a la clase `MainActivity` y agregamos el código de menú que nos ayudará a mostrar la implementación en XML en pantalla.
 
-```
+```kotlin
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -152,25 +152,55 @@ class MainActivity : AppCompatActivity() {
 
 ### CONTEXTUAL MENU
 
-Creamos un nuevo proyecto y dentro nos dirigimos al `activity_mail.xml`. Agregamos un Elemento de Layout como un TextView.
+Creamos un nuevo proyecto y dentro nos dirigimos al `activity_main.xml`. Agregamos un TextView.
+
+```xml
+    <TextView
+        android:id="@+id/txTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+```
 
 Creamos un directorio de Menú y agregamos un Menu Resource File llamado `menu_context`. Este menú tendra las opciones de click derecho como Cortar, Copiar, Pegar, etcétera.
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Copy" />
+    <item android:title="Paste" />
+    <item android:title="Cut" />
+
+</menu>
+```
+
 ![MainActivity](./images/5.png)
 
-> **Opcional**:
+<!-- > **Opcional**:
 Nos dirigimos al `Gradle` (Module: app) para agregar la dependencia de Material Design. Sincronizamos.
 
-> implementation 'com.android.support.design:28.0.0'
+> implementation 'com.android.support.design:28.0.0' -->
 
 
-Una vez terminado de sincronziar el *Gradle*, vamos a **MainActivity** para implementar el **Context Menu**.
+Vamos a **MainActivity** para implementar el **Context Menu**.
 
 Agregamos el elemento que tendrá este menú. Se activará dando un Tap largo.
-El elemento se debe registrar con la función `registerForContextMenu(txTextView)`.
+El elemento se debe registrar con la función `registerForContextMenu(txTextView)` en el método `onCreate`.
 
-
+```kotlin
+    var txTextView: TextView = findViewById(R.id.txTextView)
+    registerForContextMenu(txTextView)
 ```
+
+Y luego inflamos el menú.
+
+
+```kotlin
 override fun onCreateContextMenu( menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
      super.onCreateContextMenu(menu, v, menuInfo)
      var inflater = menuInflater
@@ -186,15 +216,35 @@ override fun onCreateContextMenu( menu: ContextMenu?, v: View?, menuInfo: Contex
 
 Al igual que con los menús anteriores, es necesario crear un proyecto nuevo, después nos dirigimos al `activity_main.xml` y agregamos un botón.
 
+```xml
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="297dp"
+        tools:ignore="MissingConstraints" />
+```
+
 Este **botón** servirá para lanzar el PopUp Menu.
 
-Creamos un Directorio de Menú y un `Menu Item` en XML con las opciones que necesitemos. 
+Creamos un Directorio de Menú y un `popmenu.xml` en XML con las opciones que necesitemos. 
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Item1" />
+    <item android:title="Item2" />
+    <item android:title="Item3" />
+</menu>
+```
 
 La implementación de este tipo de menú es muy similar a la que vimos para Context Menu.
 
-Vamos al MainActivity, agregamos un `Listener` en la clase.
+Vamos al MainActivity, agregamos un `Listener` en la clase, para esto vamos a hacer que la clase extienda a `View.OnClickListener`, que es una clase abstracta en la que se tiene que definir el método `onClick` que será el callback para el evento click.
 
-```
+```kotlin
 class MainActivity: AppCompatActivity(), View.OnClickListener {
 
 	 //...
@@ -205,15 +255,34 @@ class MainActivity: AppCompatActivity(), View.OnClickListener {
 }
 ```
 
-Dentro de este `onClick`, agregaremos una instancia de `PopupMenu`.
+Como siempre vamos a inflar el menú
 
+```kotlin
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        var inflater = menuInflater
+        inflater.inflate(R.menu.popmenu, menu)
+    }
 ```
 
-var popMenu = PopMenu(this, v)
-popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
-popMenu.show()
+Y definimos `onClick` en donde agregaremos una instancia de `PopupMenu`.
 
+```kotlin
+    override fun onClick(v: View?) {
+        var popMenu = PopupMenu(this, v)
+        popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
+        popMenu.show()
+    }
 ```
+
+Por último dentro del método `onCreate` definimos esta clase (`this`) como callback para el `OnClickListener` del botón.
+
+```kotlin
+    var button: Button = findViewById(R.id.button)
+    registerForContextMenu(button)
+    button.setOnClickListener(this)
+```
+
 ![MainActivity](./images/7.gif)
 
 

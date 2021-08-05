@@ -33,7 +33,7 @@ Retomaremos el Ejemplo de [options_menu](./options_menu) para agregarle funciona
 
 Para ello, nos dirigimos al `MainActivity`, y escribimos la función encargada de obtener la opción elegida en el menú.
 
-```
+```kotlin
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
 	return super.onOptionsItemSelected(item)
 }
@@ -41,7 +41,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
 Luego, comparamos cada `id` dentro del Menú.
 
-```
+```kotlin
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
         when (item.itemId) {
@@ -56,7 +56,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
 Finalmente, para el resto de opciones:
 
-```
+```kotlin
  override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
         when (item.itemId) {
@@ -87,7 +87,7 @@ Retomaremos el Ejemplo de [context_menu](./context_menu) para agregarle funciona
 
 Para ejecutar acciones de acuerdo al elemento seleccionado del menú, nos basaremos en la función `onContextItemSelected(item: MenuItem?)`.
 
-```
+```kotlin
  override fun onContextItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
             R.id.copy -> {
@@ -108,7 +108,7 @@ Usaremos el Ejemplo de [popup_menu](./popup_menu) para agregarle funcionalidad a
 
 Este código difiere debido a que implementaremos un **closure** para el `PopUpMenu`, y dentro de este **closure** obtendremos la opción deseada mediante un capture _list_.
 
-```
+```kotlin
 override fun onClick(v: View?) {
         var popMenu = PopupMenu(this, v)
         popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
@@ -119,7 +119,7 @@ override fun onClick(v: View?) {
 
 Captamos cada opción de menú con su `id` correspondiente.
 
-```
+```kotlin
 override fun onClick(v: View?) {
     var popMenu = PopupMenu(this, v)
         popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)

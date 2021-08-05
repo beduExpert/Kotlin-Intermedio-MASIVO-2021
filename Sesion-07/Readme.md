@@ -55,7 +55,7 @@ Crearemos menús que sean capaces de ejecutar acciones.
 Crearemos menús contextuales flotantes.
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
-- [**`RETO 3`**](Reto-03/Readme.md)
+<!-- - [**`RETO 3`**](Reto-03/Readme.md) -->
 
 ---
 
@@ -67,7 +67,7 @@ Crearemos menús contextuales flotantes.
 
 ### 4. Postwork :memo:
 
-Con lo aprendido en esta sesión, continúa con la implementación de ___Menús_ en tu proyecto.
+Con lo aprendido en esta sesión, continúa con la implementación de ___Menús___ en tu proyecto.
 
 - [**`POSTWORK SESIÓN 7`**](Postwork/Readme.md)
 

@@ -37,10 +37,10 @@ Se debe identificar en qué parte del proyecto debe agregarse este código, y, a
 
 ![Elemento de Menu](./images/1.gif)
 
-<details><summary>Solución</summary>
+<!-- details><summary>Solución</summary>
 
 Se puede ver la solución en el siguiente [enlace](./options_menu/MenusApp)
-</details>
+</details> -->
 
 
 

@@ -24,11 +24,15 @@ El reto consiste en agregar un `CheckBox` en cada elemento de menú, mostrar íc
 ![Elemento de Menu](./images/1.png)
 ![Elemento de Menu](./images/2.png)
 
+> Hint: 
+> recuerda el atributo `android:icon`
 
-<details><summary>Solución</summary>
+
+
+<!-- <details><summary>Solución</summary>
 
 Se puede ver la solución en el siguiente [enlace](./options_menu/MenusApp)
-</details>
+</details> -->
 
 
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)
