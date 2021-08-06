@@ -58,17 +58,6 @@ El `ActionMode` depende de una clase que actúa como **callback** en donde tenem
 - `onActionItemClicked`
 
 
-
-## ActionMode 
-
-Cuando tenemos nuestro ActionMode flotante, tenemos cambien un _callback_ nuevo, llamado `Callback2`. Este agrega solo una función más, esta es:
-
-- `onGetContentRect`
-
-La cual te dará la posición en la pantalla para el elemento flotante.
-
-
-
 ## Veamos como implementarlo
 
 
