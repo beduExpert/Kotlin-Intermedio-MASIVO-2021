@@ -225,7 +225,7 @@ d) Finalizamos el proceso.
 
 ___Advertencia:___ Google hará obligatorio la subida de un Android App Bundle para que la aplicación esté en la tienda.
 
-<img src="images/warning-aab.png" width="60%">
+<!-- <img src="images/warning-aab.png" width="60%"> -->
 
 La estructura de un app bundle es la siguiente:
 
