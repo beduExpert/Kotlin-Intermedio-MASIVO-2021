@@ -229,7 +229,10 @@ ___Advertencia:___ Google hará obligatorio la subida de un Android App Bundle p
 
 La estructura de un app bundle es la siguiente:
 
-<img src="images/aab.png" width="70%">
+Para generarlo simplemente se selecciona la opción `Build > Build Bundle(s)/APK(s) > Build Bundle(s)`
+
+Y el proceso para firmarlo es el mismo que con un APK. 
+
 	
 [`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
