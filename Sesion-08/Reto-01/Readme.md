@@ -17,21 +17,18 @@
 Tomaremos el ejercicio realizado en el [Ejemplo 2](../../Sesion-08/Ejemplo-02) y haremos le unas modificaciones:
 
 
-- Tanto la versión _free_ como _paid_ utilizarán el formulario, que estará ahora en un fragment ___fragment_login.xml___, que el ___activity_main.xml___ incluirá.
-- Al hacer click al login en _free_, un ___Toast___ nos advertirá que es la versión gratuita.
-- En la versión pagada, se mostrará un ___Toast___ indicando si el usuario o la contraseña están vacíos, en caso contrario, se advertirá del inicio de sesión.
-- Los recursos que se ocupen únicamente en un flavor, se deben declarar en el directorio correspondiente (por ejemplo, los _strings_).
+- En la versión gratuita se debe agregar un texto que invite a los usuarios a comprar la versión de paga, así como un botón (sin funcionalidad) para comprar la otra versión.
+- En la versión de paga al darle click al botón de login que se muestre un mensaje (Toast) en el que diga simplemente bienvenido.
+- Los recursos que se ocupen únicamente en un flavor, se deben declarar en el directorio correspondiente (por ejemplo, los _strings_) y todos estos deben definirse siguiendo buenas prácticas de programación.
 - La versión pagada debe enviar un mensaje como este (si los campos tienen texto) 
- 
- <img src="images/1.png" width="33%">
- 
+  
 
 #### Tips:
 
 - Tanto la versión _free_ como _paid_ tendrán su directorio en _src_.
-- No olvides que si utilizas una clase que es diferente para distintas versiones, repítela en los directorios de flavors correspondientes y no en el _main_, puesto que se duplicarían los 
+- No olvides que si utilizas una clase que es diferente para distintas versiones, repítela en los directorios de flavors correspondientes y no en el _main_, puesto que se duplicarían 
 
-<details><summary>Solución</summary>
+<!-- <details><summary>Solución</summary>
 
 en _free > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
 
@@ -108,7 +105,7 @@ en _paid > res > values > strings.xml_
 
 
 </details>
-<br/>
+<br/> -->
 
 
 [`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)

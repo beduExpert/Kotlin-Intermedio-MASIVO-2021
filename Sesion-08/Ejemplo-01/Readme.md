@@ -110,7 +110,7 @@ dependencies {
 }
 ```
 
-Vamos a declarar algunas de las versiones en el ___build.gradle___ raíz, esto para que cada módulo pueda tener acceso a él y se eviten inconsistencias por versiones distintas entre módulos
+<!-- Vamos a declarar algunas de las versiones en el ___build.gradle___ raíz, esto para que cada módulo pueda tener acceso a él y se eviten inconsistencias por versiones distintas entre módulos
 
 ```kotlin
 buildscript {...}
@@ -151,16 +151,16 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${rootProject.ext.appCompatVersion}"
     ...
 }
-```
+``` -->
 
 En _buildTypes->release_, habilitaremos la ofuscación y depuración del código cambiando el valor de ___minifyEnabled___ y ___shrinkResources___ a _true_. Esto sólo se recomienda antes de liberar la app ya que hace que el proceso de compilación sea más tardado, pero es necesario para garantizar que la aplicación funciona corretamente.
 
 ```kotlin
 release {
-	    shrinkResourses true
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+        minifyEnabled true
+        shrinkResources true
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
 ```
 
 

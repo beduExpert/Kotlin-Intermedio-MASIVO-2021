@@ -55,21 +55,11 @@ Se abrirá una ventana con los siguientes archivos:
 * ___kotlin___ clases _"built-in"_ de Kotlin como _String, Int_ y otras utilidades.
 * ___AndroidManifest.xml___, Archivo xml en formato binario.
 
-Existen otros directorios que se generan en apps más complejas, como con librerías 3rd party.
+Existen otros directorios que se generan en apps más complejas, como con bibliotecas 3rd party.
 
-#### Estructura del aab
 
-3. El _Android App Bundle_ es un archivo que contiene todos los recursos y el código compilado de la app, pero que a diferencia de un _Apk_ no es un archivo instalable, sino que sirve como fuente para extraer lo necesario y compilar un _apk_ específico para un dispositivo, con una arquitectura determinada y con un idioma en concreto; esto reduce los recursos dentro del archivo y, por lo tanto, el tamaño de la aplicación. Si un dispositivo viene configurado con ciertos idiomas y posteriormente se configura uno nuevo, el recurso para este idioma (si existe en él) se descarga automáticamente de la ___Play Store___.
 
-___Advertencia:___ Google hará obligatorio la subida de un Android App Bundle para que la aplicación esté en la tienda.
-
-<img src="images/warning-aab.png" width="60%">
-
-La estructura de un app bundle es la siguiente:
-
-<img src="images/aab.png" width="70%">
-
-Desde la versión 5.0 de android, se pueden tener _APK's divididas_, que en conjunto se pueden tomar como una sola app. El Base module son los recursos y código de la apk base, una versión que todas las variantes comparten. Los _dynamic features_ son apks divididas que tienen funciones específicas para ciertos dispositivos/clientes.
+<!-- Desde la versión 5.0 de android, se pueden tener _APK's divididas_, que en conjunto se pueden tomar como una sola app. El Base module son los recursos y código de la apk base, una versión que todas las variantes comparten. Los _dynamic features_ son apks divididas que tienen funciones específicas para ciertos dispositivos/clientes.
 
 Para el testing de un _AAB_, existen dos maneras:
 
@@ -192,7 +182,7 @@ bundletool install-apks --apks=/MyApp/my_app.apks
 
 Se instalará la aplicación sin que se ejecute automáticamente.
 
----
+--- -->
 
 #### Generación del keystore
 
@@ -227,7 +217,19 @@ b) Seleccionamos el build variant deseado ___freeRelease___.
 c) Seleccionamos V1 (Jar Signature) y V2 (Full APK Signature) para tener mayor seguridad.
 d) Finalizamos el proceso.
 
-El ___apk___ de release estará ubicado en ___app/{flavor}/{buildType}/app-{flavor}-{buildType}.apk___.
+<!-- El ___apk___ de release estará ubicado en ___app/{flavor}/{buildType}/app-{flavor}-{buildType}.apk___. -->
+
+#### Estructura del aab
+
+3. El _Android App Bundle_ es un archivo que contiene todos los recursos y el código compilado de la app, pero que a diferencia de un _Apk_ no es un archivo instalable, sino que sirve como fuente para extraer lo necesario y compilar un _apk_ específico para un dispositivo, con una arquitectura determinada y con un idioma en concreto; esto reduce los recursos dentro del archivo y, por lo tanto, el tamaño de la aplicación. Si un dispositivo viene configurado con ciertos idiomas y posteriormente se configura uno nuevo, el recurso para este idioma (si existe en él) se descarga automáticamente de la ___Play Store___.
+
+___Advertencia:___ Google hará obligatorio la subida de un Android App Bundle para que la aplicación esté en la tienda.
+
+<img src="images/warning-aab.png" width="60%">
+
+La estructura de un app bundle es la siguiente:
+
+<img src="images/aab.png" width="70%">
 	
 [`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 

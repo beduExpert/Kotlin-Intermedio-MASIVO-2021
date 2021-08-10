@@ -95,7 +95,7 @@ Con esto, manifestaremos que para la versión build, agregaremos a nuestro `appl
 5. Ahora, para hacer la diferenciación de la variante gratuita y de paga para la aplicación, utilizaremos el bloque `productFlavors`.
 Podemos agregar a cualquier `productFlavor` las configuraciones que hacemos en `defaultConfig`, puesto que este realmente pertenece a dicho bloque.
 
-Cada flavor debe llevar una `dimension`, que es el parámetro por el cuál existen variantes de la app. Se pueden declarar varias dimensiones, pero en este caso solo ocuparemos el precio, por lo que declaramos lo siguiente:
+Cada flavor debe llevar una `dimension`, que es el parámetro por el cuál existen variantes de la app. Se pueden declarar varias dimensiones, pero en este caso solo ocuparemos el precio, por lo que declaramos lo siguiente en ___app/builld.gradle___:
 
 ```kotlin
 flavorDimensions 'price'
@@ -141,7 +141,7 @@ Nos saldrá un menú con todas las variantes:
 
 Al compilar y/o correr nuestra app, se ajustará a la versión seleccionada.
 
-6. Aunque las variantes están creadas, aún falta reemplazar el _layout_ del formulario por el aviso de app gratuita. La fuente de recursos generalizado para todas las variantes de la app se encuentran por defecto en ___app/src/main___, así que para definir un recurso específico para la variante _free_, la agregamos en la ruta ___app/src/debug___.
+6. Aunque las variantes están creadas, aún falta reemplazar el _layout_ del formulario por el aviso de app gratuita. La fuente de recursos generalizado para todas las variantes de la app se encuentran por defecto en ___app/src/main___, así que para definir un recurso específico para la variante _free_, la agregamos en la ruta ___app/src/free___.
 
 Al crear un recurso xml, la forma más rápida sería dando click derecho en _src > New > Android Resource File_, seleccionar layout y seleccionar en _Source Set_, a qué variante pertenece el recurso. En este caso será el _layout_content.mxl_
 
