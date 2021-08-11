@@ -20,12 +20,12 @@ Tomaremos el ejercicio realizado en el [Ejemplo 2](../../Sesion-08/Ejemplo-02) y
 - En la versión gratuita se debe agregar un texto que invite a los usuarios a comprar la versión de paga, así como un botón (sin funcionalidad) para comprar la otra versión.
 - En la versión de paga al darle click al botón de login que se muestre un mensaje (Toast) en el que diga simplemente bienvenido.
 - Los recursos que se ocupen únicamente en un flavor, se deben declarar en el directorio correspondiente (por ejemplo, los _strings_) y todos estos deben definirse siguiendo buenas prácticas de programación.
-- La versión pagada debe enviar un mensaje como este (si los campos tienen texto) 
+- La versión pagada debe enviar un mensaje de error si los campos no tienen texto. 
   
 
 #### Tips:
 
-- Tanto la versión _free_ como _paid_ tendrán su directorio en _src_.
+- Tanto la versión _free_ como _paid_ tendrán su directorio en _res_.
 - No olvides que si utilizas una clase que es diferente para distintas versiones, repítela en los directorios de flavors correspondientes y no en el _main_, puesto que se duplicarían 
 
 <!-- <details><summary>Solución</summary>
