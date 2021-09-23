@@ -21,16 +21,6 @@ En este proyecto, crearemos una lista de contactos de teléfono sencilla con un 
 
 1.- Creamos un nuevo proyecto en Android Studio.
 
-2.- Para poder utilizar `RecyclerView` es necesario importarlo, esto se hace en el archivo **build.gradle**, hasta abajo, en la sección de `dependencies`.
-
-<img src="ss1.png" width="33%">
-
-Seleccionamos la correspondiente a `RecyclerView`
-
-<img src="ss2.png" width="33%">
-
-Y sincronizamos.
-
 `RecyclerView` sirve el mismo propósito que `ListView` sin embargo se trata de un componente mucho mas genérico y versátil que nos permite adaptar la estructura de un listado de elementos de la forma en la que queramos. Este componente está compuesto de pequeñas piezas, las cuales tenemos que comprender para poder utilizarlo correctamente.
 
 `RecyclerView` es un **ViewGroup** que va a organizar sus elementos según los parámetros con los que lo definamos.
