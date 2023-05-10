@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_home"
+        android:title="@string/viajes"
+        android:icon="@drawable/ic_baseline_home_24"/>
+
+    <item android:id="@+id/nav_driver"
+        android:title="@string/conductor_btn_nav"
+        android:icon="@drawable/ic_baseline_credit_card_24"/>
+    <item
+        android:id="@+id/nav_car"
+        android:icon="@drawable/ic_baseline_directions_car_24"
+        android:title="@string/vehiculo_btn_nav"
+        android:visible="false" />
+
+    <item android:id="@+id/nav_history"
+        android:title="@string/historial_btn_nav"
+        android:icon="@drawable/ic_baseline_history_24"/>
+</menu>
