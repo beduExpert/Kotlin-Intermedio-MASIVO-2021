@@ -7,6 +7,10 @@ android {
     namespace 'org.bedu.materialdesign'
     compileSdk 33
 
+    buildFeatures {
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "org.bedu.materialdesign"
         minSdk 28

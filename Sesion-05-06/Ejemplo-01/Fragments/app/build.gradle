@@ -7,8 +7,8 @@ android {
     namespace 'org.bedu.fragments'
     compileSdk 33
 
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding true
     }
 
     defaultConfig {

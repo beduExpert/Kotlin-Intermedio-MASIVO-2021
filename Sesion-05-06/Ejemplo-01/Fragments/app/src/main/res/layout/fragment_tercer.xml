@@ -1,18 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@drawable/bg_main"
     tools:context=".TercerFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/txtVehicle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Fragment 3"
-        android:layout_gravity="center"
-        android:textSize="28sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
+        android:layout_marginTop="16dp"
+        android:text="Informacion de Conductor"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_border_detail"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVehicle"
+        app:layout_constraintVertical_bias="0.100000024">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="209dp"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="242dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="0dp"
+                android:orientation="vertical"
+                android:paddingStart="4dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="0dp">
+
+                <TextView
+                    android:id="@+id/txtDriverId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingBottom="24dp"
+                    android:text="Id Conductor:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtDriverName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingBottom="24dp"
+                    android:text="Nombre:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtDriverRfc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingBottom="24dp"
+                    android:text="Rfc:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtDriverLicencs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="12dp"
+                    android:text="Licencia:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="267dp"
+                android:layout_height="242dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@id/linearLayout"
+                android:orientation="vertical"
+                android:paddingStart="7dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="0dp">
+
+                <TextView
+                    android:id="@+id/txtDriverIdData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingBottom="24dp"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="Id Conductor" />
+
+                <TextView
+                    android:id="@+id/txtDriverNameData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingBottom="24dp"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="Nombre de Conductor" />
+
+                <TextView
+                    android:id="@+id/txtDriverRfcData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingBottom="24dp"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="RFC de Conductor" />
+
+                <TextView
+                    android:id="@+id/txtDriverLicenceData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="Licencia de Conducir" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

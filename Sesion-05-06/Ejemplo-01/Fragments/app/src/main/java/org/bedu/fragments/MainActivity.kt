@@ -15,13 +15,14 @@ class MainActivity : AppCompatActivity() {
     val segundoFragment=SegundoFragment()
     val tercerFragment=TercerFragment()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Logica de programacion
         setCurrentFragment(primerFragment)
         createFragments()
     }
@@ -31,20 +32,25 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.nav_home->{
                     setCurrentFragment(primerFragment)
+                    it.actionView?.clearFocus()
                     true
                 }
                 R.id.nav_driver->{
                     setCurrentFragment(segundoFragment)
+                    it.actionView?.clearFocus()
                     true
                 }
 
                 R.id.nav_history->{
-                    val args = Bundle()
-                    val shared: SharedPreferences = getSharedPreferences("shared", MODE_PRIVATE)
-                    args.putInt("idConductor", shared.getInt("idConductor",0))
-                    args.putString("token", shared.getString("token","0"))
-                    tercerFragment.arguments=args
+//                    val args = Bundle()
+//                    val shared: SharedPreferences = getSharedPreferences("shared", MODE_PRIVATE)
+//                    args.putInt("idConductor", shared.getInt("idConductor",0))
+//                    args.putString("token", shared.getString("token","0"))
+//                    tercerFragment.arguments=args
+//                    setCurrentFragment(tercerFragment)
+//                    true
                     setCurrentFragment(tercerFragment)
+                    it.actionView?.clearFocus()
                     true
                 }
                 else -> false
