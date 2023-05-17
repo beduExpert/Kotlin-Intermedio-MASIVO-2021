@@ -1,41 +1,55 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//aplicamos plugins
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    namespace 'org.bedu.solucion'
+    compileSdk rootProject.ext.compileSdkVersion //nivel de sdk a compilar (no puedes usar features de apis superiores)
+
+    buildFeatures {
+        viewBinding true
+    }
 
     defaultConfig {
-        applicationId "org.bedu.listdetailfragment"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.compileSdkVersion
-        versionCode 1
-        versionName "1.0"
+        applicationId "org.bedu.solucion" //identificador único de nuestra app para su publicación
+        minSdk rootProject.ext.minSdkVersion // la versión mínima de android para que la app funcione
+        targetSdk rootProject.ext.targetSdkVersion // la versión con la cual se prueba la app
+        versionCode 1 // el número de versión
+        versionName "1.0" //nombre de la versión para el público
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // build types (por defecto release y debug).
     buildTypes {
         release {
-            shrinkResources true
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    // Opciones para la compilación Java
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Setear diferentes configuraciones de kotlin
+    kotlinOptions {
+        jvmTarget = '1.8' // La versión de la JVM para generar el bytecode desde kotlin
+    }
 }
 
+// bloque de dependencias
 dependencies {
-    api 'com.google.android.material:material:1.3.0-alpha03'
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.core:core-ktx:${rootProject.ext.coreKtxVersion}"
-    implementation "androidx.appcompat:appcompat:${rootProject.ext.appCompatVersion}"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
+    implementation "androidx.core:core-ktx:${coreKtxVersion}"
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${materialVersion}"
+    implementation "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

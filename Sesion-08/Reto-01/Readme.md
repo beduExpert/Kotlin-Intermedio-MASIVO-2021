@@ -30,21 +30,23 @@ Tomaremos el ejercicio realizado en el [Ejemplo 2](../../Sesion-08/Ejemplo-02) y
 
 <!-- <details><summary>Solución</summary>
 
-en _free > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
+en _free > java > org > bedu > buildvariants_, crear _LoginFragment.kt_
 
 ```kotlin
-   class LoginFragment : Fragment() {
+ class LoginFragment : Fragment() {
+
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
+    ): View {
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        val loginButton = view?.findViewById<Button>(R.id.login_button)
-
-        loginButton?.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             Toast.makeText(context,getString(R.string.free_version), Toast.LENGTH_SHORT).show()
         }
         return view
@@ -58,29 +60,41 @@ en _free > res > values > strings.xml_
     <string name="free_version">Versión gratuita</string>
 </resources>
 ```
-en _paid > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
+en _paid > java > org > bedu > buildvariants_, crear _LoginFragment.kt_
 
 ```kotlin
+package org.bedu.buildvariants
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import org.bedu.buildvariants.databinding.FragmentLoginBinding
+
 class LoginFragment : Fragment() {
+
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        val loginButton = view?.findViewById<Button>(R.id.login_button)
-        val editUser = view?.findViewById<EditText>(R.id.edit_user)
-        val editPassword = view?.findViewById<EditText>(R.id.edit_password)
-
-        loginButton?.setOnClickListener {
+        binding.loginButton.setOnClickListener {
 
             when {
-                editUser?.text.toString() == "" -> {
+                binding.editUser.text.toString() == "" -> {
                     Toast.makeText(context,getString(R.string.user_empty), Toast.LENGTH_SHORT).show()
                 }
-                editPassword?.text.toString() == "" -> {
+                binding.editPassword.text.toString() == "" -> {
                     Toast.makeText(context,getString(R.string.pass_empty), Toast.LENGTH_SHORT).show()
                 }
                 else -> {
@@ -89,6 +103,11 @@ class LoginFragment : Fragment() {
             }
         }
         return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
 ```

@@ -27,33 +27,16 @@ Antes de liberar una aplicación hay una serie de pasos que deben realizarse par
 
 ```kotlin
 // En este bloque se configuran los repositorios y dependencias de gradle
-buildscript {
-    ext.kotlin_version = "1.3.72"
-    // Estos son los repositorios donde buscamos y descargamos dependencias
-    repositories {
-        google()
-        jcenter()
-    }
-    // Dependencias para gradle, como el complemento de android para gradle con el cual se obtienen las instrucciones para construir los módulos de la app
-    dependencies {
-        classpath "com.android.tools.build:gradle:4.0.0"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+plugins {
+    id 'com.android.application' version '8.0.1' apply false
+    id 'com.android.library' version '8.0.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
 }
 
 // En esta sección puedes configurar dependencias y repositorios para todos los módulos en tu aplicación, incluidos módulos externos
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+// En esta sección puedes configurar dependencias y repositorios para todos los módulos en tu aplicación, incluidos módulos externos
+allprojects{
+    
 }
 ```
 
@@ -61,71 +44,104 @@ task clean(type: Delete) {
 No cierres este archivo, en un momento volveremos a él.
 
 
+
+Adicionalmente, podremos abrir este archivo ___settings.gradle___, cuya misión principal es definir submódulos y declarar un directorio root para otros módulos. A diferencia de los build.gradle, solo podemos tener uno por proyecto.
+
+```groovy
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "solucion" // nombre del directorio root
+include ':app' //incluímos el módulo app en el proyecto (si fuera multimodular, abajo incluímos los otros)
+
+```
+
 4.Ahora debe abrise el archivo ___app/build.gradle___, que es un archivo de configuración local (para el módulo donde está contenido). En este caso, define toda la configuración para la compilación de nuestro módulo ___app___. Ejemplificaremos con el _build.gradle_ de un proyecto en blanco.
 
-```kotlin
+```groovy
 //aplicamos plugins
-apply plugin: 'com.android.application' //plugin para definir opciones específicas de android
-apply plugin: 'kotlin-android' //habilitamos kotlin para android
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
 
 android {
-	
-    compileSdkVersion 29  //nivel de sdk a compilar (no puedes usar features de apis superiores)
-    buildToolsVersion "29.0.3" //version de sdk build tools, compilador y command-line
+    namespace 'org.bedu.solucion'
+    compileSdk 33 //nivel de sdk a compilar (no puedes usar features de apis superiores)
 
-	// Configuración de todos los Build Variants
+     buildFeatures {
+        viewBinding true
+    }
+ 
     defaultConfig {
-        applicationId "org.bedu.listdetailfragment" //identificador único de nuestra app para su publicación
-        minSdkVersion 16 // la versión mínima de android para que la app funcione
-        targetSdkVersion 29 //la versión con la cual se prueba la app
-        versionCode 1 //el número de versión
+        applicationId "org.bedu.solucion" //identificador único de nuestra app para su publicación
+        minSdk 24 // la versión mínima de android para que la app funcione
+        targetSdk 33 // la versión con la cual se prueba la app
+        versionCode 1 // el número de versión
         versionName "1.0" //nombre de la versión para el público
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    // build types (por defecto release y debug). 
+    // build types (por defecto release y debug).
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false  // 
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    // Opciones para la compilación Java
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Setear diferentes configuraciones de kotlin
+    kotlinOptions {
+        jvmTarget = '1.8' // La versión de la JVM para generar el bytecode desde kotlin
     }
 }
 
 // bloque de dependencias
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 ```
 
 <!-- Vamos a declarar algunas de las versiones en el ___build.gradle___ raíz, esto para que cada módulo pueda tener acceso a él y se eviten inconsistencias por versiones distintas entre módulos
 
 ```kotlin
-buildscript {...}
+plugins {...}
 
 allprojects {...}
 
 ext {
-    minSdkVersion
-    targetSdkVersion
-    buildToolsVersion
-    compileSdkVersion = 28
+    minSdk rootProject.ext.minSdkVersion
+    targetSdk rootProject.ext.targetSdkVersion
 
-    coreKtxVersion="1.3.1"
-    appCompatVersion="1.2.0"
-    
+    coreKtxVersion = '1.10.1'
+    constraintLayoutVersion = '2.1.4'
+    materialVersion = '1.9.0'
+    appCompatVersion = '1.6.1'
 }
 ```
 
@@ -133,8 +149,11 @@ Ahora, a sustituir en ___app/build.gradle___
 
 ```kotlin
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
+  
+    buildFeatures {
+        viewBinding true
+    }
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -145,13 +164,15 @@ android {
 }
 
 dependencies {
-    ...
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.core:core-ktx:${rootProject.ext.coreKtxVersion}"
-    implementation "androidx.appcompat:appcompat:${rootProject.ext.appCompatVersion}"
-    ...
+    implementation "androidx.core:core-ktx:${coreKtxVersion}"
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${materialVersion}"
+    implementation "androidx.constraintlayout:constraintlayout:${minSdkVersion}"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
-``` -->
+```
 
 En _buildTypes->release_, habilitaremos la ofuscación y depuración del código cambiando el valor de ___minifyEnabled___ y ___shrinkResources___ a _true_. Esto sólo se recomienda antes de liberar la app ya que hace que el proceso de compilación sea más tardado, pero es necesario para garantizar que la aplicación funciona corretamente.
 

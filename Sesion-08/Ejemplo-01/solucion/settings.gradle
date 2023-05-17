@@ -1,2 +1,16 @@
-include ':app'
-rootProject.name = "ListDetailFragment"
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "solucion" // nombre del directorio root
+include ':app' //incluímos el módulo app en el proyecto (si fuera multimodular, abajo incluímos los otros)
